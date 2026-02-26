@@ -1,18 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { formatCurrency } from '../utils/formatters';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, ReferenceLine, Brush } from 'recharts';
-import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
-import ExternalLink from 'lucide-react/dist/esm/icons/external-link';
-import TrendingUp from 'lucide-react/dist/esm/icons/trending-up';
-import TrendingDown from 'lucide-react/dist/esm/icons/trending-down';
-import BarChart2 from 'lucide-react/dist/esm/icons/bar-chart-2';
-import ShowChart from 'lucide-react/dist/esm/icons/activity'; // Using Activity as Line Chart icon
-
-import Maximize2 from 'lucide-react/dist/esm/icons/maximize-2';
-import Minimize2 from 'lucide-react/dist/esm/icons/minimize-2';
+import { Maximize2, Minimize2, BarChart2, CheckCircle, ExternalLink, TrendingUp, TrendingDown, Activity as ShowChart } from 'lucide-react';
 import PnLStats from './PnLStats';
-
-import { pnlData as data } from '../utils/pnlData';
 
 const CustomTooltip = ({ active, payload, label, viewMode, chartType }) => {
     if (active && payload && payload.length) {
@@ -36,7 +26,7 @@ const CustomTooltip = ({ active, payload, label, viewMode, chartType }) => {
     return null;
 };
 
-const PnLChart = () => {
+const PnLChart = ({ data, selectedSegment }) => {
     const [viewMode, setViewMode] = useState('month'); // Default to 'month'
     const [chartType, setChartType] = useState('bar'); // 'bar', 'line', 'cumulative'
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -90,7 +80,7 @@ const PnLChart = () => {
                 <div className="mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
                         <span className="text-white">Verified Consistency</span> <br />
-                        <span className="text-premium-gold">Key Performance Metrics</span>
+                        <span className="text-premium-gold">{selectedSegment === 'All' ? 'Overall' : selectedSegment} Performance Metrics</span>
                     </h2>
                     <PnLStats data={data} />
                 </div>

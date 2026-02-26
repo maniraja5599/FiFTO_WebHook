@@ -106,6 +106,10 @@ async function scrape() {
                         date: dateObj.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }),
                         rawDate: d.date,
                         dailyPnL: d.value,
+                        fnoPnL: d.dayFnoValue || 0,
+                        equityPnL: d.dayEquityValue || 0,
+                        commodityPnL: d.dayCommodityValue || 0,
+                        currencyPnL: d.dayCurrncyValue || 0,
                         trades: 0, // Not available in daily summary
                         roi: ((d.value / 10000000) * 100).toFixed(2) // Assuming 1Cr capital
                     };
@@ -114,7 +118,7 @@ async function scrape() {
                 // Sort ascending
                 processed.sort((a, b) => new Date(a.rawDate) - new Date(b.rawDate));
 
-                // Calculate cumulative
+                // Calculate cumulative for All
                 let cumulative = 0;
                 processed.forEach(d => {
                     cumulative += d.dailyPnL;
@@ -125,9 +129,20 @@ async function scrape() {
                 await fs.writeFile(pnlDataPath, JSON.stringify(processed, null, 2));
                 console.log(`Saved processed data to ${pnlDataPath}`);
 
+                // Also save trade-wise data with segments if available
+                if (raw.pnlValue && Array.isArray(raw.pnlValue)) {
+                    const tradesDataPath = path.resolve('src/utils/tradesData.json');
+                    await fs.writeFile(tradesDataPath, JSON.stringify(raw.pnlValue, null, 2));
+                    console.log(`Saved trades data to ${tradesDataPath}`);
+
+                    const tradesJsContent = `import data from './tradesData.json';
+export const tradesData = data;
+`;
+                    await fs.writeFile(path.resolve('src/utils/tradesData.js'), tradesJsContent);
+                }
+
                 // Update src/utils/pnlData.js
                 const jsContent = `import data from './pnlData.json';
-
 export const pnlData = data;
 `;
                 const jsPath = path.resolve('src/utils/pnlData.js');

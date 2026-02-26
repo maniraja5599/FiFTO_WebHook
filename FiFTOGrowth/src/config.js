@@ -1,1 +1,1 @@
-export const VERIFIED_PNL_URL = "https://verified.flattrade.in/pnl/bba4f9468b2e44569e0b46630e5478a8";
+export const VERIFIED_PNL_URL = "https://verified.flattrade.in/pnl/PO41cdb4211d8a44ee92dca04769037650";

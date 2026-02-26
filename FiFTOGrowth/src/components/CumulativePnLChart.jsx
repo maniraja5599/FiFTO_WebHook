@@ -5,8 +5,6 @@ import Maximize2 from 'lucide-react/dist/esm/icons/maximize-2';
 import Minimize2 from 'lucide-react/dist/esm/icons/minimize-2';
 import PieChart from 'lucide-react/dist/esm/icons/pie-chart';
 
-import { pnlData as data } from '../utils/pnlData';
-
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         const value = payload[0].value;
@@ -27,7 +25,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     return null;
 };
 
-const CumulativePnLChart = () => {
+const CumulativePnLChart = ({ data, selectedSegment }) => {
     const [isFullScreen, setIsFullScreen] = useState(false);
 
     if (!data || data.length === 0) return null;
@@ -54,7 +52,7 @@ const CumulativePnLChart = () => {
 
                             <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4 relative z-10">
                                 <h3 className="text-xl font-semibold flex items-center gap-2">
-                                    <span className="text-white">Cumulative</span>
+                                    <span className="text-white">{selectedSegment === 'All' ? 'Cumulative' : `${selectedSegment} Cumulative`}</span>
                                     <span className="text-premium-gold">P&L</span>
                                     <span className="text-xs bg-premium-gold/20 text-premium-gold px-2 py-0.5 rounded-full border border-premium-gold/30">Equity Curve</span>
                                 </h3>

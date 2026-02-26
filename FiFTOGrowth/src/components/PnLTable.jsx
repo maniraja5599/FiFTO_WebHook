@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { formatCurrency } from '../utils/formatters';
-import { pnlData } from '../utils/pnlData';
 import ArrowUpRight from 'lucide-react/dist/esm/icons/arrow-up-right';
 import ArrowDownRight from 'lucide-react/dist/esm/icons/arrow-down-right';
 import Download from 'lucide-react/dist/esm/icons/download';
 
-const PnLTable = () => {
-    // Calculate cumulative ROI before reversing
+const PnLTable = ({ data, selectedSegment }) => {
+    // Calculate cumulative ROI before reversing 
+    // Wait, the data passed from Home already has 'roi' and 'cumulativePnL' recalculated if needed.
+    // However, PnLTable calculates its own 'cumulativeRoi' based on the reversed data usually? 
+    // Let's re-calculate it locally to be safe.
+
     let runningRoi = 0;
-    const dataWithCumulativeRoi = pnlData.map(day => {
+    const dataWithCumulativeRoi = data.map(day => {
         runningRoi += parseFloat(day.roi);
         return {
             ...day,
@@ -44,7 +47,7 @@ const PnLTable = () => {
         const url = URL.createObjectURL(blob);
 
         link.setAttribute('href', url);
-        link.setAttribute('download', `pnl_data_${new Date().toISOString().split('T')[0]}.csv`);
+        link.setAttribute('download', `${selectedSegment}_pnl_data_${new Date().toISOString().split('T')[0]}.csv`);
         link.style.visibility = 'hidden';
 
         document.body.appendChild(link);
@@ -58,7 +61,7 @@ const PnLTable = () => {
                 <div className="mb-8 relative flex flex-col md:flex-row items-center justify-center">
                     <div className="text-center">
                         <h2 className="text-2xl font-bold mb-1">
-                            <span className="text-white">Daily Performance</span> <span className="text-premium-gold">Ledger</span>
+                            <span className="text-white">{selectedSegment === 'All' ? 'Daily Performance' : `${selectedSegment} Daily Total`}</span> <span className="text-premium-gold">Ledger</span>
                         </h2>
                         <p className="text-gray-400 text-sm">Detailed breakdown of every trading day.</p>
                     </div>

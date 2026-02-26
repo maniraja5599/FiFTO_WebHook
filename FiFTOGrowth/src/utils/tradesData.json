@@ -1,0 +1,222 @@
+[
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 62800 ",
+    "quantity": 60,
+    "buyValue": 34629,
+    "buyAvg": 577.15,
+    "sellValue": 21432,
+    "sellAvg": 357.2,
+    "pnlAmount": -13197,
+    "percentage": "-38.11%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 62900 ",
+    "quantity": 420,
+    "buyValue": 194737.5,
+    "buyAvg": 463.66071429,
+    "sellValue": 134532,
+    "sellAvg": 320.31428571,
+    "pnlAmount": -60205.5,
+    "percentage": "-30.92%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63000 ",
+    "quantity": 540,
+    "buyValue": 197235,
+    "buyAvg": 365.25,
+    "sellValue": 130419,
+    "sellAvg": 241.51666667,
+    "pnlAmount": -66816,
+    "percentage": "-33.88%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63100 ",
+    "quantity": 420,
+    "buyValue": 140676,
+    "buyAvg": 334.94285714,
+    "sellValue": 94600.5,
+    "sellAvg": 225.23928571,
+    "pnlAmount": -46075.5,
+    "percentage": "-32.75%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63200 ",
+    "quantity": 480,
+    "buyValue": 139827,
+    "buyAvg": 291.30625,
+    "sellValue": 137122.5,
+    "sellAvg": 285.671875,
+    "pnlAmount": -2704.5,
+    "percentage": "-1.93%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63300 ",
+    "quantity": 60,
+    "buyValue": 12324,
+    "buyAvg": 205.4,
+    "sellValue": 17379,
+    "sellAvg": 289.65,
+    "pnlAmount": 5055,
+    "percentage": "41.02%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63500 ",
+    "quantity": 60,
+    "buyValue": 8676,
+    "buyAvg": 144.6,
+    "sellValue": 6003,
+    "sellAvg": 100.05,
+    "pnlAmount": -2673,
+    "percentage": "-30.81%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63700 ",
+    "quantity": 600,
+    "buyValue": 91540.5,
+    "buyAvg": 152.5675,
+    "sellValue": 77515.5,
+    "sellAvg": 129.1925,
+    "pnlAmount": -14025,
+    "percentage": "-15.32%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63800 ",
+    "quantity": 900,
+    "buyValue": 84118.5,
+    "buyAvg": 93.465,
+    "sellValue": 94275,
+    "sellAvg": 104.75,
+    "pnlAmount": 10156.5,
+    "percentage": "12.07%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 63900 ",
+    "quantity": 240,
+    "buyValue": 22944,
+    "buyAvg": 95.6,
+    "sellValue": 37416,
+    "sellAvg": 155.9,
+    "pnlAmount": 14472,
+    "percentage": "63.08%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64000 ",
+    "quantity": 540,
+    "buyValue": 18033,
+    "buyAvg": 33.39444444,
+    "sellValue": 58527,
+    "sellAvg": 108.38333333,
+    "pnlAmount": 40494,
+    "percentage": "224.55%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64100 ",
+    "quantity": 120,
+    "buyValue": 4281,
+    "buyAvg": 35.675,
+    "sellValue": 21658.5,
+    "sellAvg": 180.4875,
+    "pnlAmount": 17377.5,
+    "percentage": "405.92%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64300 ",
+    "quantity": 180,
+    "buyValue": 4269,
+    "buyAvg": 23.71666667,
+    "sellValue": 2115,
+    "sellAvg": 11.75,
+    "pnlAmount": -2154,
+    "percentage": "-50.46%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64400 ",
+    "quantity": 540,
+    "buyValue": 6288,
+    "buyAvg": 11.64444444,
+    "sellValue": 6930,
+    "sellAvg": 12.83333333,
+    "pnlAmount": 642,
+    "percentage": "10.21%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64500 ",
+    "quantity": 180,
+    "buyValue": 1452,
+    "buyAvg": 8.06666667,
+    "sellValue": 1126.5,
+    "sellAvg": 6.25833333,
+    "pnlAmount": -325.5,
+    "percentage": "-22.42%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64600 ",
+    "quantity": 180,
+    "buyValue": 1596,
+    "buyAvg": 8.86666667,
+    "sellValue": 1011,
+    "sellAvg": 5.61666667,
+    "pnlAmount": -585,
+    "percentage": "-36.65%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64700 ",
+    "quantity": 240,
+    "buyValue": 2157,
+    "buyAvg": 8.9875,
+    "sellValue": 370.5,
+    "sellAvg": 1.54375,
+    "pnlAmount": -1786.5,
+    "percentage": "-82.82%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64800 ",
+    "quantity": 180,
+    "buyValue": 2353.5,
+    "buyAvg": 13.075,
+    "sellValue": 480,
+    "sellAvg": 2.66666667,
+    "pnlAmount": -1873.5,
+    "percentage": "-79.60%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 64900 ",
+    "quantity": 60,
+    "buyValue": 97.5,
+    "buyAvg": 1.625,
+    "sellValue": 108,
+    "sellAvg": 1.8,
+    "pnlAmount": 10.5,
+    "percentage": "10.77%",
+    "segment": "FNO"
+  },
+  {
+    "stockName": "IO CE BANKEX 24JUN2025 65100 ",
+    "quantity": 120,
+    "buyValue": 429,
+    "buyAvg": 3.575,
+    "sellValue": 303,
+    "sellAvg": 2.525,
+    "pnlAmount": -126,
+    "percentage": "-29.37%",
+    "segment": "FNO"
+  }
+]
