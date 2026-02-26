@@ -22,17 +22,40 @@ const LoadingSpinner = () => (
 );
 
 const Home = () => {
-    const [selectedSegment, setSelectedSegment] = useState('All');
-    const segments = ['All', 'F&O', 'Equity', 'Commodity', 'Currency'];
+    const segments = [
+        { id: 'fnoPnL', label: 'F&O' },
+        { id: 'equityPnL', label: 'Equity' },
+        { id: 'commodityPnL', label: 'Commodity' },
+        { id: 'currencyPnL', label: 'Currency' }
+    ];
+
+    const [selectedSegments, setSelectedSegments] = useState(segments.map(s => s.id));
+
+    const toggleSegment = (id) => {
+        setSelectedSegments(prev => {
+            if (prev.includes(id)) {
+                return prev.filter(item => item !== id);
+            } else {
+                return [...prev, id];
+            }
+        });
+    };
+
+    const selectAll = () => {
+        if (selectedSegments.length === segments.length) {
+            setSelectedSegments([]);
+        } else {
+            setSelectedSegments(segments.map(s => s.id));
+        }
+    };
 
     const filteredData = useMemo(() => {
         let cumulative = 0;
         return pnlData.map(d => {
-            let dailyVal = d.dailyPnL;
-            if (selectedSegment === 'F&O') dailyVal = d.fnoPnL;
-            else if (selectedSegment === 'Equity') dailyVal = d.equityPnL;
-            else if (selectedSegment === 'Commodity') dailyVal = d.commodityPnL;
-            else if (selectedSegment === 'Currency') dailyVal = d.currencyPnL;
+            let dailyVal = 0;
+            selectedSegments.forEach(segId => {
+                dailyVal += (d[segId] || 0);
+            });
 
             cumulative += dailyVal;
             return {
@@ -42,7 +65,13 @@ const Home = () => {
                 roi: ((dailyVal / 10000000) * 100).toFixed(2)
             };
         });
-    }, [selectedSegment]);
+    }, [selectedSegments]);
+
+    const formatSelectedLabel = () => {
+        if (selectedSegments.length === segments.length) return 'All Segments';
+        if (selectedSegments.length === 0) return 'No Segment Selected';
+        return segments.filter(s => selectedSegments.includes(s.id)).map(s => s.label).join(' + ');
+    };
 
     return (
         <div className="bg-premium-dark min-h-screen text-white selection:bg-premium-gold selection:text-black relative">
@@ -51,29 +80,43 @@ const Home = () => {
             <Hero />
 
             <div className="container mx-auto px-6 mb-8 relative z-10">
-                <div className="flex flex-wrap justify-center gap-4 bg-black/30 p-4 rounded-2xl border border-white/5 backdrop-blur-md">
-                    {segments.map(seg => (
+                <div className="flex flex-col items-center gap-4 bg-black/30 p-6 rounded-2xl border border-white/5 backdrop-blur-md">
+                    <div className="flex flex-wrap justify-center gap-3">
                         <button
-                            key={seg}
-                            onClick={() => setSelectedSegment(seg)}
-                            className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${selectedSegment === seg
-                                    ? 'bg-premium-gold text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]'
-                                    : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/5'
+                            onClick={selectAll}
+                            className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 border ${selectedSegments.length === segments.length
+                                    ? 'bg-premium-gold text-black border-premium-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]'
+                                    : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
                                 }`}
                         >
-                            {seg}
+                            All
                         </button>
-                    ))}
+                        {segments.map(seg => (
+                            <button
+                                key={seg.id}
+                                onClick={() => toggleSegment(seg.id)}
+                                className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 border ${selectedSegments.includes(seg.id)
+                                        ? 'bg-premium-gold/20 text-premium-gold border-premium-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]'
+                                        : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
+                                    }`}
+                            >
+                                {seg.label}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="text-xs text-gray-500 font-mono tracking-widest uppercase">
+                        Active: <span className="text-premium-gold">{formatSelectedLabel()}</span>
+                    </div>
                 </div>
             </div>
 
             <Suspense fallback={<LoadingSpinner />}>
                 <AnimatedDivider />
-                <PnLChart data={filteredData} selectedSegment={selectedSegment} />
+                <PnLChart data={filteredData} selectedSegment={formatSelectedLabel()} />
                 <AnimatedDivider />
-                <CumulativePnLChart data={filteredData} selectedSegment={selectedSegment} />
+                <CumulativePnLChart data={filteredData} selectedSegment={formatSelectedLabel()} />
                 <AnimatedDivider />
-                <PnLTable data={filteredData} selectedSegment={selectedSegment} />
+                <PnLTable data={filteredData} selectedSegment={formatSelectedLabel()} />
                 <AnimatedDivider />
                 <Roadmap />
                 <AnimatedDivider />
