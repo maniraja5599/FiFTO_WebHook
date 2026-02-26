@@ -1,0 +1,5843 @@
+[
+  {
+    "token": "26037",
+    "symbol": "FINNIFTY",
+    "name": "FINNIFTY",
+    "expiry": "",
+    "lotsize": "1",
+    "exch_seg": "NSE",
+    "instrumenttype": ""
+  },
+  {
+    "token": "26074",
+    "symbol": "MIDCPNIFTY",
+    "name": "MIDCPNIFTY",
+    "expiry": "",
+    "lotsize": "-1",
+    "exch_seg": "NSE",
+    "instrumenttype": ""
+  },
+  {
+    "token": "26000",
+    "symbol": "NIFTY",
+    "name": "NIFTY",
+    "expiry": "",
+    "lotsize": "1",
+    "exch_seg": "NSE",
+    "instrumenttype": ""
+  },
+  {
+    "token": "26009",
+    "symbol": "BANKNIFTY",
+    "name": "BANKNIFTY",
+    "expiry": "",
+    "lotsize": "1",
+    "exch_seg": "NSE",
+    "instrumenttype": ""
+  },
+  {
+    "token": "36700",
+    "symbol": "061NSETEST27NOV36FUT",
+    "name": "061NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36721",
+    "symbol": "141NSETEST27NOV36FUT",
+    "name": "141NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51826",
+    "symbol": "BHARTIARTL30MAR26FUT",
+    "name": "BHARTIARTL",
+    "expiry": "30MAR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51866",
+    "symbol": "DIXON30MAR26FUT",
+    "name": "DIXON",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51877",
+    "symbol": "FEDERALBNK30MAR26FUT",
+    "name": "FEDERALBNK",
+    "expiry": "30MAR2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51884",
+    "symbol": "GRASIM30MAR26FUT",
+    "name": "GRASIM",
+    "expiry": "30MAR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51886",
+    "symbol": "HAVELLS30MAR26FUT",
+    "name": "HAVELLS",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51894",
+    "symbol": "HDFCLIFE30MAR26FUT",
+    "name": "HDFCLIFE",
+    "expiry": "30MAR2026",
+    "lotsize": "1100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51904",
+    "symbol": "HUDCO30MAR26FUT",
+    "name": "HUDCO",
+    "expiry": "30MAR2026",
+    "lotsize": "2775",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51923",
+    "symbol": "INDUSINDBK30MAR26FUT",
+    "name": "INDUSINDBK",
+    "expiry": "30MAR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51933",
+    "symbol": "INOXWIND30MAR26FUT",
+    "name": "INOXWIND",
+    "expiry": "30MAR2026",
+    "lotsize": "3575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51954",
+    "symbol": "KFINTECH30MAR26FUT",
+    "name": "KFINTECH",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51961",
+    "symbol": "LAURUSLABS30MAR26FUT",
+    "name": "LAURUSLABS",
+    "expiry": "30MAR2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51985",
+    "symbol": "NBCC30MAR26FUT",
+    "name": "NBCC",
+    "expiry": "30MAR2026",
+    "lotsize": "6500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51995",
+    "symbol": "OFSS30MAR26FUT",
+    "name": "OFSS",
+    "expiry": "30MAR2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52005",
+    "symbol": "PHOENIXLTD30MAR26FUT",
+    "name": "PHOENIXLTD",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52035",
+    "symbol": "SOLARINDS30MAR26FUT",
+    "name": "SOLARINDS",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52039",
+    "symbol": "SUPREMEIND30MAR26FUT",
+    "name": "SUPREMEIND",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52060",
+    "symbol": "TORNTPOWER30MAR26FUT",
+    "name": "TORNTPOWER",
+    "expiry": "30MAR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52069",
+    "symbol": "VEDL30MAR26FUT",
+    "name": "VEDL",
+    "expiry": "30MAR2026",
+    "lotsize": "1150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66068",
+    "symbol": "BANKNIFTY26MAY26FUT",
+    "name": "BANKNIFTY",
+    "expiry": "26MAY2026",
+    "lotsize": "30",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66077",
+    "symbol": "ADANIENT26MAY26FUT",
+    "name": "ADANIENT",
+    "expiry": "26MAY2026",
+    "lotsize": "309",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66084",
+    "symbol": "APLAPOLLO26MAY26FUT",
+    "name": "APLAPOLLO",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66086",
+    "symbol": "ASHOKLEY26MAY26FUT",
+    "name": "ASHOKLEY",
+    "expiry": "26MAY2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66091",
+    "symbol": "AXISBANK26MAY26FUT",
+    "name": "AXISBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66107",
+    "symbol": "BPCL26MAY26FUT",
+    "name": "BPCL",
+    "expiry": "26MAY2026",
+    "lotsize": "1975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66109",
+    "symbol": "BSE26MAY26FUT",
+    "name": "BSE",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66158",
+    "symbol": "ETERNAL26MAY26FUT",
+    "name": "ETERNAL",
+    "expiry": "26MAY2026",
+    "lotsize": "2425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66165",
+    "symbol": "GLENMARK26MAY26FUT",
+    "name": "GLENMARK",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66206",
+    "symbol": "INDUSINDBK26MAY26FUT",
+    "name": "INDUSINDBK",
+    "expiry": "26MAY2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66217",
+    "symbol": "INFY26MAY26FUT",
+    "name": "INFY",
+    "expiry": "26MAY2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66218",
+    "symbol": "INOXWIND26MAY26FUT",
+    "name": "INOXWIND",
+    "expiry": "26MAY2026",
+    "lotsize": "3575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66269",
+    "symbol": "LT26MAY26FUT",
+    "name": "LT",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66294",
+    "symbol": "MFSL26MAY26FUT",
+    "name": "MFSL",
+    "expiry": "26MAY2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66312",
+    "symbol": "NTPC26MAY26FUT",
+    "name": "NTPC",
+    "expiry": "26MAY2026",
+    "lotsize": "1500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66356",
+    "symbol": "RVNL26MAY26FUT",
+    "name": "RVNL",
+    "expiry": "26MAY2026",
+    "lotsize": "1525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66358",
+    "symbol": "SAMMAANCAP26MAY26FUT",
+    "name": "SAMMAANCAP",
+    "expiry": "26MAY2026",
+    "lotsize": "4300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66359",
+    "symbol": "SBICARD26MAY26FUT",
+    "name": "SBICARD",
+    "expiry": "26MAY2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66389",
+    "symbol": "TCS26MAY26FUT",
+    "name": "TCS",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66694",
+    "symbol": "ABB28APR26FUT",
+    "name": "ABB",
+    "expiry": "28APR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66696",
+    "symbol": "ADANIENSOL28APR26FUT",
+    "name": "ADANIENSOL",
+    "expiry": "28APR2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66709",
+    "symbol": "ANGELONE28APR26FUT",
+    "name": "ANGELONE",
+    "expiry": "28APR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66710",
+    "symbol": "APLAPOLLO28APR26FUT",
+    "name": "APLAPOLLO",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66712",
+    "symbol": "ASHOKLEY28APR26FUT",
+    "name": "ASHOKLEY",
+    "expiry": "28APR2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66720",
+    "symbol": "BAJAJHLDNG28APR26FUT",
+    "name": "BAJAJHLDNG",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66724",
+    "symbol": "BANKINDIA28APR26FUT",
+    "name": "BANKINDIA",
+    "expiry": "28APR2026",
+    "lotsize": "5200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66732",
+    "symbol": "BOSCHLTD28APR26FUT",
+    "name": "BOSCHLTD",
+    "expiry": "28APR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66753",
+    "symbol": "CHOLAFIN28APR26FUT",
+    "name": "CHOLAFIN",
+    "expiry": "28APR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66776",
+    "symbol": "CIPLA28APR26FUT",
+    "name": "CIPLA",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66781",
+    "symbol": "CROMPTON28APR26FUT",
+    "name": "CROMPTON",
+    "expiry": "28APR2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66824",
+    "symbol": "ETERNAL28APR26FUT",
+    "name": "ETERNAL",
+    "expiry": "28APR2026",
+    "lotsize": "2425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66836",
+    "symbol": "GLENMARK28APR26FUT",
+    "name": "GLENMARK",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66838",
+    "symbol": "GMRAIRPORT28APR26FUT",
+    "name": "GMRAIRPORT",
+    "expiry": "28APR2026",
+    "lotsize": "6975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66852",
+    "symbol": "HINDZINC28APR26FUT",
+    "name": "HINDZINC",
+    "expiry": "28APR2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66857",
+    "symbol": "IDEA28APR26FUT",
+    "name": "IDEA",
+    "expiry": "28APR2026",
+    "lotsize": "71475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66870",
+    "symbol": "ITC28APR26FUT",
+    "name": "ITC",
+    "expiry": "28APR2026",
+    "lotsize": "1600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66884",
+    "symbol": "LICI28APR26FUT",
+    "name": "LICI",
+    "expiry": "28APR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66888",
+    "symbol": "LTIM28APR26FUT",
+    "name": "LTIM",
+    "expiry": "28APR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66899",
+    "symbol": "MAZDOCK28APR26FUT",
+    "name": "MAZDOCK",
+    "expiry": "28APR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66901",
+    "symbol": "MFSL28APR26FUT",
+    "name": "MFSL",
+    "expiry": "28APR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66902",
+    "symbol": "MOTHERSON28APR26FUT",
+    "name": "MOTHERSON",
+    "expiry": "28APR2026",
+    "lotsize": "6150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66903",
+    "symbol": "MPHASIS28APR26FUT",
+    "name": "MPHASIS",
+    "expiry": "28APR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66968",
+    "symbol": "PHOENIXLTD28APR26FUT",
+    "name": "PHOENIXLTD",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67007",
+    "symbol": "SBICARD28APR26FUT",
+    "name": "SBICARD",
+    "expiry": "28APR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67043",
+    "symbol": "WIPRO28APR26FUT",
+    "name": "WIPRO",
+    "expiry": "28APR2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36690",
+    "symbol": "021NSETEST27NOV36FUT",
+    "name": "021NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36691",
+    "symbol": "031NSETEST27NOV36FUT",
+    "name": "031NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51713",
+    "symbol": "MIDCPNIFTY30MAR26FUT",
+    "name": "MIDCPNIFTY",
+    "expiry": "30MAR2026",
+    "lotsize": "120",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "51819",
+    "symbol": "BAJFINANCE30MAR26FUT",
+    "name": "BAJFINANCE",
+    "expiry": "30MAR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51821",
+    "symbol": "BANKBARODA30MAR26FUT",
+    "name": "BANKBARODA",
+    "expiry": "30MAR2026",
+    "lotsize": "2925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51828",
+    "symbol": "BIOCON30MAR26FUT",
+    "name": "BIOCON",
+    "expiry": "30MAR2026",
+    "lotsize": "2500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51832",
+    "symbol": "BRITANNIA30MAR26FUT",
+    "name": "BRITANNIA",
+    "expiry": "30MAR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51882",
+    "symbol": "GODREJCP30MAR26FUT",
+    "name": "GODREJCP",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51918",
+    "symbol": "IEX30MAR26FUT",
+    "name": "IEX",
+    "expiry": "30MAR2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51919",
+    "symbol": "INDHOTEL30MAR26FUT",
+    "name": "INDHOTEL",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51922",
+    "symbol": "INDIGO30MAR26FUT",
+    "name": "INDIGO",
+    "expiry": "30MAR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51935",
+    "symbol": "IREDA30MAR26FUT",
+    "name": "IREDA",
+    "expiry": "30MAR2026",
+    "lotsize": "3450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51947",
+    "symbol": "JIOFIN30MAR26FUT",
+    "name": "JIOFIN",
+    "expiry": "30MAR2026",
+    "lotsize": "2350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51952",
+    "symbol": "KAYNES30MAR26FUT",
+    "name": "KAYNES",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51974",
+    "symbol": "MARICO30MAR26FUT",
+    "name": "MARICO",
+    "expiry": "30MAR2026",
+    "lotsize": "1200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51983",
+    "symbol": "NATIONALUM30MAR26FUT",
+    "name": "NATIONALUM",
+    "expiry": "30MAR2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51994",
+    "symbol": "OBEROIRLTY30MAR26FUT",
+    "name": "OBEROIRLTY",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52003",
+    "symbol": "PFC30MAR26FUT",
+    "name": "PFC",
+    "expiry": "30MAR2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52012",
+    "symbol": "POLYCAB30MAR26FUT",
+    "name": "POLYCAB",
+    "expiry": "30MAR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52026",
+    "symbol": "SAIL30MAR26FUT",
+    "name": "SAIL",
+    "expiry": "30MAR2026",
+    "lotsize": "4700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52031",
+    "symbol": "SHREECEM30MAR26FUT",
+    "name": "SHREECEM",
+    "expiry": "30MAR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52047",
+    "symbol": "SYNGENE30MAR26FUT",
+    "name": "SYNGENE",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52051",
+    "symbol": "TATAPOWER30MAR26FUT",
+    "name": "TATAPOWER",
+    "expiry": "30MAR2026",
+    "lotsize": "1450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52089",
+    "symbol": "YESBANK30MAR26FUT",
+    "name": "YESBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "31100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66069",
+    "symbol": "FINNIFTY26MAY26FUT",
+    "name": "FINNIFTY",
+    "expiry": "26MAY2026",
+    "lotsize": "60",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66071",
+    "symbol": "NIFTY26MAY26FUT",
+    "name": "NIFTY",
+    "expiry": "26MAY2026",
+    "lotsize": "65",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66085",
+    "symbol": "APOLLOHOSP26MAY26FUT",
+    "name": "APOLLOHOSP",
+    "expiry": "26MAY2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66089",
+    "symbol": "AUBANK26MAY26FUT",
+    "name": "AUBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66092",
+    "symbol": "BAJAJ-AUTO26MAY26FUT",
+    "name": "BAJAJ-AUTO",
+    "expiry": "26MAY2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66096",
+    "symbol": "BANDHANBNK26MAY26FUT",
+    "name": "BANDHANBNK",
+    "expiry": "26MAY2026",
+    "lotsize": "3600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66105",
+    "symbol": "BLUESTARCO26MAY26FUT",
+    "name": "BLUESTARCO",
+    "expiry": "26MAY2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66122",
+    "symbol": "CHOLAFIN26MAY26FUT",
+    "name": "CHOLAFIN",
+    "expiry": "26MAY2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66156",
+    "symbol": "DRREDDY26MAY26FUT",
+    "name": "DRREDDY",
+    "expiry": "26MAY2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66157",
+    "symbol": "EICHERMOT26MAY26FUT",
+    "name": "EICHERMOT",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66227",
+    "symbol": "IREDA26MAY26FUT",
+    "name": "IREDA",
+    "expiry": "26MAY2026",
+    "lotsize": "3450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66249",
+    "symbol": "JSWSTEEL26MAY26FUT",
+    "name": "JSWSTEEL",
+    "expiry": "26MAY2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66254",
+    "symbol": "KFINTECH26MAY26FUT",
+    "name": "KFINTECH",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66262",
+    "symbol": "LODHA26MAY26FUT",
+    "name": "LODHA",
+    "expiry": "26MAY2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66274",
+    "symbol": "MANAPPURAM26MAY26FUT",
+    "name": "MANAPPURAM",
+    "expiry": "26MAY2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66305",
+    "symbol": "NMDC26MAY26FUT",
+    "name": "NMDC",
+    "expiry": "26MAY2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66320",
+    "symbol": "PATANJALI26MAY26FUT",
+    "name": "PATANJALI",
+    "expiry": "26MAY2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66324",
+    "symbol": "PFC26MAY26FUT",
+    "name": "PFC",
+    "expiry": "26MAY2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66332",
+    "symbol": "PIIND26MAY26FUT",
+    "name": "PIIND",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66390",
+    "symbol": "TECHM26MAY26FUT",
+    "name": "TECHM",
+    "expiry": "26MAY2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66394",
+    "symbol": "TORNTPHARM26MAY26FUT",
+    "name": "TORNTPHARM",
+    "expiry": "26MAY2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66402",
+    "symbol": "UNOMINDA26MAY26FUT",
+    "name": "UNOMINDA",
+    "expiry": "26MAY2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66415",
+    "symbol": "WAAREEENER26MAY26FUT",
+    "name": "WAAREEENER",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66418",
+    "symbol": "ZYDUSLIFE26MAY26FUT",
+    "name": "ZYDUSLIFE",
+    "expiry": "26MAY2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66691",
+    "symbol": "NIFTY28APR26FUT",
+    "name": "NIFTY",
+    "expiry": "28APR2026",
+    "lotsize": "65",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66706",
+    "symbol": "ALKEM28APR26FUT",
+    "name": "ALKEM",
+    "expiry": "28APR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66716",
+    "symbol": "AUROPHARMA28APR26FUT",
+    "name": "AUROPHARMA",
+    "expiry": "28APR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66723",
+    "symbol": "BANKBARODA28APR26FUT",
+    "name": "BANKBARODA",
+    "expiry": "28APR2026",
+    "lotsize": "2925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66734",
+    "symbol": "BRITANNIA28APR26FUT",
+    "name": "BRITANNIA",
+    "expiry": "28APR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66779",
+    "symbol": "COLPAL28APR26FUT",
+    "name": "COLPAL",
+    "expiry": "28APR2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66786",
+    "symbol": "DALBHARAT28APR26FUT",
+    "name": "DALBHARAT",
+    "expiry": "28APR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66842",
+    "symbol": "HAL28APR26FUT",
+    "name": "HAL",
+    "expiry": "28APR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66845",
+    "symbol": "HDFCAMC28APR26FUT",
+    "name": "HDFCAMC",
+    "expiry": "28APR2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66854",
+    "symbol": "ICICIBANK28APR26FUT",
+    "name": "ICICIBANK",
+    "expiry": "28APR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66866",
+    "symbol": "INOXWIND28APR26FUT",
+    "name": "INOXWIND",
+    "expiry": "28APR2026",
+    "lotsize": "3575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66867",
+    "symbol": "IOC28APR26FUT",
+    "name": "IOC",
+    "expiry": "28APR2026",
+    "lotsize": "4875",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66868",
+    "symbol": "IREDA28APR26FUT",
+    "name": "IREDA",
+    "expiry": "28APR2026",
+    "lotsize": "3450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66871",
+    "symbol": "JINDALSTEL28APR26FUT",
+    "name": "JINDALSTEL",
+    "expiry": "28APR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66880",
+    "symbol": "KOTAKBANK28APR26FUT",
+    "name": "KOTAKBANK",
+    "expiry": "28APR2026",
+    "lotsize": "2000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66887",
+    "symbol": "LTF28APR26FUT",
+    "name": "LTF",
+    "expiry": "28APR2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66890",
+    "symbol": "M&M28APR26FUT",
+    "name": "M&M",
+    "expiry": "28APR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66896",
+    "symbol": "MARICO28APR26FUT",
+    "name": "MARICO",
+    "expiry": "28APR2026",
+    "lotsize": "1200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66907",
+    "symbol": "NBCC28APR26FUT",
+    "name": "NBCC",
+    "expiry": "28APR2026",
+    "lotsize": "6500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66961",
+    "symbol": "PAGEIND28APR26FUT",
+    "name": "PAGEIND",
+    "expiry": "28APR2026",
+    "lotsize": "15",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66970",
+    "symbol": "PIIND28APR26FUT",
+    "name": "PIIND",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67008",
+    "symbol": "SBILIFE28APR26FUT",
+    "name": "SBILIFE",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67001",
+    "symbol": "RBLBANK28APR26FUT",
+    "name": "RBLBANK",
+    "expiry": "28APR2026",
+    "lotsize": "3175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67003",
+    "symbol": "RELIANCE28APR26FUT",
+    "name": "RELIANCE",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67019",
+    "symbol": "SWIGGY28APR26FUT",
+    "name": "SWIGGY",
+    "expiry": "28APR2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67020",
+    "symbol": "TATACONSUM28APR26FUT",
+    "name": "TATACONSUM",
+    "expiry": "28APR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67022",
+    "symbol": "TATAPOWER28APR26FUT",
+    "name": "TATAPOWER",
+    "expiry": "28APR2026",
+    "lotsize": "1450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67023",
+    "symbol": "TATASTEEL28APR26FUT",
+    "name": "TATASTEEL",
+    "expiry": "28APR2026",
+    "lotsize": "5500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67026",
+    "symbol": "TECHM28APR26FUT",
+    "name": "TECHM",
+    "expiry": "28APR2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67029",
+    "symbol": "TMPV28APR26FUT",
+    "name": "TMPV",
+    "expiry": "28APR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67031",
+    "symbol": "TORNTPOWER28APR26FUT",
+    "name": "TORNTPOWER",
+    "expiry": "28APR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67038",
+    "symbol": "UPL28APR26FUT",
+    "name": "UPL",
+    "expiry": "28APR2026",
+    "lotsize": "1355",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67045",
+    "symbol": "ZYDUSLIFE28APR26FUT",
+    "name": "ZYDUSLIFE",
+    "expiry": "28APR2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36724",
+    "symbol": "151NSETEST27NOV36FUT",
+    "name": "151NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51736",
+    "symbol": "AMBER30MAR26FUT",
+    "name": "AMBER",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51737",
+    "symbol": "AMBUJACEM30MAR26FUT",
+    "name": "AMBUJACEM",
+    "expiry": "30MAR2026",
+    "lotsize": "1050",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51820",
+    "symbol": "BANDHANBNK30MAR26FUT",
+    "name": "BANDHANBNK",
+    "expiry": "30MAR2026",
+    "lotsize": "3600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51823",
+    "symbol": "BDL30MAR26FUT",
+    "name": "BDL",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51844",
+    "symbol": "CHOLAFIN30MAR26FUT",
+    "name": "CHOLAFIN",
+    "expiry": "30MAR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51850",
+    "symbol": "COLPAL30MAR26FUT",
+    "name": "COLPAL",
+    "expiry": "30MAR2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51880",
+    "symbol": "GLENMARK30MAR26FUT",
+    "name": "GLENMARK",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51901",
+    "symbol": "HINDPETRO30MAR26FUT",
+    "name": "HINDPETRO",
+    "expiry": "30MAR2026",
+    "lotsize": "2025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51917",
+    "symbol": "IDFCFIRSTB30MAR26FUT",
+    "name": "IDFCFIRSTB",
+    "expiry": "30MAR2026",
+    "lotsize": "9275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51939",
+    "symbol": "ITC30MAR26FUT",
+    "name": "ITC",
+    "expiry": "30MAR2026",
+    "lotsize": "1600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51951",
+    "symbol": "KALYANKJIL30MAR26FUT",
+    "name": "KALYANKJIL",
+    "expiry": "30MAR2026",
+    "lotsize": "1175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51953",
+    "symbol": "KEI30MAR26FUT",
+    "name": "KEI",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51962",
+    "symbol": "LICHSGFIN30MAR26FUT",
+    "name": "LICHSGFIN",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51980",
+    "symbol": "MOTHERSON30MAR26FUT",
+    "name": "MOTHERSON",
+    "expiry": "30MAR2026",
+    "lotsize": "6150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51981",
+    "symbol": "MPHASIS30MAR26FUT",
+    "name": "MPHASIS",
+    "expiry": "30MAR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51986",
+    "symbol": "NESTLEIND30MAR26FUT",
+    "name": "NESTLEIND",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51996",
+    "symbol": "OIL30MAR26FUT",
+    "name": "OIL",
+    "expiry": "30MAR2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52004",
+    "symbol": "PGEL30MAR26FUT",
+    "name": "PGEL",
+    "expiry": "30MAR2026",
+    "lotsize": "950",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52014",
+    "symbol": "POWERINDIA30MAR26FUT",
+    "name": "POWERINDIA",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52021",
+    "symbol": "RECLTD30MAR26FUT",
+    "name": "RECLTD",
+    "expiry": "30MAR2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52062",
+    "symbol": "TVSMOTOR30MAR26FUT",
+    "name": "TVSMOTOR",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52064",
+    "symbol": "UNIONBANK30MAR26FUT",
+    "name": "UNIONBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "4425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52063",
+    "symbol": "ULTRACEMCO30MAR26FUT",
+    "name": "ULTRACEMCO",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52066",
+    "symbol": "UNOMINDA30MAR26FUT",
+    "name": "UNOMINDA",
+    "expiry": "30MAR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66075",
+    "symbol": "ABCAPITAL26MAY26FUT",
+    "name": "ABCAPITAL",
+    "expiry": "26MAY2026",
+    "lotsize": "3100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66076",
+    "symbol": "ADANIENSOL26MAY26FUT",
+    "name": "ADANIENSOL",
+    "expiry": "26MAY2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66079",
+    "symbol": "ADANIPORTS26MAY26FUT",
+    "name": "ADANIPORTS",
+    "expiry": "26MAY2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66081",
+    "symbol": "AMBER26MAY26FUT",
+    "name": "AMBER",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66098",
+    "symbol": "BANKINDIA26MAY26FUT",
+    "name": "BANKINDIA",
+    "expiry": "26MAY2026",
+    "lotsize": "5200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66099",
+    "symbol": "BDL26MAY26FUT",
+    "name": "BDL",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66103",
+    "symbol": "BHEL26MAY26FUT",
+    "name": "BHEL",
+    "expiry": "26MAY2026",
+    "lotsize": "2625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66108",
+    "symbol": "BRITANNIA26MAY26FUT",
+    "name": "BRITANNIA",
+    "expiry": "26MAY2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66133",
+    "symbol": "COFORGE26MAY26FUT",
+    "name": "COFORGE",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66143",
+    "symbol": "DABUR26MAY26FUT",
+    "name": "DABUR",
+    "expiry": "26MAY2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66147",
+    "symbol": "DIVISLAB26MAY26FUT",
+    "name": "DIVISLAB",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66166",
+    "symbol": "GMRAIRPORT26MAY26FUT",
+    "name": "GMRAIRPORT",
+    "expiry": "26MAY2026",
+    "lotsize": "6975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66170",
+    "symbol": "HAL26MAY26FUT",
+    "name": "HAL",
+    "expiry": "26MAY2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66177",
+    "symbol": "HAVELLS26MAY26FUT",
+    "name": "HAVELLS",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66178",
+    "symbol": "HCLTECH26MAY26FUT",
+    "name": "HCLTECH",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66191",
+    "symbol": "ICICIBANK26MAY26FUT",
+    "name": "ICICIBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66195",
+    "symbol": "IDFCFIRSTB26MAY26FUT",
+    "name": "IDFCFIRSTB",
+    "expiry": "26MAY2026",
+    "lotsize": "9275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66252",
+    "symbol": "KAYNES26MAY26FUT",
+    "name": "KAYNES",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66270",
+    "symbol": "LTF26MAY26FUT",
+    "name": "LTF",
+    "expiry": "26MAY2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66302",
+    "symbol": "NBCC26MAY26FUT",
+    "name": "NBCC",
+    "expiry": "26MAY2026",
+    "lotsize": "6500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66313",
+    "symbol": "NUVAMA26MAY26FUT",
+    "name": "NUVAMA",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66315",
+    "symbol": "OBEROIRLTY26MAY26FUT",
+    "name": "OBEROIRLTY",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66316",
+    "symbol": "OFSS26MAY26FUT",
+    "name": "OFSS",
+    "expiry": "26MAY2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66321",
+    "symbol": "PAYTM26MAY26FUT",
+    "name": "PAYTM",
+    "expiry": "26MAY2026",
+    "lotsize": "725",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66392",
+    "symbol": "TITAN26MAY26FUT",
+    "name": "TITAN",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66692",
+    "symbol": "NIFTYNXT5028APR26FUT",
+    "name": "NIFTYNXT50",
+    "expiry": "28APR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66395",
+    "symbol": "TRENT26MAY26FUT",
+    "name": "TRENT",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66416",
+    "symbol": "WIPRO26MAY26FUT",
+    "name": "WIPRO",
+    "expiry": "26MAY2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66695",
+    "symbol": "ABCAPITAL28APR26FUT",
+    "name": "ABCAPITAL",
+    "expiry": "28APR2026",
+    "lotsize": "3100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66707",
+    "symbol": "AMBER28APR26FUT",
+    "name": "AMBER",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66727",
+    "symbol": "BHARATFORG28APR26FUT",
+    "name": "BHARATFORG",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66730",
+    "symbol": "BIOCON28APR26FUT",
+    "name": "BIOCON",
+    "expiry": "28APR2026",
+    "lotsize": "2500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66736",
+    "symbol": "CAMS28APR26FUT",
+    "name": "CAMS",
+    "expiry": "28APR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66751",
+    "symbol": "CDSL28APR26FUT",
+    "name": "CDSL",
+    "expiry": "28APR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66853",
+    "symbol": "HUDCO28APR26FUT",
+    "name": "HUDCO",
+    "expiry": "28APR2026",
+    "lotsize": "2775",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66874",
+    "symbol": "JSWSTEEL28APR26FUT",
+    "name": "JSWSTEEL",
+    "expiry": "28APR2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66877",
+    "symbol": "KAYNES28APR26FUT",
+    "name": "KAYNES",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66879",
+    "symbol": "KFINTECH28APR26FUT",
+    "name": "KFINTECH",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66892",
+    "symbol": "MANKIND28APR26FUT",
+    "name": "MANKIND",
+    "expiry": "28APR2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66905",
+    "symbol": "NATIONALUM28APR26FUT",
+    "name": "NATIONALUM",
+    "expiry": "28APR2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66963",
+    "symbol": "PAYTM28APR26FUT",
+    "name": "PAYTM",
+    "expiry": "28APR2026",
+    "lotsize": "725",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66969",
+    "symbol": "PIDILITIND28APR26FUT",
+    "name": "PIDILITIND",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66988",
+    "symbol": "POWERINDIA28APR26FUT",
+    "name": "POWERINDIA",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67021",
+    "symbol": "TATAELXSI28APR26FUT",
+    "name": "TATAELXSI",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67027",
+    "symbol": "TIINDIA28APR26FUT",
+    "name": "TIINDIA",
+    "expiry": "28APR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67036",
+    "symbol": "UNITDSPR28APR26FUT",
+    "name": "UNITDSPR",
+    "expiry": "28APR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67044",
+    "symbol": "YESBANK28APR26FUT",
+    "name": "YESBANK",
+    "expiry": "28APR2026",
+    "lotsize": "31100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36720",
+    "symbol": "131NSETEST27NOV36FUT",
+    "name": "131NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51729",
+    "symbol": "ADANIGREEN30MAR26FUT",
+    "name": "ADANIGREEN",
+    "expiry": "30MAR2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51735",
+    "symbol": "ALKEM30MAR26FUT",
+    "name": "ALKEM",
+    "expiry": "30MAR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51747",
+    "symbol": "ANGELONE30MAR26FUT",
+    "name": "ANGELONE",
+    "expiry": "30MAR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51748",
+    "symbol": "APLAPOLLO30MAR26FUT",
+    "name": "APLAPOLLO",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51756",
+    "symbol": "APOLLOHOSP30MAR26FUT",
+    "name": "APOLLOHOSP",
+    "expiry": "30MAR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51825",
+    "symbol": "BHARATFORG30MAR26FUT",
+    "name": "BHARATFORG",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51831",
+    "symbol": "BPCL30MAR26FUT",
+    "name": "BPCL",
+    "expiry": "30MAR2026",
+    "lotsize": "1975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51847",
+    "symbol": "CIPLA30MAR26FUT",
+    "name": "CIPLA",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51848",
+    "symbol": "COALINDIA30MAR26FUT",
+    "name": "COALINDIA",
+    "expiry": "30MAR2026",
+    "lotsize": "1350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51871",
+    "symbol": "DLF30MAR26FUT",
+    "name": "DLF",
+    "expiry": "30MAR2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51899",
+    "symbol": "HEROMOTOCO30MAR26FUT",
+    "name": "HEROMOTOCO",
+    "expiry": "30MAR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51902",
+    "symbol": "HINDUNILVR30MAR26FUT",
+    "name": "HINDUNILVR",
+    "expiry": "30MAR2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51912",
+    "symbol": "ICICIPRULI30MAR26FUT",
+    "name": "ICICIPRULI",
+    "expiry": "30MAR2026",
+    "lotsize": "925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51934",
+    "symbol": "IOC30MAR26FUT",
+    "name": "IOC",
+    "expiry": "30MAR2026",
+    "lotsize": "4875",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51936",
+    "symbol": "IRFC30MAR26FUT",
+    "name": "IRFC",
+    "expiry": "30MAR2026",
+    "lotsize": "4250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51963",
+    "symbol": "LICI30MAR26FUT",
+    "name": "LICI",
+    "expiry": "30MAR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51966",
+    "symbol": "LT30MAR26FUT",
+    "name": "LT",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51967",
+    "symbol": "LTF30MAR26FUT",
+    "name": "LTF",
+    "expiry": "30MAR2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51973",
+    "symbol": "MANKIND30MAR26FUT",
+    "name": "MANKIND",
+    "expiry": "30MAR2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51984",
+    "symbol": "NAUKRI30MAR26FUT",
+    "name": "NAUKRI",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51987",
+    "symbol": "NHPC30MAR26FUT",
+    "name": "NHPC",
+    "expiry": "30MAR2026",
+    "lotsize": "6400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51988",
+    "symbol": "NMDC30MAR26FUT",
+    "name": "NMDC",
+    "expiry": "30MAR2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51998",
+    "symbol": "PAGEIND30MAR26FUT",
+    "name": "PAGEIND",
+    "expiry": "30MAR2026",
+    "lotsize": "15",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52000",
+    "symbol": "PAYTM30MAR26FUT",
+    "name": "PAYTM",
+    "expiry": "30MAR2026",
+    "lotsize": "725",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52008",
+    "symbol": "PNB30MAR26FUT",
+    "name": "PNB",
+    "expiry": "30MAR2026",
+    "lotsize": "8000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52023",
+    "symbol": "RELIANCE30MAR26FUT",
+    "name": "RELIANCE",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52033",
+    "symbol": "SHRIRAMFIN30MAR26FUT",
+    "name": "SHRIRAMFIN",
+    "expiry": "30MAR2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52036",
+    "symbol": "SONACOMS30MAR26FUT",
+    "name": "SONACOMS",
+    "expiry": "30MAR2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52050",
+    "symbol": "TATAELXSI30MAR26FUT",
+    "name": "TATAELXSI",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52054",
+    "symbol": "TCS30MAR26FUT",
+    "name": "TCS",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52061",
+    "symbol": "TRENT30MAR26FUT",
+    "name": "TRENT",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52074",
+    "symbol": "WIPRO30MAR26FUT",
+    "name": "WIPRO",
+    "expiry": "30MAR2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36702",
+    "symbol": "071NSETEST27NOV36FUT",
+    "name": "071NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36713",
+    "symbol": "091NSETEST27NOV36FUT",
+    "name": "091NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51724",
+    "symbol": "ABCAPITAL30MAR26FUT",
+    "name": "ABCAPITAL",
+    "expiry": "30MAR2026",
+    "lotsize": "3100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51824",
+    "symbol": "BEL30MAR26FUT",
+    "name": "BEL",
+    "expiry": "30MAR2026",
+    "lotsize": "1425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51734",
+    "symbol": "ADANIPORTS30MAR26FUT",
+    "name": "ADANIPORTS",
+    "expiry": "30MAR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51774",
+    "symbol": "ASTRAL30MAR26FUT",
+    "name": "ASTRAL",
+    "expiry": "30MAR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51795",
+    "symbol": "AUBANK30MAR26FUT",
+    "name": "AUBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51852",
+    "symbol": "CONCOR30MAR26FUT",
+    "name": "CONCOR",
+    "expiry": "30MAR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51893",
+    "symbol": "HDFCBANK30MAR26FUT",
+    "name": "HDFCBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51903",
+    "symbol": "HINDZINC30MAR26FUT",
+    "name": "HINDZINC",
+    "expiry": "30MAR2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51909",
+    "symbol": "ICICIBANK30MAR26FUT",
+    "name": "ICICIBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51920",
+    "symbol": "INDIANB30MAR26FUT",
+    "name": "INDIANB",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51928",
+    "symbol": "INDUSTOWER30MAR26FUT",
+    "name": "INDUSTOWER",
+    "expiry": "30MAR2026",
+    "lotsize": "1700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51929",
+    "symbol": "INFY30MAR26FUT",
+    "name": "INFY",
+    "expiry": "30MAR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51949",
+    "symbol": "JSWSTEEL30MAR26FUT",
+    "name": "JSWSTEEL",
+    "expiry": "30MAR2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66082",
+    "symbol": "AMBUJACEM26MAY26FUT",
+    "name": "AMBUJACEM",
+    "expiry": "26MAY2026",
+    "lotsize": "1050",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66088",
+    "symbol": "ASTRAL26MAY26FUT",
+    "name": "ASTRAL",
+    "expiry": "26MAY2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66100",
+    "symbol": "BEL26MAY26FUT",
+    "name": "BEL",
+    "expiry": "26MAY2026",
+    "lotsize": "1425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66101",
+    "symbol": "BHARATFORG26MAY26FUT",
+    "name": "BHARATFORG",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66104",
+    "symbol": "BIOCON26MAY26FUT",
+    "name": "BIOCON",
+    "expiry": "26MAY2026",
+    "lotsize": "2500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66106",
+    "symbol": "BOSCHLTD26MAY26FUT",
+    "name": "BOSCHLTD",
+    "expiry": "26MAY2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66121",
+    "symbol": "CGPOWER26MAY26FUT",
+    "name": "CGPOWER",
+    "expiry": "26MAY2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66135",
+    "symbol": "CONCOR26MAY26FUT",
+    "name": "CONCOR",
+    "expiry": "26MAY2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66139",
+    "symbol": "CUMMINSIND26MAY26FUT",
+    "name": "CUMMINSIND",
+    "expiry": "26MAY2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66162",
+    "symbol": "GAIL26MAY26FUT",
+    "name": "GAIL",
+    "expiry": "26MAY2026",
+    "lotsize": "3150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66198",
+    "symbol": "INDIANB26MAY26FUT",
+    "name": "INDIANB",
+    "expiry": "26MAY2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66216",
+    "symbol": "INDUSTOWER26MAY26FUT",
+    "name": "INDUSTOWER",
+    "expiry": "26MAY2026",
+    "lotsize": "1700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66261",
+    "symbol": "LICI26MAY26FUT",
+    "name": "LICI",
+    "expiry": "26MAY2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66271",
+    "symbol": "LTIM26MAY26FUT",
+    "name": "LTIM",
+    "expiry": "26MAY2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66272",
+    "symbol": "LUPIN26MAY26FUT",
+    "name": "LUPIN",
+    "expiry": "26MAY2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66292",
+    "symbol": "MAZDOCK26MAY26FUT",
+    "name": "MAZDOCK",
+    "expiry": "26MAY2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66314",
+    "symbol": "NYKAA26MAY26FUT",
+    "name": "NYKAA",
+    "expiry": "26MAY2026",
+    "lotsize": "3125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66322",
+    "symbol": "PERSISTENT26MAY26FUT",
+    "name": "PERSISTENT",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66323",
+    "symbol": "PETRONET26MAY26FUT",
+    "name": "PETRONET",
+    "expiry": "26MAY2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66334",
+    "symbol": "PNBHOUSING26MAY26FUT",
+    "name": "PNBHOUSING",
+    "expiry": "26MAY2026",
+    "lotsize": "650",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66341",
+    "symbol": "POWERGRID26MAY26FUT",
+    "name": "POWERGRID",
+    "expiry": "26MAY2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66352",
+    "symbol": "PRESTIGE26MAY26FUT",
+    "name": "PRESTIGE",
+    "expiry": "26MAY2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66353",
+    "symbol": "RBLBANK26MAY26FUT",
+    "name": "RBLBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "3175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66365",
+    "symbol": "SHRIRAMFIN26MAY26FUT",
+    "name": "SHRIRAMFIN",
+    "expiry": "26MAY2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66385",
+    "symbol": "TATACONSUM26MAY26FUT",
+    "name": "TATACONSUM",
+    "expiry": "26MAY2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66379",
+    "symbol": "SONACOMS26MAY26FUT",
+    "name": "SONACOMS",
+    "expiry": "26MAY2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66380",
+    "symbol": "SRF26MAY26FUT",
+    "name": "SRF",
+    "expiry": "26MAY2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66393",
+    "symbol": "TMPV26MAY26FUT",
+    "name": "TMPV",
+    "expiry": "26MAY2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66398",
+    "symbol": "UNIONBANK26MAY26FUT",
+    "name": "UNIONBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "4425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66689",
+    "symbol": "FINNIFTY28APR26FUT",
+    "name": "FINNIFTY",
+    "expiry": "28APR2026",
+    "lotsize": "60",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66703",
+    "symbol": "ADANIENT28APR26FUT",
+    "name": "ADANIENT",
+    "expiry": "28APR2026",
+    "lotsize": "309",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66711",
+    "symbol": "APOLLOHOSP28APR26FUT",
+    "name": "APOLLOHOSP",
+    "expiry": "28APR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66713",
+    "symbol": "ASIANPAINT28APR26FUT",
+    "name": "ASIANPAINT",
+    "expiry": "28APR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66719",
+    "symbol": "BAJAJFINSV28APR26FUT",
+    "name": "BAJAJFINSV",
+    "expiry": "28APR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66728",
+    "symbol": "BHARTIARTL28APR26FUT",
+    "name": "BHARTIARTL",
+    "expiry": "28APR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66729",
+    "symbol": "BHEL28APR26FUT",
+    "name": "BHEL",
+    "expiry": "28APR2026",
+    "lotsize": "2625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66731",
+    "symbol": "BLUESTARCO28APR26FUT",
+    "name": "BLUESTARCO",
+    "expiry": "28APR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66735",
+    "symbol": "BSE28APR26FUT",
+    "name": "BSE",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66780",
+    "symbol": "CONCOR28APR26FUT",
+    "name": "CONCOR",
+    "expiry": "28APR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66787",
+    "symbol": "DELHIVERY28APR26FUT",
+    "name": "DELHIVERY",
+    "expiry": "28APR2026",
+    "lotsize": "2075",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66821",
+    "symbol": "DMART28APR26FUT",
+    "name": "DMART",
+    "expiry": "28APR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66823",
+    "symbol": "EICHERMOT28APR26FUT",
+    "name": "EICHERMOT",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66826",
+    "symbol": "FEDERALBNK28APR26FUT",
+    "name": "FEDERALBNK",
+    "expiry": "28APR2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66848",
+    "symbol": "HEROMOTOCO28APR26FUT",
+    "name": "HEROMOTOCO",
+    "expiry": "28APR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66849",
+    "symbol": "HINDALCO28APR26FUT",
+    "name": "HINDALCO",
+    "expiry": "28APR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66850",
+    "symbol": "HINDPETRO28APR26FUT",
+    "name": "HINDPETRO",
+    "expiry": "28APR2026",
+    "lotsize": "2025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66855",
+    "symbol": "ICICIGI28APR26FUT",
+    "name": "ICICIGI",
+    "expiry": "28APR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66872",
+    "symbol": "JIOFIN28APR26FUT",
+    "name": "JIOFIN",
+    "expiry": "28APR2026",
+    "lotsize": "2350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66873",
+    "symbol": "JSWENERGY28APR26FUT",
+    "name": "JSWENERGY",
+    "expiry": "28APR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66906",
+    "symbol": "NAUKRI28APR26FUT",
+    "name": "NAUKRI",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66947",
+    "symbol": "NMDC28APR26FUT",
+    "name": "NMDC",
+    "expiry": "28APR2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66960",
+    "symbol": "ONGC28APR26FUT",
+    "name": "ONGC",
+    "expiry": "28APR2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66983",
+    "symbol": "PNB28APR26FUT",
+    "name": "PNB",
+    "expiry": "28APR2026",
+    "lotsize": "8000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67002",
+    "symbol": "RECLTD28APR26FUT",
+    "name": "RECLTD",
+    "expiry": "28APR2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67004",
+    "symbol": "RVNL28APR26FUT",
+    "name": "RVNL",
+    "expiry": "28APR2026",
+    "lotsize": "1525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67015",
+    "symbol": "SRF28APR26FUT",
+    "name": "SRF",
+    "expiry": "28APR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67035",
+    "symbol": "UNIONBANK28APR26FUT",
+    "name": "UNIONBANK",
+    "expiry": "28APR2026",
+    "lotsize": "4425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67040",
+    "symbol": "VEDL28APR26FUT",
+    "name": "VEDL",
+    "expiry": "28APR2026",
+    "lotsize": "1150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51968",
+    "symbol": "LTIM30MAR26FUT",
+    "name": "LTIM",
+    "expiry": "30MAR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51972",
+    "symbol": "MANAPPURAM30MAR26FUT",
+    "name": "MANAPPURAM",
+    "expiry": "30MAR2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51976",
+    "symbol": "MAXHEALTH30MAR26FUT",
+    "name": "MAXHEALTH",
+    "expiry": "30MAR2026",
+    "lotsize": "525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51977",
+    "symbol": "MAZDOCK30MAR26FUT",
+    "name": "MAZDOCK",
+    "expiry": "30MAR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51989",
+    "symbol": "NTPC30MAR26FUT",
+    "name": "NTPC",
+    "expiry": "30MAR2026",
+    "lotsize": "1500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52006",
+    "symbol": "PIDILITIND30MAR26FUT",
+    "name": "PIDILITIND",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52011",
+    "symbol": "POLICYBZR30MAR26FUT",
+    "name": "POLICYBZR",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52024",
+    "symbol": "RVNL30MAR26FUT",
+    "name": "RVNL",
+    "expiry": "30MAR2026",
+    "lotsize": "1525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52038",
+    "symbol": "SUNPHARMA30MAR26FUT",
+    "name": "SUNPHARMA",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52052",
+    "symbol": "TATASTEEL30MAR26FUT",
+    "name": "TATASTEEL",
+    "expiry": "30MAR2026",
+    "lotsize": "5500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52073",
+    "symbol": "WAAREEENER30MAR26FUT",
+    "name": "WAAREEENER",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52090",
+    "symbol": "ZYDUSLIFE30MAR26FUT",
+    "name": "ZYDUSLIFE",
+    "expiry": "30MAR2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66078",
+    "symbol": "ADANIGREEN26MAY26FUT",
+    "name": "ADANIGREEN",
+    "expiry": "26MAY2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66111",
+    "symbol": "CANBK26MAY26FUT",
+    "name": "CANBK",
+    "expiry": "26MAY2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66112",
+    "symbol": "CDSL26MAY26FUT",
+    "name": "CDSL",
+    "expiry": "26MAY2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66144",
+    "symbol": "DALBHARAT26MAY26FUT",
+    "name": "DALBHARAT",
+    "expiry": "26MAY2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66149",
+    "symbol": "DLF26MAY26FUT",
+    "name": "DLF",
+    "expiry": "26MAY2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66155",
+    "symbol": "DMART26MAY26FUT",
+    "name": "DMART",
+    "expiry": "26MAY2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66160",
+    "symbol": "FEDERALBNK26MAY26FUT",
+    "name": "FEDERALBNK",
+    "expiry": "26MAY2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66197",
+    "symbol": "INDHOTEL26MAY26FUT",
+    "name": "INDHOTEL",
+    "expiry": "26MAY2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66205",
+    "symbol": "INDIGO26MAY26FUT",
+    "name": "INDIGO",
+    "expiry": "26MAY2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66226",
+    "symbol": "IOC26MAY26FUT",
+    "name": "IOC",
+    "expiry": "26MAY2026",
+    "lotsize": "4875",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66235",
+    "symbol": "JIOFIN26MAY26FUT",
+    "name": "JIOFIN",
+    "expiry": "26MAY2026",
+    "lotsize": "2350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66251",
+    "symbol": "KALYANKJIL26MAY26FUT",
+    "name": "KALYANKJIL",
+    "expiry": "26MAY2026",
+    "lotsize": "1175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66255",
+    "symbol": "KOTAKBANK26MAY26FUT",
+    "name": "KOTAKBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "2000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66276",
+    "symbol": "MARICO26MAY26FUT",
+    "name": "MARICO",
+    "expiry": "26MAY2026",
+    "lotsize": "1200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66303",
+    "symbol": "NESTLEIND26MAY26FUT",
+    "name": "NESTLEIND",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66351",
+    "symbol": "PREMIERENE26MAY26FUT",
+    "name": "PREMIERENE",
+    "expiry": "26MAY2026",
+    "lotsize": "575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66363",
+    "symbol": "SBIN26MAY26FUT",
+    "name": "SBIN",
+    "expiry": "26MAY2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66364",
+    "symbol": "SHREECEM26MAY26FUT",
+    "name": "SHREECEM",
+    "expiry": "26MAY2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66388",
+    "symbol": "TATASTEEL26MAY26FUT",
+    "name": "TATASTEEL",
+    "expiry": "26MAY2026",
+    "lotsize": "5500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66401",
+    "symbol": "UNITDSPR26MAY26FUT",
+    "name": "UNITDSPR",
+    "expiry": "26MAY2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66693",
+    "symbol": "360ONE28APR26FUT",
+    "name": "360ONE",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66705",
+    "symbol": "ADANIPORTS28APR26FUT",
+    "name": "ADANIPORTS",
+    "expiry": "28APR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66714",
+    "symbol": "ASTRAL28APR26FUT",
+    "name": "ASTRAL",
+    "expiry": "28APR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66722",
+    "symbol": "BANDHANBNK28APR26FUT",
+    "name": "BANDHANBNK",
+    "expiry": "28APR2026",
+    "lotsize": "3600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66737",
+    "symbol": "CANBK28APR26FUT",
+    "name": "CANBK",
+    "expiry": "28APR2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66777",
+    "symbol": "COALINDIA28APR26FUT",
+    "name": "COALINDIA",
+    "expiry": "28APR2026",
+    "lotsize": "1350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66819",
+    "symbol": "DIXON28APR26FUT",
+    "name": "DIXON",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66820",
+    "symbol": "DLF28APR26FUT",
+    "name": "DLF",
+    "expiry": "28APR2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66827",
+    "symbol": "FORTIS28APR26FUT",
+    "name": "FORTIS",
+    "expiry": "28APR2026",
+    "lotsize": "775",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66839",
+    "symbol": "GODREJCP28APR26FUT",
+    "name": "GODREJCP",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66843",
+    "symbol": "HAVELLS28APR26FUT",
+    "name": "HAVELLS",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66889",
+    "symbol": "LUPIN28APR26FUT",
+    "name": "LUPIN",
+    "expiry": "28APR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66856",
+    "symbol": "ICICIPRULI28APR26FUT",
+    "name": "ICICIPRULI",
+    "expiry": "28APR2026",
+    "lotsize": "925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66950",
+    "symbol": "NUVAMA28APR26FUT",
+    "name": "NUVAMA",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66955",
+    "symbol": "OFSS28APR26FUT",
+    "name": "OFSS",
+    "expiry": "28APR2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66959",
+    "symbol": "OIL28APR26FUT",
+    "name": "OIL",
+    "expiry": "28APR2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66965",
+    "symbol": "PETRONET28APR26FUT",
+    "name": "PETRONET",
+    "expiry": "28APR2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66987",
+    "symbol": "POWERGRID28APR26FUT",
+    "name": "POWERGRID",
+    "expiry": "28APR2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67005",
+    "symbol": "SAIL28APR26FUT",
+    "name": "SAIL",
+    "expiry": "28APR2026",
+    "lotsize": "4700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67014",
+    "symbol": "SONACOMS28APR26FUT",
+    "name": "SONACOMS",
+    "expiry": "28APR2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67017",
+    "symbol": "SUPREMEIND28APR26FUT",
+    "name": "SUPREMEIND",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67025",
+    "symbol": "TCS28APR26FUT",
+    "name": "TCS",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67034",
+    "symbol": "ULTRACEMCO28APR26FUT",
+    "name": "ULTRACEMCO",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67037",
+    "symbol": "UNOMINDA28APR26FUT",
+    "name": "UNOMINDA",
+    "expiry": "28APR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36709",
+    "symbol": "081NSETEST27NOV36FUT",
+    "name": "081NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36725",
+    "symbol": "161NSETEST27NOV36FUT",
+    "name": "161NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "48576",
+    "symbol": "171NSETEST27NOV36FUT",
+    "name": "171NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51773",
+    "symbol": "ASIANPAINT30MAR26FUT",
+    "name": "ASIANPAINT",
+    "expiry": "30MAR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51796",
+    "symbol": "AUROPHARMA30MAR26FUT",
+    "name": "AUROPHARMA",
+    "expiry": "30MAR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51814",
+    "symbol": "BAJAJ-AUTO30MAR26FUT",
+    "name": "BAJAJ-AUTO",
+    "expiry": "30MAR2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51815",
+    "symbol": "BAJAJFINSV30MAR26FUT",
+    "name": "BAJAJFINSV",
+    "expiry": "30MAR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51830",
+    "symbol": "BOSCHLTD30MAR26FUT",
+    "name": "BOSCHLTD",
+    "expiry": "30MAR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51853",
+    "symbol": "CROMPTON30MAR26FUT",
+    "name": "CROMPTON",
+    "expiry": "30MAR2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51859",
+    "symbol": "CUMMINSIND30MAR26FUT",
+    "name": "CUMMINSIND",
+    "expiry": "30MAR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51862",
+    "symbol": "DELHIVERY30MAR26FUT",
+    "name": "DELHIVERY",
+    "expiry": "30MAR2026",
+    "lotsize": "2075",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51872",
+    "symbol": "DMART30MAR26FUT",
+    "name": "DMART",
+    "expiry": "30MAR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51878",
+    "symbol": "FORTIS30MAR26FUT",
+    "name": "FORTIS",
+    "expiry": "30MAR2026",
+    "lotsize": "775",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51885",
+    "symbol": "HAL30MAR26FUT",
+    "name": "HAL",
+    "expiry": "30MAR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51910",
+    "symbol": "ICICIGI30MAR26FUT",
+    "name": "ICICIGI",
+    "expiry": "30MAR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51971",
+    "symbol": "M&M30MAR26FUT",
+    "name": "M&M",
+    "expiry": "30MAR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51978",
+    "symbol": "MCX30MAR26FUT",
+    "name": "MCX",
+    "expiry": "30MAR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51990",
+    "symbol": "NUVAMA30MAR26FUT",
+    "name": "NUVAMA",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52013",
+    "symbol": "POWERGRID30MAR26FUT",
+    "name": "POWERGRID",
+    "expiry": "30MAR2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52015",
+    "symbol": "PPLPHARMA30MAR26FUT",
+    "name": "PPLPHARMA",
+    "expiry": "30MAR2026",
+    "lotsize": "2625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52019",
+    "symbol": "PRESTIGE30MAR26FUT",
+    "name": "PRESTIGE",
+    "expiry": "30MAR2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52034",
+    "symbol": "SIEMENS30MAR26FUT",
+    "name": "SIEMENS",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52046",
+    "symbol": "SWIGGY30MAR26FUT",
+    "name": "SWIGGY",
+    "expiry": "30MAR2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52056",
+    "symbol": "TIINDIA30MAR26FUT",
+    "name": "TIINDIA",
+    "expiry": "30MAR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52067",
+    "symbol": "UPL30MAR26FUT",
+    "name": "UPL",
+    "expiry": "30MAR2026",
+    "lotsize": "1355",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52070",
+    "symbol": "VOLTAS30MAR26FUT",
+    "name": "VOLTAS",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66070",
+    "symbol": "MIDCPNIFTY26MAY26FUT",
+    "name": "MIDCPNIFTY",
+    "expiry": "26MAY2026",
+    "lotsize": "120",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66080",
+    "symbol": "ALKEM26MAY26FUT",
+    "name": "ALKEM",
+    "expiry": "26MAY2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66083",
+    "symbol": "ANGELONE26MAY26FUT",
+    "name": "ANGELONE",
+    "expiry": "26MAY2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66093",
+    "symbol": "BAJAJFINSV26MAY26FUT",
+    "name": "BAJAJFINSV",
+    "expiry": "26MAY2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66094",
+    "symbol": "BAJAJHLDNG26MAY26FUT",
+    "name": "BAJAJHLDNG",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66110",
+    "symbol": "CAMS26MAY26FUT",
+    "name": "CAMS",
+    "expiry": "26MAY2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66132",
+    "symbol": "COALINDIA26MAY26FUT",
+    "name": "COALINDIA",
+    "expiry": "26MAY2026",
+    "lotsize": "1350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66148",
+    "symbol": "DIXON26MAY26FUT",
+    "name": "DIXON",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66159",
+    "symbol": "EXIDEIND26MAY26FUT",
+    "name": "EXIDEIND",
+    "expiry": "26MAY2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66167",
+    "symbol": "GODREJCP26MAY26FUT",
+    "name": "GODREJCP",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66185",
+    "symbol": "HDFCLIFE26MAY26FUT",
+    "name": "HDFCLIFE",
+    "expiry": "26MAY2026",
+    "lotsize": "1100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66192",
+    "symbol": "ICICIGI26MAY26FUT",
+    "name": "ICICIGI",
+    "expiry": "26MAY2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66194",
+    "symbol": "IDEA26MAY26FUT",
+    "name": "IDEA",
+    "expiry": "26MAY2026",
+    "lotsize": "71475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66275",
+    "symbol": "MANKIND26MAY26FUT",
+    "name": "MANKIND",
+    "expiry": "26MAY2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66295",
+    "symbol": "MOTHERSON26MAY26FUT",
+    "name": "MOTHERSON",
+    "expiry": "26MAY2026",
+    "lotsize": "6150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66296",
+    "symbol": "MPHASIS26MAY26FUT",
+    "name": "MPHASIS",
+    "expiry": "26MAY2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66299",
+    "symbol": "NAUKRI26MAY26FUT",
+    "name": "NAUKRI",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66319",
+    "symbol": "PAGEIND26MAY26FUT",
+    "name": "PAGEIND",
+    "expiry": "26MAY2026",
+    "lotsize": "15",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66335",
+    "symbol": "POLICYBZR26MAY26FUT",
+    "name": "POLICYBZR",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66357",
+    "symbol": "SAIL26MAY26FUT",
+    "name": "SAIL",
+    "expiry": "26MAY2026",
+    "lotsize": "4700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66362",
+    "symbol": "SBILIFE26MAY26FUT",
+    "name": "SBILIFE",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66382",
+    "symbol": "SUPREMEIND26MAY26FUT",
+    "name": "SUPREMEIND",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66396",
+    "symbol": "TVSMOTOR26MAY26FUT",
+    "name": "TVSMOTOR",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66397",
+    "symbol": "ULTRACEMCO26MAY26FUT",
+    "name": "ULTRACEMCO",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66413",
+    "symbol": "VEDL26MAY26FUT",
+    "name": "VEDL",
+    "expiry": "26MAY2026",
+    "lotsize": "1150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66708",
+    "symbol": "AMBUJACEM28APR26FUT",
+    "name": "AMBUJACEM",
+    "expiry": "28APR2026",
+    "lotsize": "1050",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66725",
+    "symbol": "BDL28APR26FUT",
+    "name": "BDL",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66733",
+    "symbol": "BPCL28APR26FUT",
+    "name": "BPCL",
+    "expiry": "28APR2026",
+    "lotsize": "1975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66785",
+    "symbol": "DABUR28APR26FUT",
+    "name": "DABUR",
+    "expiry": "28APR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66825",
+    "symbol": "EXIDEIND28APR26FUT",
+    "name": "EXIDEIND",
+    "expiry": "28APR2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66841",
+    "symbol": "GRASIM28APR26FUT",
+    "name": "GRASIM",
+    "expiry": "28APR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66861",
+    "symbol": "INDIANB28APR26FUT",
+    "name": "INDIANB",
+    "expiry": "28APR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66863",
+    "symbol": "INDUSINDBK28APR26FUT",
+    "name": "INDUSINDBK",
+    "expiry": "28APR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66875",
+    "symbol": "JUBLFOOD28APR26FUT",
+    "name": "JUBLFOOD",
+    "expiry": "28APR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66876",
+    "symbol": "KALYANKJIL28APR26FUT",
+    "name": "KALYANKJIL",
+    "expiry": "28APR2026",
+    "lotsize": "1175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66878",
+    "symbol": "KEI28APR26FUT",
+    "name": "KEI",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66881",
+    "symbol": "KPITTECH28APR26FUT",
+    "name": "KPITTECH",
+    "expiry": "28APR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66886",
+    "symbol": "LT28APR26FUT",
+    "name": "LT",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66883",
+    "symbol": "LICHSGFIN28APR26FUT",
+    "name": "LICHSGFIN",
+    "expiry": "28APR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66949",
+    "symbol": "NTPC28APR26FUT",
+    "name": "NTPC",
+    "expiry": "28APR2026",
+    "lotsize": "1500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66999",
+    "symbol": "PREMIERENE28APR26FUT",
+    "name": "PREMIERENE",
+    "expiry": "28APR2026",
+    "lotsize": "575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67000",
+    "symbol": "PRESTIGE28APR26FUT",
+    "name": "PRESTIGE",
+    "expiry": "28APR2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67006",
+    "symbol": "SAMMAANCAP28APR26FUT",
+    "name": "SAMMAANCAP",
+    "expiry": "28APR2026",
+    "lotsize": "4300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67012",
+    "symbol": "SIEMENS28APR26FUT",
+    "name": "SIEMENS",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67013",
+    "symbol": "SOLARINDS28APR26FUT",
+    "name": "SOLARINDS",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67028",
+    "symbol": "TITAN28APR26FUT",
+    "name": "TITAN",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67041",
+    "symbol": "VOLTAS28APR26FUT",
+    "name": "VOLTAS",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51712",
+    "symbol": "FINNIFTY30MAR26FUT",
+    "name": "FINNIFTY",
+    "expiry": "30MAR2026",
+    "lotsize": "60",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "51723",
+    "symbol": "ABB30MAR26FUT",
+    "name": "ABB",
+    "expiry": "30MAR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51813",
+    "symbol": "AXISBANK30MAR26FUT",
+    "name": "AXISBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51818",
+    "symbol": "BAJAJHLDNG30MAR26FUT",
+    "name": "BAJAJHLDNG",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51835",
+    "symbol": "BSE30MAR26FUT",
+    "name": "BSE",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51838",
+    "symbol": "CDSL30MAR26FUT",
+    "name": "CDSL",
+    "expiry": "30MAR2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51875",
+    "symbol": "ETERNAL30MAR26FUT",
+    "name": "ETERNAL",
+    "expiry": "30MAR2026",
+    "lotsize": "2425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51900",
+    "symbol": "HINDALCO30MAR26FUT",
+    "name": "HINDALCO",
+    "expiry": "30MAR2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51940",
+    "symbol": "JINDALSTEL30MAR26FUT",
+    "name": "JINDALSTEL",
+    "expiry": "30MAR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51958",
+    "symbol": "KPITTECH30MAR26FUT",
+    "name": "KPITTECH",
+    "expiry": "30MAR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51964",
+    "symbol": "LODHA30MAR26FUT",
+    "name": "LODHA",
+    "expiry": "30MAR2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52010",
+    "symbol": "PNBHOUSING30MAR26FUT",
+    "name": "PNBHOUSING",
+    "expiry": "30MAR2026",
+    "lotsize": "650",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52018",
+    "symbol": "PREMIERENE30MAR26FUT",
+    "name": "PREMIERENE",
+    "expiry": "30MAR2026",
+    "lotsize": "575",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52020",
+    "symbol": "RBLBANK30MAR26FUT",
+    "name": "RBLBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "3175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52029",
+    "symbol": "SBILIFE30MAR26FUT",
+    "name": "SBILIFE",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52037",
+    "symbol": "SRF30MAR26FUT",
+    "name": "SRF",
+    "expiry": "30MAR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52040",
+    "symbol": "SUZLON30MAR26FUT",
+    "name": "SUZLON",
+    "expiry": "30MAR2026",
+    "lotsize": "9025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52053",
+    "symbol": "TATATECH30MAR26FUT",
+    "name": "TATATECH",
+    "expiry": "30MAR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52057",
+    "symbol": "TITAN30MAR26FUT",
+    "name": "TITAN",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52058",
+    "symbol": "TMPV30MAR26FUT",
+    "name": "TMPV",
+    "expiry": "30MAR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66072",
+    "symbol": "NIFTYNXT5026MAY26FUT",
+    "name": "NIFTYNXT50",
+    "expiry": "26MAY2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66074",
+    "symbol": "ABB26MAY26FUT",
+    "name": "ABB",
+    "expiry": "26MAY2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66126",
+    "symbol": "CIPLA26MAY26FUT",
+    "name": "CIPLA",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66187",
+    "symbol": "HINDALCO26MAY26FUT",
+    "name": "HINDALCO",
+    "expiry": "26MAY2026",
+    "lotsize": "700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66228",
+    "symbol": "IRFC26MAY26FUT",
+    "name": "IRFC",
+    "expiry": "26MAY2026",
+    "lotsize": "4250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66230",
+    "symbol": "JINDALSTEL26MAY26FUT",
+    "name": "JINDALSTEL",
+    "expiry": "26MAY2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66259",
+    "symbol": "LAURUSLABS26MAY26FUT",
+    "name": "LAURUSLABS",
+    "expiry": "26MAY2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66260",
+    "symbol": "LICHSGFIN26MAY26FUT",
+    "name": "LICHSGFIN",
+    "expiry": "26MAY2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66291",
+    "symbol": "MAXHEALTH26MAY26FUT",
+    "name": "MAXHEALTH",
+    "expiry": "26MAY2026",
+    "lotsize": "525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66298",
+    "symbol": "NATIONALUM26MAY26FUT",
+    "name": "NATIONALUM",
+    "expiry": "26MAY2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66342",
+    "symbol": "POWERINDIA26MAY26FUT",
+    "name": "POWERINDIA",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66377",
+    "symbol": "SIEMENS26MAY26FUT",
+    "name": "SIEMENS",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66378",
+    "symbol": "SOLARINDS26MAY26FUT",
+    "name": "SOLARINDS",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66381",
+    "symbol": "SUNPHARMA26MAY26FUT",
+    "name": "SUNPHARMA",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66383",
+    "symbol": "SUZLON26MAY26FUT",
+    "name": "SUZLON",
+    "expiry": "26MAY2026",
+    "lotsize": "9025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66384",
+    "symbol": "SWIGGY26MAY26FUT",
+    "name": "SWIGGY",
+    "expiry": "26MAY2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66403",
+    "symbol": "UPL26MAY26FUT",
+    "name": "UPL",
+    "expiry": "26MAY2026",
+    "lotsize": "1355",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66688",
+    "symbol": "BANKNIFTY28APR26FUT",
+    "name": "BANKNIFTY",
+    "expiry": "28APR2026",
+    "lotsize": "30",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66690",
+    "symbol": "MIDCPNIFTY28APR26FUT",
+    "name": "MIDCPNIFTY",
+    "expiry": "28APR2026",
+    "lotsize": "120",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "66704",
+    "symbol": "ADANIGREEN28APR26FUT",
+    "name": "ADANIGREEN",
+    "expiry": "28APR2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66717",
+    "symbol": "AXISBANK28APR26FUT",
+    "name": "AXISBANK",
+    "expiry": "28APR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66718",
+    "symbol": "BAJAJ-AUTO28APR26FUT",
+    "name": "BAJAJ-AUTO",
+    "expiry": "28APR2026",
+    "lotsize": "75",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66778",
+    "symbol": "COFORGE28APR26FUT",
+    "name": "COFORGE",
+    "expiry": "28APR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66844",
+    "symbol": "HCLTECH28APR26FUT",
+    "name": "HCLTECH",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66847",
+    "symbol": "HDFCLIFE28APR26FUT",
+    "name": "HDFCLIFE",
+    "expiry": "28APR2026",
+    "lotsize": "1100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66858",
+    "symbol": "IDFCFIRSTB28APR26FUT",
+    "name": "IDFCFIRSTB",
+    "expiry": "28APR2026",
+    "lotsize": "9275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66860",
+    "symbol": "INDHOTEL28APR26FUT",
+    "name": "INDHOTEL",
+    "expiry": "28APR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66882",
+    "symbol": "LAURUSLABS28APR26FUT",
+    "name": "LAURUSLABS",
+    "expiry": "28APR2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66891",
+    "symbol": "MANAPPURAM28APR26FUT",
+    "name": "MANAPPURAM",
+    "expiry": "28APR2026",
+    "lotsize": "3000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66900",
+    "symbol": "MCX28APR26FUT",
+    "name": "MCX",
+    "expiry": "28APR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66904",
+    "symbol": "MUTHOOTFIN28APR26FUT",
+    "name": "MUTHOOTFIN",
+    "expiry": "28APR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66908",
+    "symbol": "NESTLEIND28APR26FUT",
+    "name": "NESTLEIND",
+    "expiry": "28APR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66909",
+    "symbol": "NHPC28APR26FUT",
+    "name": "NHPC",
+    "expiry": "28APR2026",
+    "lotsize": "6400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66954",
+    "symbol": "OBEROIRLTY28APR26FUT",
+    "name": "OBEROIRLTY",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66962",
+    "symbol": "PATANJALI28APR26FUT",
+    "name": "PATANJALI",
+    "expiry": "28APR2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66984",
+    "symbol": "PNBHOUSING28APR26FUT",
+    "name": "PNBHOUSING",
+    "expiry": "28APR2026",
+    "lotsize": "650",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66985",
+    "symbol": "POLICYBZR28APR26FUT",
+    "name": "POLICYBZR",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67010",
+    "symbol": "SHREECEM28APR26FUT",
+    "name": "SHREECEM",
+    "expiry": "28APR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67030",
+    "symbol": "TORNTPHARM28APR26FUT",
+    "name": "TORNTPHARM",
+    "expiry": "28APR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67032",
+    "symbol": "TRENT28APR26FUT",
+    "name": "TRENT",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67042",
+    "symbol": "WAAREEENER28APR26FUT",
+    "name": "WAAREEENER",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36687",
+    "symbol": "011NSETEST27NOV36FUT",
+    "name": "011NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "48577",
+    "symbol": "181NSETEST27NOV36FUT",
+    "name": "181NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51714",
+    "symbol": "NIFTY30MAR26FUT",
+    "name": "NIFTY",
+    "expiry": "30MAR2026",
+    "lotsize": "65",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "51722",
+    "symbol": "360ONE30MAR26FUT",
+    "name": "360ONE",
+    "expiry": "30MAR2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51725",
+    "symbol": "ADANIENSOL30MAR26FUT",
+    "name": "ADANIENSOL",
+    "expiry": "30MAR2026",
+    "lotsize": "675",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51728",
+    "symbol": "ADANIENT30MAR26FUT",
+    "name": "ADANIENT",
+    "expiry": "30MAR2026",
+    "lotsize": "309",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51757",
+    "symbol": "ASHOKLEY30MAR26FUT",
+    "name": "ASHOKLEY",
+    "expiry": "30MAR2026",
+    "lotsize": "5000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51829",
+    "symbol": "BLUESTARCO30MAR26FUT",
+    "name": "BLUESTARCO",
+    "expiry": "30MAR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51837",
+    "symbol": "CANBK30MAR26FUT",
+    "name": "CANBK",
+    "expiry": "30MAR2026",
+    "lotsize": "6750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51860",
+    "symbol": "DABUR30MAR26FUT",
+    "name": "DABUR",
+    "expiry": "30MAR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51865",
+    "symbol": "DIVISLAB30MAR26FUT",
+    "name": "DIVISLAB",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51873",
+    "symbol": "DRREDDY30MAR26FUT",
+    "name": "DRREDDY",
+    "expiry": "30MAR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51874",
+    "symbol": "EICHERMOT30MAR26FUT",
+    "name": "EICHERMOT",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51883",
+    "symbol": "GODREJPROP30MAR26FUT",
+    "name": "GODREJPROP",
+    "expiry": "30MAR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51891",
+    "symbol": "HCLTECH30MAR26FUT",
+    "name": "HCLTECH",
+    "expiry": "30MAR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51892",
+    "symbol": "HDFCAMC30MAR26FUT",
+    "name": "HDFCAMC",
+    "expiry": "30MAR2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51913",
+    "symbol": "IDEA30MAR26FUT",
+    "name": "IDEA",
+    "expiry": "30MAR2026",
+    "lotsize": "71475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36694",
+    "symbol": "041NSETEST27NOV36FUT",
+    "name": "041NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36697",
+    "symbol": "051NSETEST27NOV36FUT",
+    "name": "051NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36715",
+    "symbol": "101NSETEST27NOV36FUT",
+    "name": "101NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36716",
+    "symbol": "111NSETEST27NOV36FUT",
+    "name": "111NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "36718",
+    "symbol": "121NSETEST27NOV36FUT",
+    "name": "121NSETEST",
+    "expiry": "27NOV2036",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51950",
+    "symbol": "JUBLFOOD30MAR26FUT",
+    "name": "JUBLFOOD",
+    "expiry": "30MAR2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51957",
+    "symbol": "KOTAKBANK30MAR26FUT",
+    "name": "KOTAKBANK",
+    "expiry": "30MAR2026",
+    "lotsize": "2000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51982",
+    "symbol": "MUTHOOTFIN30MAR26FUT",
+    "name": "MUTHOOTFIN",
+    "expiry": "30MAR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51993",
+    "symbol": "NYKAA30MAR26FUT",
+    "name": "NYKAA",
+    "expiry": "30MAR2026",
+    "lotsize": "3125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52001",
+    "symbol": "PERSISTENT30MAR26FUT",
+    "name": "PERSISTENT",
+    "expiry": "30MAR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52002",
+    "symbol": "PETRONET30MAR26FUT",
+    "name": "PETRONET",
+    "expiry": "30MAR2026",
+    "lotsize": "1900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52027",
+    "symbol": "SAMMAANCAP30MAR26FUT",
+    "name": "SAMMAANCAP",
+    "expiry": "30MAR2026",
+    "lotsize": "4300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52028",
+    "symbol": "SBICARD30MAR26FUT",
+    "name": "SBICARD",
+    "expiry": "30MAR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52059",
+    "symbol": "TORNTPHARM30MAR26FUT",
+    "name": "TORNTPHARM",
+    "expiry": "30MAR2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52065",
+    "symbol": "UNITDSPR30MAR26FUT",
+    "name": "UNITDSPR",
+    "expiry": "30MAR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66073",
+    "symbol": "360ONE26MAY26FUT",
+    "name": "360ONE",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66090",
+    "symbol": "AUROPHARMA26MAY26FUT",
+    "name": "AUROPHARMA",
+    "expiry": "26MAY2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66095",
+    "symbol": "BAJFINANCE26MAY26FUT",
+    "name": "BAJFINANCE",
+    "expiry": "26MAY2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66097",
+    "symbol": "BANKBARODA26MAY26FUT",
+    "name": "BANKBARODA",
+    "expiry": "26MAY2026",
+    "lotsize": "2925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66161",
+    "symbol": "FORTIS26MAY26FUT",
+    "name": "FORTIS",
+    "expiry": "26MAY2026",
+    "lotsize": "775",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66168",
+    "symbol": "GODREJPROP26MAY26FUT",
+    "name": "GODREJPROP",
+    "expiry": "26MAY2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66169",
+    "symbol": "GRASIM26MAY26FUT",
+    "name": "GRASIM",
+    "expiry": "26MAY2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66179",
+    "symbol": "HDFCAMC26MAY26FUT",
+    "name": "HDFCAMC",
+    "expiry": "26MAY2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66186",
+    "symbol": "HEROMOTOCO26MAY26FUT",
+    "name": "HEROMOTOCO",
+    "expiry": "26MAY2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66253",
+    "symbol": "KEI26MAY26FUT",
+    "name": "KEI",
+    "expiry": "26MAY2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66256",
+    "symbol": "KPITTECH26MAY26FUT",
+    "name": "KPITTECH",
+    "expiry": "26MAY2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66273",
+    "symbol": "M&M26MAY26FUT",
+    "name": "M&M",
+    "expiry": "26MAY2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66293",
+    "symbol": "MCX26MAY26FUT",
+    "name": "MCX",
+    "expiry": "26MAY2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66318",
+    "symbol": "ONGC26MAY26FUT",
+    "name": "ONGC",
+    "expiry": "26MAY2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66330",
+    "symbol": "PHOENIXLTD26MAY26FUT",
+    "name": "PHOENIXLTD",
+    "expiry": "26MAY2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66355",
+    "symbol": "RELIANCE26MAY26FUT",
+    "name": "RELIANCE",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66387",
+    "symbol": "TATAPOWER26MAY26FUT",
+    "name": "TATAPOWER",
+    "expiry": "26MAY2026",
+    "lotsize": "1450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66404",
+    "symbol": "VBL26MAY26FUT",
+    "name": "VBL",
+    "expiry": "26MAY2026",
+    "lotsize": "1125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66414",
+    "symbol": "VOLTAS26MAY26FUT",
+    "name": "VOLTAS",
+    "expiry": "26MAY2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66417",
+    "symbol": "YESBANK26MAY26FUT",
+    "name": "YESBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "31100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66715",
+    "symbol": "AUBANK28APR26FUT",
+    "name": "AUBANK",
+    "expiry": "28APR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66846",
+    "symbol": "HDFCBANK28APR26FUT",
+    "name": "HDFCBANK",
+    "expiry": "28APR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66851",
+    "symbol": "HINDUNILVR28APR26FUT",
+    "name": "HINDUNILVR",
+    "expiry": "28APR2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66859",
+    "symbol": "IEX28APR26FUT",
+    "name": "IEX",
+    "expiry": "28APR2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66865",
+    "symbol": "INFY28APR26FUT",
+    "name": "INFY",
+    "expiry": "28APR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66885",
+    "symbol": "LODHA28APR26FUT",
+    "name": "LODHA",
+    "expiry": "28APR2026",
+    "lotsize": "450",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66898",
+    "symbol": "MAXHEALTH28APR26FUT",
+    "name": "MAXHEALTH",
+    "expiry": "28APR2026",
+    "lotsize": "525",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66967",
+    "symbol": "PGEL28APR26FUT",
+    "name": "PGEL",
+    "expiry": "28APR2026",
+    "lotsize": "950",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66986",
+    "symbol": "POLYCAB28APR26FUT",
+    "name": "POLYCAB",
+    "expiry": "28APR2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66998",
+    "symbol": "PPLPHARMA28APR26FUT",
+    "name": "PPLPHARMA",
+    "expiry": "28APR2026",
+    "lotsize": "2625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51701",
+    "symbol": "BANKNIFTY30MAR26FUT",
+    "name": "BANKNIFTY",
+    "expiry": "30MAR2026",
+    "lotsize": "30",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "51715",
+    "symbol": "NIFTYNXT5030MAR26FUT",
+    "name": "NIFTYNXT50",
+    "expiry": "30MAR2026",
+    "lotsize": "25",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTIDX"
+  },
+  {
+    "token": "51822",
+    "symbol": "BANKINDIA30MAR26FUT",
+    "name": "BANKINDIA",
+    "expiry": "30MAR2026",
+    "lotsize": "5200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51827",
+    "symbol": "BHEL30MAR26FUT",
+    "name": "BHEL",
+    "expiry": "30MAR2026",
+    "lotsize": "2625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51836",
+    "symbol": "CAMS30MAR26FUT",
+    "name": "CAMS",
+    "expiry": "30MAR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51843",
+    "symbol": "CGPOWER30MAR26FUT",
+    "name": "CGPOWER",
+    "expiry": "30MAR2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51849",
+    "symbol": "COFORGE30MAR26FUT",
+    "name": "COFORGE",
+    "expiry": "30MAR2026",
+    "lotsize": "375",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51861",
+    "symbol": "DALBHARAT30MAR26FUT",
+    "name": "DALBHARAT",
+    "expiry": "30MAR2026",
+    "lotsize": "325",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51876",
+    "symbol": "EXIDEIND30MAR26FUT",
+    "name": "EXIDEIND",
+    "expiry": "30MAR2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51879",
+    "symbol": "GAIL30MAR26FUT",
+    "name": "GAIL",
+    "expiry": "30MAR2026",
+    "lotsize": "3150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51881",
+    "symbol": "GMRAIRPORT30MAR26FUT",
+    "name": "GMRAIRPORT",
+    "expiry": "30MAR2026",
+    "lotsize": "6975",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51948",
+    "symbol": "JSWENERGY30MAR26FUT",
+    "name": "JSWENERGY",
+    "expiry": "30MAR2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51969",
+    "symbol": "LUPIN30MAR26FUT",
+    "name": "LUPIN",
+    "expiry": "30MAR2026",
+    "lotsize": "425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51975",
+    "symbol": "MARUTI30MAR26FUT",
+    "name": "MARUTI",
+    "expiry": "30MAR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51979",
+    "symbol": "MFSL30MAR26FUT",
+    "name": "MFSL",
+    "expiry": "30MAR2026",
+    "lotsize": "400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51997",
+    "symbol": "ONGC30MAR26FUT",
+    "name": "ONGC",
+    "expiry": "30MAR2026",
+    "lotsize": "2250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "51999",
+    "symbol": "PATANJALI30MAR26FUT",
+    "name": "PATANJALI",
+    "expiry": "30MAR2026",
+    "lotsize": "900",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52007",
+    "symbol": "PIIND30MAR26FUT",
+    "name": "PIIND",
+    "expiry": "30MAR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52030",
+    "symbol": "SBIN30MAR26FUT",
+    "name": "SBIN",
+    "expiry": "30MAR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52049",
+    "symbol": "TATACONSUM30MAR26FUT",
+    "name": "TATACONSUM",
+    "expiry": "30MAR2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52055",
+    "symbol": "TECHM30MAR26FUT",
+    "name": "TECHM",
+    "expiry": "30MAR2026",
+    "lotsize": "600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "52068",
+    "symbol": "VBL30MAR26FUT",
+    "name": "VBL",
+    "expiry": "30MAR2026",
+    "lotsize": "1125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66087",
+    "symbol": "ASIANPAINT26MAY26FUT",
+    "name": "ASIANPAINT",
+    "expiry": "26MAY2026",
+    "lotsize": "250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66102",
+    "symbol": "BHARTIARTL26MAY26FUT",
+    "name": "BHARTIARTL",
+    "expiry": "26MAY2026",
+    "lotsize": "475",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66134",
+    "symbol": "COLPAL26MAY26FUT",
+    "name": "COLPAL",
+    "expiry": "26MAY2026",
+    "lotsize": "225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66136",
+    "symbol": "CROMPTON26MAY26FUT",
+    "name": "CROMPTON",
+    "expiry": "26MAY2026",
+    "lotsize": "1800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66146",
+    "symbol": "DELHIVERY26MAY26FUT",
+    "name": "DELHIVERY",
+    "expiry": "26MAY2026",
+    "lotsize": "2075",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66180",
+    "symbol": "HDFCBANK26MAY26FUT",
+    "name": "HDFCBANK",
+    "expiry": "26MAY2026",
+    "lotsize": "550",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66188",
+    "symbol": "HINDPETRO26MAY26FUT",
+    "name": "HINDPETRO",
+    "expiry": "26MAY2026",
+    "lotsize": "2025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66189",
+    "symbol": "HINDUNILVR26MAY26FUT",
+    "name": "HINDUNILVR",
+    "expiry": "26MAY2026",
+    "lotsize": "300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66190",
+    "symbol": "HINDZINC26MAY26FUT",
+    "name": "HINDZINC",
+    "expiry": "26MAY2026",
+    "lotsize": "1225",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66193",
+    "symbol": "ICICIPRULI26MAY26FUT",
+    "name": "ICICIPRULI",
+    "expiry": "26MAY2026",
+    "lotsize": "925",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66196",
+    "symbol": "IEX26MAY26FUT",
+    "name": "IEX",
+    "expiry": "26MAY2026",
+    "lotsize": "3750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66229",
+    "symbol": "ITC26MAY26FUT",
+    "name": "ITC",
+    "expiry": "26MAY2026",
+    "lotsize": "1600",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66236",
+    "symbol": "JSWENERGY26MAY26FUT",
+    "name": "JSWENERGY",
+    "expiry": "26MAY2026",
+    "lotsize": "1000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66250",
+    "symbol": "JUBLFOOD26MAY26FUT",
+    "name": "JUBLFOOD",
+    "expiry": "26MAY2026",
+    "lotsize": "1250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66290",
+    "symbol": "MARUTI26MAY26FUT",
+    "name": "MARUTI",
+    "expiry": "26MAY2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66297",
+    "symbol": "MUTHOOTFIN26MAY26FUT",
+    "name": "MUTHOOTFIN",
+    "expiry": "26MAY2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66304",
+    "symbol": "NHPC26MAY26FUT",
+    "name": "NHPC",
+    "expiry": "26MAY2026",
+    "lotsize": "6400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66317",
+    "symbol": "OIL26MAY26FUT",
+    "name": "OIL",
+    "expiry": "26MAY2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66327",
+    "symbol": "PGEL26MAY26FUT",
+    "name": "PGEL",
+    "expiry": "26MAY2026",
+    "lotsize": "950",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66331",
+    "symbol": "PIDILITIND26MAY26FUT",
+    "name": "PIDILITIND",
+    "expiry": "26MAY2026",
+    "lotsize": "500",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66333",
+    "symbol": "PNB26MAY26FUT",
+    "name": "PNB",
+    "expiry": "26MAY2026",
+    "lotsize": "8000",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66336",
+    "symbol": "POLYCAB26MAY26FUT",
+    "name": "POLYCAB",
+    "expiry": "26MAY2026",
+    "lotsize": "125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66354",
+    "symbol": "RECLTD26MAY26FUT",
+    "name": "RECLTD",
+    "expiry": "26MAY2026",
+    "lotsize": "1400",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66386",
+    "symbol": "TATAELXSI26MAY26FUT",
+    "name": "TATAELXSI",
+    "expiry": "26MAY2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66391",
+    "symbol": "TIINDIA26MAY26FUT",
+    "name": "TIINDIA",
+    "expiry": "26MAY2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66721",
+    "symbol": "BAJFINANCE28APR26FUT",
+    "name": "BAJFINANCE",
+    "expiry": "28APR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66726",
+    "symbol": "BEL28APR26FUT",
+    "name": "BEL",
+    "expiry": "28APR2026",
+    "lotsize": "1425",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66752",
+    "symbol": "CGPOWER28APR26FUT",
+    "name": "CGPOWER",
+    "expiry": "28APR2026",
+    "lotsize": "850",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66784",
+    "symbol": "CUMMINSIND28APR26FUT",
+    "name": "CUMMINSIND",
+    "expiry": "28APR2026",
+    "lotsize": "200",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66788",
+    "symbol": "DIVISLAB28APR26FUT",
+    "name": "DIVISLAB",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66822",
+    "symbol": "DRREDDY28APR26FUT",
+    "name": "DRREDDY",
+    "expiry": "28APR2026",
+    "lotsize": "625",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66835",
+    "symbol": "GAIL28APR26FUT",
+    "name": "GAIL",
+    "expiry": "28APR2026",
+    "lotsize": "3150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66840",
+    "symbol": "GODREJPROP28APR26FUT",
+    "name": "GODREJPROP",
+    "expiry": "28APR2026",
+    "lotsize": "275",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66862",
+    "symbol": "INDIGO28APR26FUT",
+    "name": "INDIGO",
+    "expiry": "28APR2026",
+    "lotsize": "150",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66864",
+    "symbol": "INDUSTOWER28APR26FUT",
+    "name": "INDUSTOWER",
+    "expiry": "28APR2026",
+    "lotsize": "1700",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66869",
+    "symbol": "IRFC28APR26FUT",
+    "name": "IRFC",
+    "expiry": "28APR2026",
+    "lotsize": "4250",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66897",
+    "symbol": "MARUTI28APR26FUT",
+    "name": "MARUTI",
+    "expiry": "28APR2026",
+    "lotsize": "50",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66953",
+    "symbol": "NYKAA28APR26FUT",
+    "name": "NYKAA",
+    "expiry": "28APR2026",
+    "lotsize": "3125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66964",
+    "symbol": "PERSISTENT28APR26FUT",
+    "name": "PERSISTENT",
+    "expiry": "28APR2026",
+    "lotsize": "100",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "66966",
+    "symbol": "PFC28APR26FUT",
+    "name": "PFC",
+    "expiry": "28APR2026",
+    "lotsize": "1300",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67009",
+    "symbol": "SBIN28APR26FUT",
+    "name": "SBIN",
+    "expiry": "28APR2026",
+    "lotsize": "750",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67011",
+    "symbol": "SHRIRAMFIN28APR26FUT",
+    "name": "SHRIRAMFIN",
+    "expiry": "28APR2026",
+    "lotsize": "825",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67016",
+    "symbol": "SUNPHARMA28APR26FUT",
+    "name": "SUNPHARMA",
+    "expiry": "28APR2026",
+    "lotsize": "350",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67018",
+    "symbol": "SUZLON28APR26FUT",
+    "name": "SUZLON",
+    "expiry": "28APR2026",
+    "lotsize": "9025",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67024",
+    "symbol": "TATATECH28APR26FUT",
+    "name": "TATATECH",
+    "expiry": "28APR2026",
+    "lotsize": "800",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67033",
+    "symbol": "TVSMOTOR28APR26FUT",
+    "name": "TVSMOTOR",
+    "expiry": "28APR2026",
+    "lotsize": "175",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  },
+  {
+    "token": "67039",
+    "symbol": "VBL28APR26FUT",
+    "name": "VBL",
+    "expiry": "28APR2026",
+    "lotsize": "1125",
+    "exch_seg": "NFO",
+    "instrumenttype": "FUTSTK"
+  }
+]

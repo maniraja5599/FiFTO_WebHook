@@ -1,0 +1,1818 @@
+[
+  {
+    "date": "Apr 1, 2025",
+    "rawDate": "2025-04-01",
+    "dailyPnL": 74177.4996,
+    "trades": 0,
+    "roi": "0.74",
+    "cumulativePnL": 74177.4996
+  },
+  {
+    "date": "Apr 2, 2025",
+    "rawDate": "2025-04-02",
+    "dailyPnL": 4267.9847,
+    "trades": 0,
+    "roi": "0.04",
+    "cumulativePnL": 78445.4843
+  },
+  {
+    "date": "Apr 3, 2025",
+    "rawDate": "2025-04-03",
+    "dailyPnL": 33844.4947,
+    "trades": 0,
+    "roi": "0.34",
+    "cumulativePnL": 112289.97899999999
+  },
+  {
+    "date": "Apr 4, 2025",
+    "rawDate": "2025-04-04",
+    "dailyPnL": -42078.011,
+    "trades": 0,
+    "roi": "-0.42",
+    "cumulativePnL": 70211.968
+  },
+  {
+    "date": "Apr 7, 2025",
+    "rawDate": "2025-04-07",
+    "dailyPnL": -41993.501,
+    "trades": 0,
+    "roi": "-0.42",
+    "cumulativePnL": 28218.466999999997
+  },
+  {
+    "date": "Apr 8, 2025",
+    "rawDate": "2025-04-08",
+    "dailyPnL": 189443.9995,
+    "trades": 0,
+    "roi": "1.89",
+    "cumulativePnL": 217662.4665
+  },
+  {
+    "date": "Apr 9, 2025",
+    "rawDate": "2025-04-09",
+    "dailyPnL": 117437.7195,
+    "trades": 0,
+    "roi": "1.17",
+    "cumulativePnL": 335100.186
+  },
+  {
+    "date": "Apr 10, 2025",
+    "rawDate": "2025-04-10",
+    "dailyPnL": -29694.99,
+    "trades": 0,
+    "roi": "-0.30",
+    "cumulativePnL": 305405.196
+  },
+  {
+    "date": "Apr 11, 2025",
+    "rawDate": "2025-04-11",
+    "dailyPnL": -32449.5004,
+    "trades": 0,
+    "roi": "-0.32",
+    "cumulativePnL": 272955.6956
+  },
+  {
+    "date": "Apr 14, 2025",
+    "rawDate": "2025-04-14",
+    "dailyPnL": 16905,
+    "trades": 0,
+    "roi": "0.17",
+    "cumulativePnL": 289860.6956
+  },
+  {
+    "date": "Apr 15, 2025",
+    "rawDate": "2025-04-15",
+    "dailyPnL": 145493.4996,
+    "trades": 0,
+    "roi": "1.45",
+    "cumulativePnL": 435354.19519999996
+  },
+  {
+    "date": "Apr 16, 2025",
+    "rawDate": "2025-04-16",
+    "dailyPnL": 49117.985,
+    "trades": 0,
+    "roi": "0.49",
+    "cumulativePnL": 484472.18019999994
+  },
+  {
+    "date": "Apr 17, 2025",
+    "rawDate": "2025-04-17",
+    "dailyPnL": 313118.2341,
+    "trades": 0,
+    "roi": "3.13",
+    "cumulativePnL": 797590.4143
+  },
+  {
+    "date": "Apr 21, 2025",
+    "rawDate": "2025-04-21",
+    "dailyPnL": 118931.9998,
+    "trades": 0,
+    "roi": "1.19",
+    "cumulativePnL": 916522.4140999999
+  },
+  {
+    "date": "Apr 22, 2025",
+    "rawDate": "2025-04-22",
+    "dailyPnL": 145904.9916,
+    "trades": 0,
+    "roi": "1.46",
+    "cumulativePnL": 1062427.4057
+  },
+  {
+    "date": "Apr 23, 2025",
+    "rawDate": "2025-04-23",
+    "dailyPnL": -210636.4787,
+    "trades": 0,
+    "roi": "-2.11",
+    "cumulativePnL": 851790.927
+  },
+  {
+    "date": "Apr 24, 2025",
+    "rawDate": "2025-04-24",
+    "dailyPnL": -10976.5134,
+    "trades": 0,
+    "roi": "-0.11",
+    "cumulativePnL": 840814.4136
+  },
+  {
+    "date": "Apr 25, 2025",
+    "rawDate": "2025-04-25",
+    "dailyPnL": 2402.0068,
+    "trades": 0,
+    "roi": "0.02",
+    "cumulativePnL": 843216.4204
+  },
+  {
+    "date": "Apr 28, 2025",
+    "rawDate": "2025-04-28",
+    "dailyPnL": -53782.5003,
+    "trades": 0,
+    "roi": "-0.54",
+    "cumulativePnL": 789433.9201
+  },
+  {
+    "date": "Apr 29, 2025",
+    "rawDate": "2025-04-29",
+    "dailyPnL": -57794.5002,
+    "trades": 0,
+    "roi": "-0.58",
+    "cumulativePnL": 731639.4199
+  },
+  {
+    "date": "Apr 30, 2025",
+    "rawDate": "2025-04-30",
+    "dailyPnL": 69381.4893,
+    "trades": 0,
+    "roi": "0.69",
+    "cumulativePnL": 801020.9092
+  },
+  {
+    "date": "May 1, 2025",
+    "rawDate": "2025-05-01",
+    "dailyPnL": -14317.5005,
+    "trades": 0,
+    "roi": "-0.14",
+    "cumulativePnL": 786703.4087
+  },
+  {
+    "date": "May 2, 2025",
+    "rawDate": "2025-05-02",
+    "dailyPnL": -29967.4984,
+    "trades": 0,
+    "roi": "-0.30",
+    "cumulativePnL": 756735.9103
+  },
+  {
+    "date": "May 5, 2025",
+    "rawDate": "2025-05-05",
+    "dailyPnL": 85020.9993,
+    "trades": 0,
+    "roi": "0.85",
+    "cumulativePnL": 841756.9096
+  },
+  {
+    "date": "May 6, 2025",
+    "rawDate": "2025-05-06",
+    "dailyPnL": -3871.0087,
+    "trades": 0,
+    "roi": "-0.04",
+    "cumulativePnL": 837885.9009
+  },
+  {
+    "date": "May 7, 2025",
+    "rawDate": "2025-05-07",
+    "dailyPnL": 54112.7295,
+    "trades": 0,
+    "roi": "0.54",
+    "cumulativePnL": 891998.6304
+  },
+  {
+    "date": "May 8, 2025",
+    "rawDate": "2025-05-08",
+    "dailyPnL": -78721.7654,
+    "trades": 0,
+    "roi": "-0.79",
+    "cumulativePnL": 813276.865
+  },
+  {
+    "date": "May 9, 2025",
+    "rawDate": "2025-05-09",
+    "dailyPnL": 63973.4996,
+    "trades": 0,
+    "roi": "0.64",
+    "cumulativePnL": 877250.3646
+  },
+  {
+    "date": "May 12, 2025",
+    "rawDate": "2025-05-12",
+    "dailyPnL": 81276.9996,
+    "trades": 0,
+    "roi": "0.81",
+    "cumulativePnL": 958527.3642
+  },
+  {
+    "date": "May 13, 2025",
+    "rawDate": "2025-05-13",
+    "dailyPnL": -187802.7504,
+    "trades": 0,
+    "roi": "-1.88",
+    "cumulativePnL": 770724.6137999999
+  },
+  {
+    "date": "May 14, 2025",
+    "rawDate": "2025-05-14",
+    "dailyPnL": -131366.2802,
+    "trades": 0,
+    "roi": "-1.31",
+    "cumulativePnL": 639358.3335999999
+  },
+  {
+    "date": "May 15, 2025",
+    "rawDate": "2025-05-15",
+    "dailyPnL": -259721.5029,
+    "trades": 0,
+    "roi": "-2.60",
+    "cumulativePnL": 379636.83069999993
+  },
+  {
+    "date": "May 16, 2025",
+    "rawDate": "2025-05-16",
+    "dailyPnL": 48605.2588,
+    "trades": 0,
+    "roi": "0.49",
+    "cumulativePnL": 428242.08949999994
+  },
+  {
+    "date": "May 19, 2025",
+    "rawDate": "2025-05-19",
+    "dailyPnL": 200796.4984,
+    "trades": 0,
+    "roi": "2.01",
+    "cumulativePnL": 629038.5878999999
+  },
+  {
+    "date": "May 20, 2025",
+    "rawDate": "2025-05-20",
+    "dailyPnL": 493734.4993,
+    "trades": 0,
+    "roi": "4.94",
+    "cumulativePnL": 1122773.0872
+  },
+  {
+    "date": "May 21, 2025",
+    "rawDate": "2025-05-21",
+    "dailyPnL": -16245.7356,
+    "trades": 0,
+    "roi": "-0.16",
+    "cumulativePnL": 1106527.3516
+  },
+  {
+    "date": "May 22, 2025",
+    "rawDate": "2025-05-22",
+    "dailyPnL": 207732.2496,
+    "trades": 0,
+    "roi": "2.08",
+    "cumulativePnL": 1314259.6012
+  },
+  {
+    "date": "May 23, 2025",
+    "rawDate": "2025-05-23",
+    "dailyPnL": -892.9964,
+    "trades": 0,
+    "roi": "-0.01",
+    "cumulativePnL": 1313366.6047999999
+  },
+  {
+    "date": "May 26, 2025",
+    "rawDate": "2025-05-26",
+    "dailyPnL": -90353.5004,
+    "trades": 0,
+    "roi": "-0.90",
+    "cumulativePnL": 1223013.1043999998
+  },
+  {
+    "date": "May 27, 2025",
+    "rawDate": "2025-05-27",
+    "dailyPnL": -189809.0007,
+    "trades": 0,
+    "roi": "-1.90",
+    "cumulativePnL": 1033204.1036999999
+  },
+  {
+    "date": "May 28, 2025",
+    "rawDate": "2025-05-28",
+    "dailyPnL": 135037.0146,
+    "trades": 0,
+    "roi": "1.35",
+    "cumulativePnL": 1168241.1182999997
+  },
+  {
+    "date": "May 29, 2025",
+    "rawDate": "2025-05-29",
+    "dailyPnL": 74061.9996,
+    "trades": 0,
+    "roi": "0.74",
+    "cumulativePnL": 1242303.1178999997
+  },
+  {
+    "date": "May 30, 2025",
+    "rawDate": "2025-05-30",
+    "dailyPnL": -10534.8687,
+    "trades": 0,
+    "roi": "-0.11",
+    "cumulativePnL": 1231768.2491999997
+  },
+  {
+    "date": "Jun 2, 2025",
+    "rawDate": "2025-06-02",
+    "dailyPnL": -40.1215,
+    "trades": 0,
+    "roi": "-0.00",
+    "cumulativePnL": 1231728.1276999998
+  },
+  {
+    "date": "Jun 3, 2025",
+    "rawDate": "2025-06-03",
+    "dailyPnL": 81410.4922,
+    "trades": 0,
+    "roi": "0.81",
+    "cumulativePnL": 1313138.6198999998
+  },
+  {
+    "date": "Jun 4, 2025",
+    "rawDate": "2025-06-04",
+    "dailyPnL": -17344.1504,
+    "trades": 0,
+    "roi": "-0.17",
+    "cumulativePnL": 1295794.4695
+  },
+  {
+    "date": "Jun 5, 2025",
+    "rawDate": "2025-06-05",
+    "dailyPnL": 257033.747,
+    "trades": 0,
+    "roi": "2.57",
+    "cumulativePnL": 1552828.2164999999
+  },
+  {
+    "date": "Jun 6, 2025",
+    "rawDate": "2025-06-06",
+    "dailyPnL": -4236.5033,
+    "trades": 0,
+    "roi": "-0.04",
+    "cumulativePnL": 1548591.7131999999
+  },
+  {
+    "date": "Jun 9, 2025",
+    "rawDate": "2025-06-09",
+    "dailyPnL": 89881.3696,
+    "trades": 0,
+    "roi": "0.90",
+    "cumulativePnL": 1638473.0828
+  },
+  {
+    "date": "Jun 10, 2025",
+    "rawDate": "2025-06-10",
+    "dailyPnL": 161284.4869,
+    "trades": 0,
+    "roi": "1.61",
+    "cumulativePnL": 1799757.5696999999
+  },
+  {
+    "date": "Jun 11, 2025",
+    "rawDate": "2025-06-11",
+    "dailyPnL": 18632.996,
+    "trades": 0,
+    "roi": "0.19",
+    "cumulativePnL": 1818390.5657
+  },
+  {
+    "date": "Jun 12, 2025",
+    "rawDate": "2025-06-12",
+    "dailyPnL": -193412.0005,
+    "trades": 0,
+    "roi": "-1.93",
+    "cumulativePnL": 1624978.5651999998
+  },
+  {
+    "date": "Jun 13, 2025",
+    "rawDate": "2025-06-13",
+    "dailyPnL": -5932.6419,
+    "trades": 0,
+    "roi": "-0.06",
+    "cumulativePnL": 1619045.9233
+  },
+  {
+    "date": "Jun 16, 2025",
+    "rawDate": "2025-06-16",
+    "dailyPnL": 238507.6204,
+    "trades": 0,
+    "roi": "2.39",
+    "cumulativePnL": 1857553.5436999998
+  },
+  {
+    "date": "Jun 17, 2025",
+    "rawDate": "2025-06-17",
+    "dailyPnL": -2074.0079,
+    "trades": 0,
+    "roi": "-0.02",
+    "cumulativePnL": 1855479.5357999997
+  },
+  {
+    "date": "Jun 18, 2025",
+    "rawDate": "2025-06-18",
+    "dailyPnL": 10896.9857,
+    "trades": 0,
+    "roi": "0.11",
+    "cumulativePnL": 1866376.5214999998
+  },
+  {
+    "date": "Jun 19, 2025",
+    "rawDate": "2025-06-19",
+    "dailyPnL": 24706.2481,
+    "trades": 0,
+    "roi": "0.25",
+    "cumulativePnL": 1891082.7695999998
+  },
+  {
+    "date": "Jun 20, 2025",
+    "rawDate": "2025-06-20",
+    "dailyPnL": 260706.2357,
+    "trades": 0,
+    "roi": "2.61",
+    "cumulativePnL": 2151789.0053
+  },
+  {
+    "date": "Jun 23, 2025",
+    "rawDate": "2025-06-23",
+    "dailyPnL": 139392.499,
+    "trades": 0,
+    "roi": "1.39",
+    "cumulativePnL": 2291181.5042999997
+  },
+  {
+    "date": "Jun 24, 2025",
+    "rawDate": "2025-06-24",
+    "dailyPnL": 32020.9956,
+    "trades": 0,
+    "roi": "0.32",
+    "cumulativePnL": 2323202.4998999997
+  },
+  {
+    "date": "Jun 25, 2025",
+    "rawDate": "2025-06-25",
+    "dailyPnL": 7102.6283,
+    "trades": 0,
+    "roi": "0.07",
+    "cumulativePnL": 2330305.1281999997
+  },
+  {
+    "date": "Jun 26, 2025",
+    "rawDate": "2025-06-26",
+    "dailyPnL": 352920.2386,
+    "trades": 0,
+    "roi": "3.53",
+    "cumulativePnL": 2683225.3667999995
+  },
+  {
+    "date": "Jun 27, 2025",
+    "rawDate": "2025-06-27",
+    "dailyPnL": -217530.2642,
+    "trades": 0,
+    "roi": "-2.18",
+    "cumulativePnL": 2465695.1025999994
+  },
+  {
+    "date": "Jun 30, 2025",
+    "rawDate": "2025-06-30",
+    "dailyPnL": 354345.4933,
+    "trades": 0,
+    "roi": "3.54",
+    "cumulativePnL": 2820040.595899999
+  },
+  {
+    "date": "Jul 1, 2025",
+    "rawDate": "2025-07-01",
+    "dailyPnL": 94745.6195,
+    "trades": 0,
+    "roi": "0.95",
+    "cumulativePnL": 2914786.215399999
+  },
+  {
+    "date": "Jul 2, 2025",
+    "rawDate": "2025-07-02",
+    "dailyPnL": 36021.9994,
+    "trades": 0,
+    "roi": "0.36",
+    "cumulativePnL": 2950808.2147999993
+  },
+  {
+    "date": "Jul 3, 2025",
+    "rawDate": "2025-07-03",
+    "dailyPnL": 80299.7491,
+    "trades": 0,
+    "roi": "0.80",
+    "cumulativePnL": 3031107.9638999994
+  },
+  {
+    "date": "Jul 4, 2025",
+    "rawDate": "2025-07-04",
+    "dailyPnL": 21630.2496,
+    "trades": 0,
+    "roi": "0.22",
+    "cumulativePnL": 3052738.2134999996
+  },
+  {
+    "date": "Jul 7, 2025",
+    "rawDate": "2025-07-07",
+    "dailyPnL": -148531.5263,
+    "trades": 0,
+    "roi": "-1.49",
+    "cumulativePnL": 2904206.6871999996
+  },
+  {
+    "date": "Jul 8, 2025",
+    "rawDate": "2025-07-08",
+    "dailyPnL": 261023.5052,
+    "trades": 0,
+    "roi": "2.61",
+    "cumulativePnL": 3165230.1923999996
+  },
+  {
+    "date": "Jul 9, 2025",
+    "rawDate": "2025-07-09",
+    "dailyPnL": 81829.9996,
+    "trades": 0,
+    "roi": "0.82",
+    "cumulativePnL": 3247060.192
+  },
+  {
+    "date": "Jul 10, 2025",
+    "rawDate": "2025-07-10",
+    "dailyPnL": 138623.2493,
+    "trades": 0,
+    "roi": "1.39",
+    "cumulativePnL": 3385683.4412999996
+  },
+  {
+    "date": "Jul 11, 2025",
+    "rawDate": "2025-07-11",
+    "dailyPnL": 109746.9995,
+    "trades": 0,
+    "roi": "1.10",
+    "cumulativePnL": 3495430.4407999995
+  },
+  {
+    "date": "Jul 14, 2025",
+    "rawDate": "2025-07-14",
+    "dailyPnL": -187112.7507,
+    "trades": 0,
+    "roi": "-1.87",
+    "cumulativePnL": 3308317.6900999993
+  },
+  {
+    "date": "Jul 15, 2025",
+    "rawDate": "2025-07-15",
+    "dailyPnL": -131498.9829,
+    "trades": 0,
+    "roi": "-1.31",
+    "cumulativePnL": 3176818.707199999
+  },
+  {
+    "date": "Jul 16, 2025",
+    "rawDate": "2025-07-16",
+    "dailyPnL": -82873.2506,
+    "trades": 0,
+    "roi": "-0.83",
+    "cumulativePnL": 3093945.456599999
+  },
+  {
+    "date": "Jul 17, 2025",
+    "rawDate": "2025-07-17",
+    "dailyPnL": 121338.9993,
+    "trades": 0,
+    "roi": "1.21",
+    "cumulativePnL": 3215284.455899999
+  },
+  {
+    "date": "Jul 18, 2025",
+    "rawDate": "2025-07-18",
+    "dailyPnL": -12707.0008,
+    "trades": 0,
+    "roi": "-0.13",
+    "cumulativePnL": 3202577.455099999
+  },
+  {
+    "date": "Jul 21, 2025",
+    "rawDate": "2025-07-21",
+    "dailyPnL": 53587.9995,
+    "trades": 0,
+    "roi": "0.54",
+    "cumulativePnL": 3256165.454599999
+  },
+  {
+    "date": "Jul 22, 2025",
+    "rawDate": "2025-07-22",
+    "dailyPnL": 83372.7553,
+    "trades": 0,
+    "roi": "0.83",
+    "cumulativePnL": 3339538.2098999987
+  },
+  {
+    "date": "Jul 23, 2025",
+    "rawDate": "2025-07-23",
+    "dailyPnL": 389011.4996,
+    "trades": 0,
+    "roi": "3.89",
+    "cumulativePnL": 3728549.709499999
+  },
+  {
+    "date": "Jul 24, 2025",
+    "rawDate": "2025-07-24",
+    "dailyPnL": 190964.9997,
+    "trades": 0,
+    "roi": "1.91",
+    "cumulativePnL": 3919514.709199999
+  },
+  {
+    "date": "Jul 25, 2025",
+    "rawDate": "2025-07-25",
+    "dailyPnL": 85011.9994,
+    "trades": 0,
+    "roi": "0.85",
+    "cumulativePnL": 4004526.708599999
+  },
+  {
+    "date": "Jul 28, 2025",
+    "rawDate": "2025-07-28",
+    "dailyPnL": -17589.5003,
+    "trades": 0,
+    "roi": "-0.18",
+    "cumulativePnL": 3986937.208299999
+  },
+  {
+    "date": "Jul 29, 2025",
+    "rawDate": "2025-07-29",
+    "dailyPnL": 49591.2496,
+    "trades": 0,
+    "roi": "0.50",
+    "cumulativePnL": 4036528.4578999993
+  },
+  {
+    "date": "Jul 30, 2025",
+    "rawDate": "2025-07-30",
+    "dailyPnL": 57208.4742,
+    "trades": 0,
+    "roi": "0.57",
+    "cumulativePnL": 4093736.9320999994
+  },
+  {
+    "date": "Jul 31, 2025",
+    "rawDate": "2025-07-31",
+    "dailyPnL": -133621.7429,
+    "trades": 0,
+    "roi": "-1.34",
+    "cumulativePnL": 3960115.1891999994
+  },
+  {
+    "date": "Aug 1, 2025",
+    "rawDate": "2025-08-01",
+    "dailyPnL": -75930.2504,
+    "trades": 0,
+    "roi": "-0.76",
+    "cumulativePnL": 3884184.9387999997
+  },
+  {
+    "date": "Aug 4, 2025",
+    "rawDate": "2025-08-04",
+    "dailyPnL": -361621.7673,
+    "trades": 0,
+    "roi": "-3.62",
+    "cumulativePnL": 3522563.1714999997
+  },
+  {
+    "date": "Aug 5, 2025",
+    "rawDate": "2025-08-05",
+    "dailyPnL": 188131.9995,
+    "trades": 0,
+    "roi": "1.88",
+    "cumulativePnL": 3710695.1709999996
+  },
+  {
+    "date": "Aug 6, 2025",
+    "rawDate": "2025-08-06",
+    "dailyPnL": -105209.1307,
+    "trades": 0,
+    "roi": "-1.05",
+    "cumulativePnL": 3605486.0402999995
+  },
+  {
+    "date": "Aug 7, 2025",
+    "rawDate": "2025-08-07",
+    "dailyPnL": -212604.0002,
+    "trades": 0,
+    "roi": "-2.13",
+    "cumulativePnL": 3392882.0400999994
+  },
+  {
+    "date": "Aug 8, 2025",
+    "rawDate": "2025-08-08",
+    "dailyPnL": 137550.4993,
+    "trades": 0,
+    "roi": "1.38",
+    "cumulativePnL": 3530432.539399999
+  },
+  {
+    "date": "Aug 11, 2025",
+    "rawDate": "2025-08-11",
+    "dailyPnL": -403800.7503,
+    "trades": 0,
+    "roi": "-4.04",
+    "cumulativePnL": 3126631.7890999992
+  },
+  {
+    "date": "Aug 12, 2025",
+    "rawDate": "2025-08-12",
+    "dailyPnL": 238511.4932,
+    "trades": 0,
+    "roi": "2.39",
+    "cumulativePnL": 3365143.282299999
+  },
+  {
+    "date": "Aug 13, 2025",
+    "rawDate": "2025-08-13",
+    "dailyPnL": -124217.5055,
+    "trades": 0,
+    "roi": "-1.24",
+    "cumulativePnL": 3240925.776799999
+  },
+  {
+    "date": "Aug 14, 2025",
+    "rawDate": "2025-08-14",
+    "dailyPnL": 93901.2494,
+    "trades": 0,
+    "roi": "0.94",
+    "cumulativePnL": 3334827.0261999993
+  },
+  {
+    "date": "Aug 18, 2025",
+    "rawDate": "2025-08-18",
+    "dailyPnL": 318102.2556,
+    "trades": 0,
+    "roi": "3.18",
+    "cumulativePnL": 3652929.281799999
+  },
+  {
+    "date": "Aug 19, 2025",
+    "rawDate": "2025-08-19",
+    "dailyPnL": 354785.0076,
+    "trades": 0,
+    "roi": "3.55",
+    "cumulativePnL": 4007714.289399999
+  },
+  {
+    "date": "Aug 20, 2025",
+    "rawDate": "2025-08-20",
+    "dailyPnL": 88720.0096,
+    "trades": 0,
+    "roi": "0.89",
+    "cumulativePnL": 4096434.298999999
+  },
+  {
+    "date": "Aug 21, 2025",
+    "rawDate": "2025-08-21",
+    "dailyPnL": 76127.4942,
+    "trades": 0,
+    "roi": "0.76",
+    "cumulativePnL": 4172561.7931999993
+  },
+  {
+    "date": "Aug 22, 2025",
+    "rawDate": "2025-08-22",
+    "dailyPnL": 161744.9994,
+    "trades": 0,
+    "roi": "1.62",
+    "cumulativePnL": 4334306.792599999
+  },
+  {
+    "date": "Aug 25, 2025",
+    "rawDate": "2025-08-25",
+    "dailyPnL": 83774.9937,
+    "trades": 0,
+    "roi": "0.84",
+    "cumulativePnL": 4418081.7863
+  },
+  {
+    "date": "Aug 26, 2025",
+    "rawDate": "2025-08-26",
+    "dailyPnL": 113670.7495,
+    "trades": 0,
+    "roi": "1.14",
+    "cumulativePnL": 4531752.5358
+  },
+  {
+    "date": "Aug 27, 2025",
+    "rawDate": "2025-08-27",
+    "dailyPnL": 103687.5,
+    "trades": 0,
+    "roi": "1.04",
+    "cumulativePnL": 4635440.0358
+  },
+  {
+    "date": "Aug 28, 2025",
+    "rawDate": "2025-08-28",
+    "dailyPnL": 86551.9996,
+    "trades": 0,
+    "roi": "0.87",
+    "cumulativePnL": 4721992.0353999995
+  },
+  {
+    "date": "Aug 29, 2025",
+    "rawDate": "2025-08-29",
+    "dailyPnL": 82987.4994,
+    "trades": 0,
+    "roi": "0.83",
+    "cumulativePnL": 4804979.5348
+  },
+  {
+    "date": "Sep 1, 2025",
+    "rawDate": "2025-09-01",
+    "dailyPnL": -269266.5004,
+    "trades": 0,
+    "roi": "-2.69",
+    "cumulativePnL": 4535713.034399999
+  },
+  {
+    "date": "Sep 2, 2025",
+    "rawDate": "2025-09-02",
+    "dailyPnL": -41590.7604,
+    "trades": 0,
+    "roi": "-0.42",
+    "cumulativePnL": 4494122.273999999
+  },
+  {
+    "date": "Sep 3, 2025",
+    "rawDate": "2025-09-03",
+    "dailyPnL": 25071.9992,
+    "trades": 0,
+    "roi": "0.25",
+    "cumulativePnL": 4519194.2732
+  },
+  {
+    "date": "Sep 4, 2025",
+    "rawDate": "2025-09-04",
+    "dailyPnL": 206373.5186,
+    "trades": 0,
+    "roi": "2.06",
+    "cumulativePnL": 4725567.7918
+  },
+  {
+    "date": "Sep 5, 2025",
+    "rawDate": "2025-09-05",
+    "dailyPnL": 109409.9991,
+    "trades": 0,
+    "roi": "1.09",
+    "cumulativePnL": 4834977.790899999
+  },
+  {
+    "date": "Sep 8, 2025",
+    "rawDate": "2025-09-08",
+    "dailyPnL": -119863.0006,
+    "trades": 0,
+    "roi": "-1.20",
+    "cumulativePnL": 4715114.7902999995
+  },
+  {
+    "date": "Sep 9, 2025",
+    "rawDate": "2025-09-09",
+    "dailyPnL": 97161.9993,
+    "trades": 0,
+    "roi": "0.97",
+    "cumulativePnL": 4812276.7896
+  },
+  {
+    "date": "Sep 10, 2025",
+    "rawDate": "2025-09-10",
+    "dailyPnL": -45974.5007,
+    "trades": 0,
+    "roi": "-0.46",
+    "cumulativePnL": 4766302.2889
+  },
+  {
+    "date": "Sep 11, 2025",
+    "rawDate": "2025-09-11",
+    "dailyPnL": 4701.7553,
+    "trades": 0,
+    "roi": "0.05",
+    "cumulativePnL": 4771004.0442
+  },
+  {
+    "date": "Sep 12, 2025",
+    "rawDate": "2025-09-12",
+    "dailyPnL": 52971.9994,
+    "trades": 0,
+    "roi": "0.53",
+    "cumulativePnL": 4823976.0436
+  },
+  {
+    "date": "Sep 15, 2025",
+    "rawDate": "2025-09-15",
+    "dailyPnL": 27714.7495,
+    "trades": 0,
+    "roi": "0.28",
+    "cumulativePnL": 4851690.7931
+  },
+  {
+    "date": "Sep 16, 2025",
+    "rawDate": "2025-09-16",
+    "dailyPnL": -7815.7506,
+    "trades": 0,
+    "roi": "-0.08",
+    "cumulativePnL": 4843875.0425
+  },
+  {
+    "date": "Sep 17, 2025",
+    "rawDate": "2025-09-17",
+    "dailyPnL": -83417.2508,
+    "trades": 0,
+    "roi": "-0.83",
+    "cumulativePnL": 4760457.791700001
+  },
+  {
+    "date": "Sep 18, 2025",
+    "rawDate": "2025-09-18",
+    "dailyPnL": -312527.7567,
+    "trades": 0,
+    "roi": "-3.13",
+    "cumulativePnL": 4447930.035000001
+  },
+  {
+    "date": "Sep 19, 2025",
+    "rawDate": "2025-09-19",
+    "dailyPnL": -127649.0004,
+    "trades": 0,
+    "roi": "-1.28",
+    "cumulativePnL": 4320281.034600001
+  },
+  {
+    "date": "Sep 22, 2025",
+    "rawDate": "2025-09-22",
+    "dailyPnL": -152792.5007,
+    "trades": 0,
+    "roi": "-1.53",
+    "cumulativePnL": 4167488.5339000006
+  },
+  {
+    "date": "Sep 23, 2025",
+    "rawDate": "2025-09-23",
+    "dailyPnL": -110732.5007,
+    "trades": 0,
+    "roi": "-1.11",
+    "cumulativePnL": 4056756.0332000004
+  },
+  {
+    "date": "Sep 24, 2025",
+    "rawDate": "2025-09-24",
+    "dailyPnL": 28099.9995,
+    "trades": 0,
+    "roi": "0.28",
+    "cumulativePnL": 4084856.0327000003
+  },
+  {
+    "date": "Sep 25, 2025",
+    "rawDate": "2025-09-25",
+    "dailyPnL": 257694.9936,
+    "trades": 0,
+    "roi": "2.58",
+    "cumulativePnL": 4342551.0263
+  },
+  {
+    "date": "Sep 26, 2025",
+    "rawDate": "2025-09-26",
+    "dailyPnL": 210834.7495,
+    "trades": 0,
+    "roi": "2.11",
+    "cumulativePnL": 4553385.7758
+  },
+  {
+    "date": "Sep 29, 2025",
+    "rawDate": "2025-09-29",
+    "dailyPnL": -29621.7503,
+    "trades": 0,
+    "roi": "-0.30",
+    "cumulativePnL": 4523764.0254999995
+  },
+  {
+    "date": "Sep 30, 2025",
+    "rawDate": "2025-09-30",
+    "dailyPnL": -45430.7422,
+    "trades": 0,
+    "roi": "-0.45",
+    "cumulativePnL": 4478333.283299999
+  },
+  {
+    "date": "Oct 1, 2025",
+    "rawDate": "2025-10-01",
+    "dailyPnL": 83839.9078,
+    "trades": 0,
+    "roi": "0.84",
+    "cumulativePnL": 4562173.1910999995
+  },
+  {
+    "date": "Oct 3, 2025",
+    "rawDate": "2025-10-03",
+    "dailyPnL": -71729.7515,
+    "trades": 0,
+    "roi": "-0.72",
+    "cumulativePnL": 4490443.439599999
+  },
+  {
+    "date": "Oct 6, 2025",
+    "rawDate": "2025-10-06",
+    "dailyPnL": 21030.4984,
+    "trades": 0,
+    "roi": "0.21",
+    "cumulativePnL": 4511473.937999999
+  },
+  {
+    "date": "Oct 7, 2025",
+    "rawDate": "2025-10-07",
+    "dailyPnL": 80217.4992,
+    "trades": 0,
+    "roi": "0.80",
+    "cumulativePnL": 4591691.4372
+  },
+  {
+    "date": "Oct 8, 2025",
+    "rawDate": "2025-10-08",
+    "dailyPnL": 64095.9998,
+    "trades": 0,
+    "roi": "0.64",
+    "cumulativePnL": 4655787.437
+  },
+  {
+    "date": "Oct 9, 2025",
+    "rawDate": "2025-10-09",
+    "dailyPnL": -114342.7505,
+    "trades": 0,
+    "roi": "-1.14",
+    "cumulativePnL": 4541444.6865
+  },
+  {
+    "date": "Oct 10, 2025",
+    "rawDate": "2025-10-10",
+    "dailyPnL": -32459.7502,
+    "trades": 0,
+    "roi": "-0.32",
+    "cumulativePnL": 4508984.9363
+  },
+  {
+    "date": "Oct 13, 2025",
+    "rawDate": "2025-10-13",
+    "dailyPnL": -28220.0003,
+    "trades": 0,
+    "roi": "-0.28",
+    "cumulativePnL": 4480764.936
+  },
+  {
+    "date": "Oct 14, 2025",
+    "rawDate": "2025-10-14",
+    "dailyPnL": 457746.9996,
+    "trades": 0,
+    "roi": "4.58",
+    "cumulativePnL": 4938511.9355999995
+  },
+  {
+    "date": "Oct 15, 2025",
+    "rawDate": "2025-10-15",
+    "dailyPnL": 34842.2494,
+    "trades": 0,
+    "roi": "0.35",
+    "cumulativePnL": 4973354.185
+  },
+  {
+    "date": "Oct 16, 2025",
+    "rawDate": "2025-10-16",
+    "dailyPnL": 53356.4995,
+    "trades": 0,
+    "roi": "0.53",
+    "cumulativePnL": 5026710.6844999995
+  },
+  {
+    "date": "Oct 17, 2025",
+    "rawDate": "2025-10-17",
+    "dailyPnL": -59623.7504,
+    "trades": 0,
+    "roi": "-0.60",
+    "cumulativePnL": 4967086.934099999
+  },
+  {
+    "date": "Oct 20, 2025",
+    "rawDate": "2025-10-20",
+    "dailyPnL": -163283.5004,
+    "trades": 0,
+    "roi": "-1.63",
+    "cumulativePnL": 4803803.433699999
+  },
+  {
+    "date": "Oct 22, 2025",
+    "rawDate": "2025-10-22",
+    "dailyPnL": -218937.49,
+    "trades": 0,
+    "roi": "-2.19",
+    "cumulativePnL": 4584865.943699999
+  },
+  {
+    "date": "Oct 23, 2025",
+    "rawDate": "2025-10-23",
+    "dailyPnL": 391924.5049,
+    "trades": 0,
+    "roi": "3.92",
+    "cumulativePnL": 4976790.448599999
+  },
+  {
+    "date": "Oct 24, 2025",
+    "rawDate": "2025-10-24",
+    "dailyPnL": 99927.4997,
+    "trades": 0,
+    "roi": "1.00",
+    "cumulativePnL": 5076717.948299998
+  },
+  {
+    "date": "Oct 27, 2025",
+    "rawDate": "2025-10-27",
+    "dailyPnL": -45795.0003,
+    "trades": 0,
+    "roi": "-0.46",
+    "cumulativePnL": 5030922.947999998
+  },
+  {
+    "date": "Oct 28, 2025",
+    "rawDate": "2025-10-28",
+    "dailyPnL": 412142.7318,
+    "trades": 0,
+    "roi": "4.12",
+    "cumulativePnL": 5443065.679799998
+  },
+  {
+    "date": "Oct 29, 2025",
+    "rawDate": "2025-10-29",
+    "dailyPnL": -28972.0001,
+    "trades": 0,
+    "roi": "-0.29",
+    "cumulativePnL": 5414093.679699998
+  },
+  {
+    "date": "Oct 30, 2025",
+    "rawDate": "2025-10-30",
+    "dailyPnL": 280609.7496,
+    "trades": 0,
+    "roi": "2.81",
+    "cumulativePnL": 5694703.429299998
+  },
+  {
+    "date": "Oct 31, 2025",
+    "rawDate": "2025-10-31",
+    "dailyPnL": 17332.2498,
+    "trades": 0,
+    "roi": "0.17",
+    "cumulativePnL": 5712035.679099998
+  },
+  {
+    "date": "Nov 3, 2025",
+    "rawDate": "2025-11-03",
+    "dailyPnL": -34786.5001,
+    "trades": 0,
+    "roi": "-0.35",
+    "cumulativePnL": 5677249.178999999
+  },
+  {
+    "date": "Nov 4, 2025",
+    "rawDate": "2025-11-04",
+    "dailyPnL": 166800.2499,
+    "trades": 0,
+    "roi": "1.67",
+    "cumulativePnL": 5844049.428899999
+  },
+  {
+    "date": "Nov 6, 2025",
+    "rawDate": "2025-11-06",
+    "dailyPnL": 97973.4991,
+    "trades": 0,
+    "roi": "0.98",
+    "cumulativePnL": 5942022.927999998
+  },
+  {
+    "date": "Nov 7, 2025",
+    "rawDate": "2025-11-07",
+    "dailyPnL": -85443.2501,
+    "trades": 0,
+    "roi": "-0.85",
+    "cumulativePnL": 5856579.677899999
+  },
+  {
+    "date": "Nov 10, 2025",
+    "rawDate": "2025-11-10",
+    "dailyPnL": -51791.0022,
+    "trades": 0,
+    "roi": "-0.52",
+    "cumulativePnL": 5804788.675699999
+  },
+  {
+    "date": "Nov 11, 2025",
+    "rawDate": "2025-11-11",
+    "dailyPnL": -77806.0003,
+    "trades": 0,
+    "roi": "-0.78",
+    "cumulativePnL": 5726982.675399998
+  },
+  {
+    "date": "Nov 12, 2025",
+    "rawDate": "2025-11-12",
+    "dailyPnL": -86864.2529,
+    "trades": 0,
+    "roi": "-0.87",
+    "cumulativePnL": 5640118.4224999985
+  },
+  {
+    "date": "Nov 13, 2025",
+    "rawDate": "2025-11-13",
+    "dailyPnL": 251812.5102,
+    "trades": 0,
+    "roi": "2.52",
+    "cumulativePnL": 5891930.932699999
+  },
+  {
+    "date": "Nov 14, 2025",
+    "rawDate": "2025-11-14",
+    "dailyPnL": -43482.7933,
+    "trades": 0,
+    "roi": "-0.43",
+    "cumulativePnL": 5848448.139399999
+  },
+  {
+    "date": "Nov 17, 2025",
+    "rawDate": "2025-11-17",
+    "dailyPnL": 136756.2064,
+    "trades": 0,
+    "roi": "1.37",
+    "cumulativePnL": 5985204.345799998
+  },
+  {
+    "date": "Nov 18, 2025",
+    "rawDate": "2025-11-18",
+    "dailyPnL": 147890.2442,
+    "trades": 0,
+    "roi": "1.48",
+    "cumulativePnL": 6133094.589999998
+  },
+  {
+    "date": "Nov 19, 2025",
+    "rawDate": "2025-11-19",
+    "dailyPnL": 1574.7397,
+    "trades": 0,
+    "roi": "0.02",
+    "cumulativePnL": 6134669.329699998
+  },
+  {
+    "date": "Nov 20, 2025",
+    "rawDate": "2025-11-20",
+    "dailyPnL": -68490.5012,
+    "trades": 0,
+    "roi": "-0.68",
+    "cumulativePnL": 6066178.828499998
+  },
+  {
+    "date": "Nov 21, 2025",
+    "rawDate": "2025-11-21",
+    "dailyPnL": -93425.5528,
+    "trades": 0,
+    "roi": "-0.93",
+    "cumulativePnL": 5972753.275699998
+  },
+  {
+    "date": "Nov 24, 2025",
+    "rawDate": "2025-11-24",
+    "dailyPnL": 71168.995,
+    "trades": 0,
+    "roi": "0.71",
+    "cumulativePnL": 6043922.270699998
+  },
+  {
+    "date": "Nov 25, 2025",
+    "rawDate": "2025-11-25",
+    "dailyPnL": -219127.72,
+    "trades": 0,
+    "roi": "-2.19",
+    "cumulativePnL": 5824794.550699999
+  },
+  {
+    "date": "Nov 26, 2025",
+    "rawDate": "2025-11-26",
+    "dailyPnL": 93030,
+    "trades": 0,
+    "roi": "0.93",
+    "cumulativePnL": 5917824.550699999
+  },
+  {
+    "date": "Nov 27, 2025",
+    "rawDate": "2025-11-27",
+    "dailyPnL": -66974.7096,
+    "trades": 0,
+    "roi": "-0.67",
+    "cumulativePnL": 5850849.841099999
+  },
+  {
+    "date": "Nov 28, 2025",
+    "rawDate": "2025-11-28",
+    "dailyPnL": -27540.44,
+    "trades": 0,
+    "roi": "-0.28",
+    "cumulativePnL": 5823309.4010999985
+  },
+  {
+    "date": "Dec 1, 2025",
+    "rawDate": "2025-12-01",
+    "dailyPnL": 38025.2375,
+    "trades": 0,
+    "roi": "0.38",
+    "cumulativePnL": 5861334.638599998
+  },
+  {
+    "date": "Dec 2, 2025",
+    "rawDate": "2025-12-02",
+    "dailyPnL": 341863.2501,
+    "trades": 0,
+    "roi": "3.42",
+    "cumulativePnL": 6203197.888699998
+  },
+  {
+    "date": "Dec 3, 2025",
+    "rawDate": "2025-12-03",
+    "dailyPnL": -29917.9994,
+    "trades": 0,
+    "roi": "-0.30",
+    "cumulativePnL": 6173279.889299998
+  },
+  {
+    "date": "Dec 4, 2025",
+    "rawDate": "2025-12-04",
+    "dailyPnL": 151890.75,
+    "trades": 0,
+    "roi": "1.52",
+    "cumulativePnL": 6325170.639299998
+  },
+  {
+    "date": "Dec 5, 2025",
+    "rawDate": "2025-12-05",
+    "dailyPnL": -88920.9994,
+    "trades": 0,
+    "roi": "-0.89",
+    "cumulativePnL": 6236249.639899998
+  },
+  {
+    "date": "Dec 8, 2025",
+    "rawDate": "2025-12-08",
+    "dailyPnL": 254145.0003,
+    "trades": 0,
+    "roi": "2.54",
+    "cumulativePnL": 6490394.640199998
+  },
+  {
+    "date": "Dec 9, 2025",
+    "rawDate": "2025-12-09",
+    "dailyPnL": 5239.0002,
+    "trades": 0,
+    "roi": "0.05",
+    "cumulativePnL": 6495633.640399998
+  },
+  {
+    "date": "Dec 10, 2025",
+    "rawDate": "2025-12-10",
+    "dailyPnL": -21110.25,
+    "trades": 0,
+    "roi": "-0.21",
+    "cumulativePnL": 6474523.390399998
+  },
+  {
+    "date": "Dec 11, 2025",
+    "rawDate": "2025-12-11",
+    "dailyPnL": -234148.2,
+    "trades": 0,
+    "roi": "-2.34",
+    "cumulativePnL": 6240375.190399998
+  },
+  {
+    "date": "Dec 12, 2025",
+    "rawDate": "2025-12-12",
+    "dailyPnL": 37539.0001,
+    "trades": 0,
+    "roi": "0.38",
+    "cumulativePnL": 6277914.190499998
+  },
+  {
+    "date": "Dec 15, 2025",
+    "rawDate": "2025-12-15",
+    "dailyPnL": -47169.255,
+    "trades": 0,
+    "roi": "-0.47",
+    "cumulativePnL": 6230744.935499998
+  },
+  {
+    "date": "Dec 16, 2025",
+    "rawDate": "2025-12-16",
+    "dailyPnL": -84627.7499,
+    "trades": 0,
+    "roi": "-0.85",
+    "cumulativePnL": 6146117.185599998
+  },
+  {
+    "date": "Dec 17, 2025",
+    "rawDate": "2025-12-17",
+    "dailyPnL": 34746.5,
+    "trades": 0,
+    "roi": "0.35",
+    "cumulativePnL": 6180863.685599998
+  },
+  {
+    "date": "Dec 18, 2025",
+    "rawDate": "2025-12-18",
+    "dailyPnL": -114688.75,
+    "trades": 0,
+    "roi": "-1.15",
+    "cumulativePnL": 6066174.935599998
+  },
+  {
+    "date": "Dec 19, 2025",
+    "rawDate": "2025-12-19",
+    "dailyPnL": 34878.7464,
+    "trades": 0,
+    "roi": "0.35",
+    "cumulativePnL": 6101053.681999997
+  },
+  {
+    "date": "Dec 22, 2025",
+    "rawDate": "2025-12-22",
+    "dailyPnL": 14711.1787,
+    "trades": 0,
+    "roi": "0.15",
+    "cumulativePnL": 6115764.860699997
+  },
+  {
+    "date": "Dec 23, 2025",
+    "rawDate": "2025-12-23",
+    "dailyPnL": -77894.4427,
+    "trades": 0,
+    "roi": "-0.78",
+    "cumulativePnL": 6037870.417999998
+  },
+  {
+    "date": "Dec 24, 2025",
+    "rawDate": "2025-12-24",
+    "dailyPnL": 63103,
+    "trades": 0,
+    "roi": "0.63",
+    "cumulativePnL": 6100973.417999998
+  },
+  {
+    "date": "Dec 26, 2025",
+    "rawDate": "2025-12-26",
+    "dailyPnL": 21601.75,
+    "trades": 0,
+    "roi": "0.22",
+    "cumulativePnL": 6122575.167999998
+  },
+  {
+    "date": "Dec 29, 2025",
+    "rawDate": "2025-12-29",
+    "dailyPnL": 79130.4988,
+    "trades": 0,
+    "roi": "0.79",
+    "cumulativePnL": 6201705.666799998
+  },
+  {
+    "date": "Dec 30, 2025",
+    "rawDate": "2025-12-30",
+    "dailyPnL": 51653.7848,
+    "trades": 0,
+    "roi": "0.52",
+    "cumulativePnL": 6253359.4515999975
+  },
+  {
+    "date": "Dec 31, 2025",
+    "rawDate": "2025-12-31",
+    "dailyPnL": -15252.25,
+    "trades": 0,
+    "roi": "-0.15",
+    "cumulativePnL": 6238107.2015999975
+  },
+  {
+    "date": "Jan 1, 2026",
+    "rawDate": "2026-01-01",
+    "dailyPnL": -37070.256,
+    "trades": 0,
+    "roi": "-0.37",
+    "cumulativePnL": 6201036.945599997
+  },
+  {
+    "date": "Jan 2, 2026",
+    "rawDate": "2026-01-02",
+    "dailyPnL": -442.25,
+    "trades": 0,
+    "roi": "-0.00",
+    "cumulativePnL": 6200594.695599997
+  },
+  {
+    "date": "Jan 5, 2026",
+    "rawDate": "2026-01-05",
+    "dailyPnL": -68606.8185,
+    "trades": 0,
+    "roi": "-0.69",
+    "cumulativePnL": 6131987.877099997
+  },
+  {
+    "date": "Jan 6, 2026",
+    "rawDate": "2026-01-06",
+    "dailyPnL": -113367.274,
+    "trades": 0,
+    "roi": "-1.13",
+    "cumulativePnL": 6018620.603099997
+  },
+  {
+    "date": "Jan 7, 2026",
+    "rawDate": "2026-01-07",
+    "dailyPnL": -76958.75,
+    "trades": 0,
+    "roi": "-0.77",
+    "cumulativePnL": 5941661.853099997
+  },
+  {
+    "date": "Jan 8, 2026",
+    "rawDate": "2026-01-08",
+    "dailyPnL": 161120.25,
+    "trades": 0,
+    "roi": "1.61",
+    "cumulativePnL": 6102782.103099997
+  },
+  {
+    "date": "Jan 9, 2026",
+    "rawDate": "2026-01-09",
+    "dailyPnL": 43584.9999,
+    "trades": 0,
+    "roi": "0.44",
+    "cumulativePnL": 6146367.102999997
+  },
+  {
+    "date": "Jan 12, 2026",
+    "rawDate": "2026-01-12",
+    "dailyPnL": -88802.5001,
+    "trades": 0,
+    "roi": "-0.89",
+    "cumulativePnL": 6057564.6028999975
+  },
+  {
+    "date": "Jan 13, 2026",
+    "rawDate": "2026-01-13",
+    "dailyPnL": -120648.7416,
+    "trades": 0,
+    "roi": "-1.21",
+    "cumulativePnL": 5936915.861299997
+  },
+  {
+    "date": "Jan 14, 2026",
+    "rawDate": "2026-01-14",
+    "dailyPnL": 10365.0002,
+    "trades": 0,
+    "roi": "0.10",
+    "cumulativePnL": 5947280.861499997
+  },
+  {
+    "date": "Jan 16, 2026",
+    "rawDate": "2026-01-16",
+    "dailyPnL": -4241.75,
+    "trades": 0,
+    "roi": "-0.04",
+    "cumulativePnL": 5943039.111499997
+  },
+  {
+    "date": "Jan 19, 2026",
+    "rawDate": "2026-01-19",
+    "dailyPnL": 20511.489,
+    "trades": 0,
+    "roi": "0.21",
+    "cumulativePnL": 5963550.600499997
+  },
+  {
+    "date": "Jan 20, 2026",
+    "rawDate": "2026-01-20",
+    "dailyPnL": 133283.2501,
+    "trades": 0,
+    "roi": "1.33",
+    "cumulativePnL": 6096833.850599997
+  },
+  {
+    "date": "Jan 21, 2026",
+    "rawDate": "2026-01-21",
+    "dailyPnL": 97238.3,
+    "trades": 0,
+    "roi": "0.97",
+    "cumulativePnL": 6194072.150599997
+  },
+  {
+    "date": "Jan 22, 2026",
+    "rawDate": "2026-01-22",
+    "dailyPnL": -103373.8001,
+    "trades": 0,
+    "roi": "-1.03",
+    "cumulativePnL": 6090698.350499997
+  },
+  {
+    "date": "Jan 23, 2026",
+    "rawDate": "2026-01-23",
+    "dailyPnL": 111739.7499,
+    "trades": 0,
+    "roi": "1.12",
+    "cumulativePnL": 6202438.100399997
+  },
+  {
+    "date": "Jan 27, 2026",
+    "rawDate": "2026-01-27",
+    "dailyPnL": 17288.4998,
+    "trades": 0,
+    "roi": "0.17",
+    "cumulativePnL": 6219726.600199997
+  },
+  {
+    "date": "Jan 28, 2026",
+    "rawDate": "2026-01-28",
+    "dailyPnL": -17855.2539,
+    "trades": 0,
+    "roi": "-0.18",
+    "cumulativePnL": 6201871.3462999975
+  },
+  {
+    "date": "Jan 29, 2026",
+    "rawDate": "2026-01-29",
+    "dailyPnL": -145454.7479,
+    "trades": 0,
+    "roi": "-1.45",
+    "cumulativePnL": 6056416.598399998
+  },
+  {
+    "date": "Jan 30, 2026",
+    "rawDate": "2026-01-30",
+    "dailyPnL": -39466.7501,
+    "trades": 0,
+    "roi": "-0.39",
+    "cumulativePnL": 6016949.848299998
+  },
+  {
+    "date": "Feb 1, 2026",
+    "rawDate": "2026-02-01",
+    "dailyPnL": 27921.75,
+    "trades": 0,
+    "roi": "0.28",
+    "cumulativePnL": 6044871.598299998
+  },
+  {
+    "date": "Feb 2, 2026",
+    "rawDate": "2026-02-02",
+    "dailyPnL": 55378.2392,
+    "trades": 0,
+    "roi": "0.55",
+    "cumulativePnL": 6100249.837499998
+  },
+  {
+    "date": "Feb 3, 2026",
+    "rawDate": "2026-02-03",
+    "dailyPnL": 178322.2663,
+    "trades": 0,
+    "roi": "1.78",
+    "cumulativePnL": 6278572.103799998
+  },
+  {
+    "date": "Feb 4, 2026",
+    "rawDate": "2026-02-04",
+    "dailyPnL": 41852.75,
+    "trades": 0,
+    "roi": "0.42",
+    "cumulativePnL": 6320424.853799998
+  },
+  {
+    "date": "Feb 5, 2026",
+    "rawDate": "2026-02-05",
+    "dailyPnL": 9802.2505,
+    "trades": 0,
+    "roi": "0.10",
+    "cumulativePnL": 6330227.104299998
+  },
+  {
+    "date": "Feb 6, 2026",
+    "rawDate": "2026-02-06",
+    "dailyPnL": 6804.9975,
+    "trades": 0,
+    "roi": "0.07",
+    "cumulativePnL": 6337032.1017999975
+  },
+  {
+    "date": "Feb 9, 2026",
+    "rawDate": "2026-02-09",
+    "dailyPnL": -20404.7472,
+    "trades": 0,
+    "roi": "-0.20",
+    "cumulativePnL": 6316627.354599997
+  },
+  {
+    "date": "Feb 10, 2026",
+    "rawDate": "2026-02-10",
+    "dailyPnL": 205611.5053,
+    "trades": 0,
+    "roi": "2.06",
+    "cumulativePnL": 6522238.859899998
+  },
+  {
+    "date": "Feb 11, 2026",
+    "rawDate": "2026-02-11",
+    "dailyPnL": 76888.2505,
+    "trades": 0,
+    "roi": "0.77",
+    "cumulativePnL": 6599127.110399998
+  },
+  {
+    "date": "Feb 12, 2026",
+    "rawDate": "2026-02-12",
+    "dailyPnL": 162324.5002,
+    "trades": 0,
+    "roi": "1.62",
+    "cumulativePnL": 6761451.610599997
+  },
+  {
+    "date": "Feb 13, 2026",
+    "rawDate": "2026-02-13",
+    "dailyPnL": -28131,
+    "trades": 0,
+    "roi": "-0.28",
+    "cumulativePnL": 6733320.610599997
+  },
+  {
+    "date": "Feb 16, 2026",
+    "rawDate": "2026-02-16",
+    "dailyPnL": 13297.7446,
+    "trades": 0,
+    "roi": "0.13",
+    "cumulativePnL": 6746618.355199997
+  },
+  {
+    "date": "Feb 17, 2026",
+    "rawDate": "2026-02-17",
+    "dailyPnL": 38435.2432,
+    "trades": 0,
+    "roi": "0.38",
+    "cumulativePnL": 6785053.598399998
+  },
+  {
+    "date": "Feb 18, 2026",
+    "rawDate": "2026-02-18",
+    "dailyPnL": -61428.4958,
+    "trades": 0,
+    "roi": "-0.61",
+    "cumulativePnL": 6723625.102599998
+  },
+  {
+    "date": "Feb 19, 2026",
+    "rawDate": "2026-02-19",
+    "dailyPnL": 359510.9851,
+    "trades": 0,
+    "roi": "3.60",
+    "cumulativePnL": 7083136.087699998
+  },
+  {
+    "date": "Feb 20, 2026",
+    "rawDate": "2026-02-20",
+    "dailyPnL": 4734.5,
+    "trades": 0,
+    "roi": "0.05",
+    "cumulativePnL": 7087870.587699998
+  }
+]

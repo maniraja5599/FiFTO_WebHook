@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiFTO Trade Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #11141a;
+            color: #e2e8f0;
+        }
+
+        .bg-dark-card {
+            background-color: #1a1d24;
+        }
+
+        .border-gray-dark {
+            border-color: #2e323a;
+        }
+
+        .text-pnl-pos {
+            color: #10b981;
+        }
+
+        .text-pnl-neg {
+            color: #f43f5e;
+        }
+
+        .badge-paper {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        .badge-automatic {
+            background-color: #ffffff;
+            color: #11141a;
+        }
+
+        .badge-status {
+            color: #f59e0b;
+        }
+
+        .transition-height {
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #11141a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2e323a;
+            border-radius: 10px;
+        }
+
+        .view-hidden {
+            display: none !important;
+        }
+
+        /* Premium Modal Styles */
+        .modal-glass {
+            background: rgba(26, 29, 36, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-premium {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .input-premium:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .setup-guide-card {
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <!-- View 1: Main List (Recent Transactions) -->
+    <div id="main-list-view" class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-white">Recent Transactions</h2>
+            <button onclick="showCreateModal()"
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center gap-2 transition-colors text-sm font-semibold">
+                <i class="fas fa-plus"></i> Create Trading Strategy
+            </button>
+        </div>
+        <div id="strategy-list" class="space-y-3">
+            <!-- Items injected here -->
+            <div class="text-center py-10 opacity-50">Loading strategies...</div>
+        </div>
+    </div>
+
+    <!-- View 3: Strategy Detail View -->
+    <div id="detail-view" class="max-w-6xl mx-auto view-hidden pb-12">
+        <!-- Header -->
+        <div class="flex items-center gap-4 mb-8">
+            <button onclick="showListView()" class="p-2 hover:bg-white/5 rounded-lg transition-colors"><i
+                    class="fas fa-arrow-left"></i></button>
+            <h1 id="detail-strategy-name" class="text-2xl font-bold text-white flex items-center gap-3">
+                Strategy Name
+            </h1>
+            <div class="ml-auto flex gap-3">
+                <button id="detail-stop-btn"
+                    class="flex items-center gap-2 px-4 py-1.5 border rounded-lg transition-all">
+                    <i class="far fa-stop-circle"></i> Stop Run
+                </button>
+                <button onclick="showEditModal(currentDetailId)"
+                    class="px-4 py-1.5 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 hover:bg-blue-600/30 transition-colors">Edit
+                    Run</button>
+                <button onclick="deleteStrategy(currentDetailId)"
+                    class="px-4 py-1.5 bg-red-600/20 text-red-400 rounded-lg border border-red-500/30 hover:bg-red-600/30 transition-colors">Delete</button>
+            </div>
+        </div>
+
+        <!-- Summary Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <!-- PnL -->
+            <div class="bg-dark-card border border-gray-dark p-5 rounded-2xl shadow-xl">
+                <div class="flex justify-between items-start opacity-50 mb-3">
+                    <span class="text-[10px] uppercase font-bold tracking-widest">Completed Profit</span>
+                    <i class="fas fa-wallet text-xs"></i>
+                </div>
+                <div id="detail-pnl" class="text-2xl font-bold tracking-tight">₹ 0</div>
+            </div>
+            <!-- Run Type -->
+            <div class="bg-dark-card border border-gray-dark p-5 rounded-2xl shadow-xl">
+                <div class="flex justify-between items-start opacity-50 mb-3">
+                    <span class="text-[10px] uppercase font-bold tracking-widest">Run Mode</span>
+                    <i class="fas fa-microchip text-xs"></i>
+                </div>
+                <div class="text-2xl font-bold tracking-tight font-mono opacity-90">Live</div>
+            </div>
+            <!-- Order Type -->
+            <div class="bg-dark-card border border-gray-dark p-5 rounded-2xl shadow-xl">
+                <div class="flex justify-between items-start opacity-50 mb-3">
+                    <span class="text-[10px] uppercase font-bold tracking-widest">Type</span>
+                    <i class="fas fa-bolt text-xs"></i>
+                </div>
+                <div id="detail-order-type" class="text-2xl font-bold tracking-tight capitalize">Automatic</div>
+            </div>
+            <!-- Status -->
+            <div class="bg-dark-card border border-gray-dark p-5 rounded-2xl shadow-xl">
+                <div class="flex justify-between items-start opacity-50 mb-3">
+                    <span class="text-[10px] uppercase font-bold tracking-widest">Status</span>
+                    <i class="fas fa-signal text-xs"></i>
+                </div>
+                <div id="detail-status" class="text-2xl font-bold tracking-tight">Started</div>
+            </div>
+        </div>
+
+        <!-- Webhook Configuration -->
+        <div class="bg-dark-card border border-gray-dark p-6 rounded-2xl shadow-xl mb-8">
+            <h4 class="text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <i class="fas fa-satellite-dish text-blue-500"></i> TradingView Webhook Configuration
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="space-y-2">
+                    <label class="block text-[10px] font-bold text-blue-400 uppercase tracking-wider">BUY ENTRY
+                        URL</label>
+                    <div
+                        class="flex items-center gap-2 bg-black/40 p-3 rounded-xl border border-gray-dark/50 group hover:border-blue-500/30 transition-colors">
+                        <code id="detail-webhook-buy-entry"
+                            class="text-[10px] text-gray-400 flex-1 truncate font-mono">...</code>
+                        <button onclick="copyToClipboard('detail-webhook-buy-entry')"
+                            class="text-gray-600 hover:text-white transition-colors">
+                            <i class="fas fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-[10px] font-bold text-blue-300/70 uppercase tracking-wider">BUY EXIT
+                        URL</label>
+                    <div
+                        class="flex items-center gap-2 bg-black/40 p-3 rounded-xl border border-gray-dark/50 group hover:border-blue-500/20 transition-colors">
+                        <code id="detail-webhook-buy-exit"
+                            class="text-[10px] text-gray-400 flex-1 truncate font-mono">...</code>
+                        <button onclick="copyToClipboard('detail-webhook-buy-exit')"
+                            class="text-gray-600 hover:text-white transition-colors">
+                            <i class="fas fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-[10px] font-bold text-red-400 uppercase tracking-wider">SELL ENTRY
+                        URL</label>
+                    <div
+                        class="flex items-center gap-2 bg-black/40 p-3 rounded-xl border border-gray-dark/50 group hover:border-red-500/30 transition-colors">
+                        <code id="detail-webhook-sell-entry"
+                            class="text-[10px] text-gray-400 flex-1 truncate font-mono">...</code>
+                        <button onclick="copyToClipboard('detail-webhook-sell-entry')"
+                            class="text-gray-600 hover:text-white transition-colors">
+                            <i class="fas fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-[10px] font-bold text-red-300/70 uppercase tracking-wider">SELL EXIT
+                        URL</label>
+                    <div
+                        class="flex items-center gap-2 bg-black/40 p-3 rounded-xl border border-gray-dark/50 group hover:border-red-500/20 transition-colors">
+                        <code id="detail-webhook-sell-exit"
+                            class="text-[10px] text-gray-400 flex-1 truncate font-mono">...</code>
+                        <button onclick="copyToClipboard('detail-webhook-sell-exit')"
+                            class="text-gray-600 hover:text-white transition-colors">
+                            <i class="fas fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-[10px] text-gray-500 italic opacity-60">* Use these unique URLs for one-click setup.
+                Strategy ID is automatically included.</p>
+
+            <div class="mt-8 pt-8 border-t border-gray-dark/50 space-y-4">
+                <h5 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Universal Setup (Requires
+                    JSON)</h5>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="block text-[9px] font-bold text-gray-500 uppercase">Webhook URL</label>
+                        <div class="flex items-center gap-2 bg-black/20 p-2.5 rounded-xl border border-gray-dark/50">
+                            <code id="tv-webhook-url" class="text-[9px] text-gray-300 flex-1 truncate">...</code>
+                            <button onclick="copyToClipboard('tv-webhook-url')"
+                                class="text-gray-500 hover:text-white transition-colors">
+                                <i class="fas fa-copy text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-[9px] font-bold text-gray-500 uppercase">JSON Payload</label>
+                        <div class="relative group">
+                            <pre id="tv-json-payload"
+                                class="text-[8px] bg-black/20 p-2.5 rounded-xl border border-gray-dark/50 text-green-400 overflow-x-auto min-h-[60px]">...</pre>
+                            <button onclick="copyToClipboard('tv-json-payload')"
+                                class="absolute top-2 right-2 text-gray-500 hover:text-white transition-colors">
+                                <i class="fas fa-copy text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Manual Trigger Card -->
+            <div class="lg:col-span-1">
+                <div class="bg-dark-card border border-gray-dark rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="p-4 border-b border-gray-dark flex justify-between items-center bg-white/5">
+                        <div id="trigger-symbol-label" class="font-bold text-xs tracking-widest text-white/90">SYMBOL
+                        </div>
+                        <div class="text-[10px] text-gray-500 font-mono">Profit <span class="text-pnl-pos">---</span>
+                        </div>
+                    </div>
+                    <div class="divide-y divide-gray-dark/50">
+                        <div class="flex justify-between items-center p-5 hover:bg-white/5 transition-colors">
+                            <span class="text-[11px] font-bold text-gray-400 tracking-wider">BUY ENTRY</span>
+                            <button onclick="sendQuickSignal('BUY')"
+                                class="px-5 py-1.5 text-[10px] font-bold text-blue-500 border border-blue-500/30 rounded-full hover:bg-blue-500/10 transition-all uppercase">Trigger</button>
+                        </div>
+                        <div class="flex justify-between items-center p-5 hover:bg-white/5 transition-colors">
+                            <span class="text-[11px] font-bold text-gray-400 tracking-wider">SELL ENTRY</span>
+                            <button onclick="sendQuickSignal('SELL')"
+                                class="px-5 py-1.5 text-[10px] font-bold text-red-500 border border-red-500/30 rounded-full hover:bg-red-500/10 transition-all uppercase">Trigger</button>
+                        </div>
+                        <div class="flex justify-between items-center p-5 hover:bg-white/5 transition-colors">
+                            <span class="text-[11px] font-bold text-gray-400 tracking-wider">FORCE CLOSE</span>
+                            <button onclick="sendQuickSignal('CLOSE')"
+                                class="px-5 py-1.5 text-[10px] font-bold text-orange-500 border border-orange-500/30 rounded-full hover:bg-orange-500/10 transition-all uppercase">Trigger</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions History -->
+            <div class="lg:col-span-2">
+                <div class="bg-dark-card border border-gray-dark rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="p-5 border-b border-gray-dark flex items-center justify-between bg-white/5">
+                        <div class="flex items-center gap-4">
+                            <h3 class="font-bold text-xs uppercase tracking-widest text-white/70">Order Details</h3>
+                            <div id="detail-stats-badges" class="flex gap-2"></div>
+                        </div>
+                        <button
+                            class="px-3 py-1 bg-white/5 text-[10px] font-bold rounded-lg border border-gray-dark hover:bg-white/10 transition-all">CSV</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-[11px] border-collapse font-mono">
+                            <thead>
+                                <tr
+                                    class="border-b border-gray-dark bg-black/40 text-[9px] uppercase tracking-widest text-gray-500">
+                                    <th class="px-6 py-4">#</th>
+                                    <th class="px-6 py-4">Instrument</th>
+                                    <th class="px-6 py-4">Entry</th>
+                                    <th class="px-6 py-4">Exit</th>
+                                    <th class="px-6 py-4 text-right">Profit</th>
+                                    <th class="px-6 py-4 text-right">Cum. Profit</th>
+                                    <th class="px-6 py-4 text-center">Chart</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detail-history-body" class="divide-y divide-gray-dark/30"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create/Edit Strategy Modal -->
+    <div id="create-modal" onclick="hideCreateModal()"
+        class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 view-hidden transition-opacity duration-300">
+        <div onclick="event.stopPropagation()"
+            class="modal-glass rounded-3xl w-full max-w-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden">
+
+            <!-- Modal Header -->
+            <div class="p-8 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
+                <div>
+                    <h3 id="modal-title" class="text-2xl font-bold text-white tracking-tight">Create New Strategy</h3>
+                    <p class="text-gray-400 text-sm mt-1">Configure your automated trading workflow</p>
+                </div>
+                <button onclick="hideCreateModal()"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="create-form" class="p-8 space-y-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
+                <input type="hidden" id="modal-mode" value="create">
+
+                <!-- Section: Asset Details -->
+                <div class="space-y-6">
+                    <h4
+                        class="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-indigo-500/30"></span> Asset Information
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Asset Type</label>
+                            <div class="relative">
+                                <select id="new-asset-type"
+                                    class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none appearance-none cursor-pointer">
+                                    <option value="FUTSTK">Future Stock (FUTSTK)</option>
+                                    <option value="STOCK">Stock (STOCK)</option>
+                                    <option value="STKOPT">Stock Option (STKOPT)</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-[10px]"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Symbol (F&O)</label>
+                            <div class="relative">
+                                <input type="text" id="new-symbol-search" list="fo-stocks"
+                                    placeholder="Search symbol..."
+                                    class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none placeholder:text-gray-600">
+                                <i
+                                    class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none text-xs"></i>
+                            </div>
+                            <datalist id="fo-stocks"></datalist>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Unique Code</label>
+                            <input type="text" id="new-unique-code" maxlength="6" placeholder="e.g. A1"
+                                class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none uppercase tracking-widest placeholder:text-gray-600">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Strategy ID
+                                (Auto-generated)</label>
+                            <input type="text" id="new-id" required readonly
+                                class="w-full bg-indigo-500/5 border border-indigo-500/20 rounded-xl px-4 py-3.5 text-sm text-indigo-400 font-bold opacity-80 cursor-not-allowed">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Strategy Configuration -->
+                <div class="space-y-6">
+                    <h4
+                        class="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-indigo-500/30"></span> Basic Configuration
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Strategy Name</label>
+                            <input type="text" id="new-name" required placeholder="My Awesome Strategy"
+                                class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Execution Type</label>
+                            <div class="relative">
+                                <select id="new-type"
+                                    class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none appearance-none cursor-pointer">
+                                    <option value="Automatic">Automatic Delivery</option>
+                                    <option value="Paper">Paper Trading</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Connectivity -->
+                <div class="space-y-6">
+                    <h4
+                        class="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-indigo-500/30"></span> Notifications & Execution
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Telegram Bot Token</label>
+                            <input type="text" id="new-tg-token" placeholder="123456789:ABC..."
+                                class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-400 ml-1">Telegram Chat ID</label>
+                            <input type="text" id="new-tg-chat-id" placeholder="-100..."
+                                class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-gray-400 ml-1">Quantman Webhook URL</label>
+                        <input type="text" id="new-qm-webhook" placeholder="https://quantman.in/webhooks/..."
+                            class="w-full input-premium rounded-xl px-4 py-3.5 text-sm focus:outline-none">
+                        <p class="text-[10px] text-gray-500 ml-1">External destination where signals will be forwarded
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TradingView Setup Helper -->
+                <div id="modal-tv-helper" class="setup-guide-card p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4
+                            class="text-[11px] font-bold text-indigo-400 uppercase tracking-[0.1em] flex items-center gap-2">
+                            <i class="fas fa-satellite-dish"></i> TradingView Integration Guide
+                        </h4>
+                        <span
+                            class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 text-[8px] font-bold uppercase tracking-widest">Auto
+                            Preview</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <label class="block text-[9px] font-bold text-gray-500 uppercase tracking-wider">Universal
+                                Webhook Endpoint</label>
+                            <div class="flex items-center gap-3 bg-black/40 p-3 rounded-xl border border-white/5 group">
+                                <code id="modal-tv-url"
+                                    class="text-[10px] text-gray-300 flex-1 truncate font-mono">http://61.2.75.161:8000/webhook</code>
+                                <button type="button" onclick="copyToClipboard('modal-tv-url')"
+                                    class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 text-gray-500 hover:text-white hover:bg-indigo-500/20 transition-all">
+                                    <i class="fas fa-copy text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="block text-[9px] font-bold text-gray-500 uppercase tracking-wider">Simple
+                                    Setup (Action URLs)</label>
+                                <div class="space-y-2">
+                                    <div
+                                        class="flex items-center gap-2 bg-black/30 p-2 rounded-lg border border-white/5">
+                                        <span class="text-[8px] font-bold text-blue-400 w-16 uppercase">Buy Entry</span>
+                                        <code id="modal-tv-buy-entry"
+                                            class="text-[8px] text-gray-500 flex-1 truncate">...</code>
+                                        <button type="button" onclick="copyToClipboard('modal-tv-buy-entry')"
+                                            class="text-gray-600 hover:text-white"><i
+                                                class="fas fa-copy text-xs scale-75"></i></button>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 bg-black/30 p-2 rounded-lg border border-white/5">
+                                        <span class="text-[8px] font-bold text-red-400 w-16 uppercase">Sell Entry</span>
+                                        <code id="modal-tv-sell-entry"
+                                            class="text-[8px] text-gray-500 flex-1 truncate">...</code>
+                                        <button type="button" onclick="copyToClipboard('modal-tv-sell-entry')"
+                                            class="text-gray-600 hover:text-white"><i
+                                                class="fas fa-copy text-xs scale-75"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="block text-[9px] font-bold text-gray-500 uppercase tracking-wider">Universal
+                                    JSON Payload</label>
+                                <div class="relative group">
+                                    <pre id="modal-tv-payload"
+                                        class="text-[9px] bg-black/40 p-3 rounded-xl border border-white/5 text-emerald-400/80 overflow-x-auto min-h-[85px] font-mono leading-relaxed">{
+  "strategy": "...",
+  "symbol": "{{ticker}}",
+  "action": "{{strategy.order.action}}"
+}</pre>
+                                    <button type="button" onclick="copyToClipboard('modal-tv-payload')"
+                                        class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-md bg-white/5 text-gray-500 hover:text-white transition-all opacity-0 group-hover:opacity-100">
+                                        <i class="fas fa-copy text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer Actions -->
+                <div class="flex flex-col md:flex-row gap-4 pt-4 border-t border-white/5">
+                    <button type="button" onclick="hideCreateModal()"
+                        class="px-8 py-3.5 rounded-xl border border-white/10 text-gray-400 text-sm font-semibold hover:bg-white/5 hover:text-white transition-all order-2 md:order-1">
+                        Cancel
+                    </button>
+                    <button type="submit" id="modal-submit-btn"
+                        class="flex-1 btn-gradient py-3.5 rounded-xl text-white text-sm font-bold uppercase tracking-widest order-1 md:order-2">
+                        Create Strategy
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let strategies = {};
+        let currentDetailId = null;
+        const FO_STOCKS = ["RELIANCE", "TCS", "INFY", "HDFCBANK", "ICICIBANK", "AXISBANK", "SBIN", "KOTAKBANK", "BHARTIARTL", "ITC", "LT", "ASIANPAINT", "MARUTI", "SUNPHARMA", "TITAN", "BAJFINANCE", "HINDUNILVR", "ADANIENT", "ADANIPORTS", "APOLLOHOSP", "ASHOKLEY", "AUBANK", "AUROPHARMA", "BAJAJ-AUTO", "BAJAJFINSV", "BALKRISIND", "BANDHANBNK", "BANKBARODA", "BEL", "BHEL", "BIOCON", "BPCL", "BRITANNIA", "CANBK", "CHOLAFIN", "CIPLA", "COALINDIA", "COFORGE", "CONCOR", "COROMANDEL", "CROMPTON", "CUB", "CUMMINSIND", "DABUR", "DALBHARAT", "DEEPAKNTR", "DELTACORP", "DIVISLAB", "DIXON", "DLF", "DRREDDY", "EICHERMOT", "ESCORTS", "EXIDEIND", "FEDERALBNK", "GAIL", "GLENMARK", "GMRINFRA", "GNFC", "GODREJCP", "GODREJPROP", "GRANULES", "GRASIM", "GUJGASLTD", "HAL", "HCLTECH", "HDFCLIFE", "HEROMOTOCO", "HINDALCO", "HINDPETRO", "ICICIGI", "ICICIPRU", "IDFC", "IDFCFIRSTB", "IEX", "IGL", "INDHOTEL", "INDIACEM", "INDIGO", "INDUSINDBK", "INDUSTOWER", "INTELLECT", "IOC", "IPCALAB", "IRCTC", "JINDALSTEL", "JKCEMENT", "JSWSTEEL", "JUBLFOOD", "L&TFH", "LALPATHLAB", "LAURUSLABS", "LICHSGFIN", "LTIM", "LTTS", "LUPIN", "M&M", "M&MFIN", "MANAPPURAM", "MARICO", "MCDOWELL-N", "MCX", "METROPOLIS", "MFSL", "MGL", "MOTHERSON", "MPHASIS", "MRF", "MUTHOOTFIN", "NATIONALUM", "NAVINFLUOR", "NESTLEIND", "NMDC", "NTPC", "OBEROIRLTY", "OFSS", "ONGC", "PAGEIND", "PEL", "PERSISTENT", "PETRONET", "PFC", "PIDILITIND", "PIIND", "PNB", "POLYCAB", "POWERGRID", "PVRINOX", "RAIN", "RAMCOCEM", "RBLBANK", "RECLTD", "SAIL", "SBICARD", "SBILIFE", "SHREECEM", "SIEMENS", "SRF", "SRTRANSFIN", "SUNTV", "SYNGENE", "TATACHEM", "TATACOMM", "TATACONSUM", "TATAMOTORS", "TATAPOWER", "TATASTEEL", "TECHM", "TORNTPHARM", "TRENT", "TVSMOTOR", "UBL", "ULTRACEMCO", "UPL", "VEDL", "VOLTAS", "WIPRO", "ZEEL"];
+
+        async function fetchAll() {
+            try {
+                const res = await fetch('/api/strategies');
+                strategies = await res.json();
+                renderList();
+                if (currentDetailId) renderDetail(currentDetailId);
+                populateDatalist();
+            } catch (err) { console.error(err); }
+        }
+
+        function populateDatalist() {
+            const dl = document.getElementById('fo-stocks');
+            if (!dl) return;
+            dl.innerHTML = FO_STOCKS.map(s => `<option value="${s}">`).join('');
+        }
+
+        function showListView() {
+            document.getElementById('main-list-view').classList.remove('view-hidden');
+            document.getElementById('detail-view').classList.add('view-hidden');
+            currentDetailId = null;
+        }
+
+        function showDetailView(id) {
+            document.getElementById('main-list-view').classList.add('view-hidden');
+            document.getElementById('detail-view').classList.remove('view-hidden');
+            currentDetailId = id;
+            renderDetail(id);
+        }
+
+        function toggleRow(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            if (content.classList.contains('view-hidden')) {
+                content.classList.remove('view-hidden');
+                icon.classList.add('rotate-90');
+            } else {
+                content.classList.add('view-hidden');
+                icon.classList.remove('rotate-90');
+            }
+        }
+
+        function renderList() {
+            const container = document.getElementById('strategy-list');
+            container.innerHTML = '';
+
+            Object.entries(strategies).forEach(([id, config]) => {
+                const pnl = config.pnl || 0;
+                const pnlClass = pnl >= 0 ? 'text-pnl-pos' : 'text-pnl-neg';
+                const pnlValue = (pnl >= 0 ? '₹ ' : '- ₹ ') + Math.abs(pnl).toLocaleString();
+                const typeBadge = config.type === 'Paper' ? 'badge-paper' : 'badge-automatic';
+
+                const row = document.createElement('div');
+                row.className = 'bg-dark-card border border-gray-dark rounded-lg';
+                row.innerHTML = `
+                    <div class="px-4 py-4 flex items-center cursor-pointer hover:bg-white/5" onclick="toggleRow('${id}')">
+                        <i id="icon-${id}" class="fas fa-chevron-right text-xs opacity-50 transition-transform mr-4 px-2"></i>
+                        <div class="flex-1" onclick="event.stopPropagation(); showDetailView('${id}')">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-sm tracking-wide text-white font-mono opacity-80">${config.name.toUpperCase()}</span>
+                            </div>
+                            <div class="flex items-center gap-4 mt-1 text-[10px]">
+                                <span class="opacity-50">Order type:</span>
+                                <span class="${typeBadge} px-1.5 py-0.5 rounded font-bold text-[8px] uppercase">${config.type || 'Automatic'}</span>
+                                <span class="flex items-center gap-1 badge-status">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                                    Waiting for Next Entry Signal
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-right font-medium ${pnlClass}">
+                            ${pnlValue}
+                        </div>
+                    </div>
+                    <!-- Image 2 Area -->
+                    <div id="content-${id}" class="view-hidden border-t border-gray-dark bg-black/10">
+                        <table class="w-full text-left text-[11px] font-medium text-gray-400">
+                            <thead>
+                                <tr class="bg-black/20 border-b border-gray-dark">
+                                    <th class="px-6 py-2">Case</th>
+                                    <th class="px-6 py-2">Trading Symbol</th>
+                                    <th class="px-6 py-2">Qty</th>
+                                    <th class="px-6 py-2">Entry</th>
+                                    <th class="px-6 py-2">Exit</th>
+                                    <th class="px-6 py-2">LTP</th>
+                                    <th class="py-2 pr-6 text-right">Realized Profit</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-dark">
+                                ${renderLegs(config)}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function renderLegs(config) {
+            const legs = [];
+            // Merge open and completed for recent view
+            Object.entries(config.open_positions || {}).forEach(([symbol, data]) => {
+                legs.push({ symbol, qty: 1, entry_action: data.action, entry_price: data.entry_price, exit_action: '-', exit_price: '-', pnl: null });
+            });
+            (config.completed_transactions || []).slice(0, 5).forEach(leg => legs.push(leg));
+
+            if (legs.length === 0) return '<tr><td colspan="7" class="px-6 py-4 opacity-30 italic text-center">No recent entries</td></tr>';
+
+            return legs.map((leg, i) => `
+                <tr class="hover:bg-white/5">
+                    <td class="px-6 py-3">1</td>
+                    <td class="px-6 py-3 font-mono text-white opacity-70">${leg.symbol}</td>
+                    <td class="px-6 py-3">${leg.qty || 1}</td>
+                    <td class="px-6 py-3">
+                        <span class="bg-red-500/20 text-red-400 border border-red-500/30 px-1 py-0.5 rounded text-[8px] font-bold mr-2">${leg.entry_action}</span>
+                        <span class="text-white opacity-80">₹ ${leg.entry_price}</span>
+                    </td>
+                    <td class="px-6 py-3">
+                        <span class="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-1 py-0.5 rounded text-[8px] font-bold mr-2">${leg.exit_action}</span>
+                        <span class="text-white opacity-80">${leg.exit_price !== '-' ? '₹ ' + leg.exit_price : '-'}</span>
+                    </td>
+                    <td class="px-6 py-3 opacity-30 font-mono">-</td>
+                    <td class="py-3 pr-6 text-right ${leg.pnl >= 0 ? 'text-pnl-pos' : (leg.pnl === null ? '' : 'text-pnl-neg')}">
+                        ${leg.pnl !== null ? (leg.pnl >= 0 ? '₹ ' : '- ₹ ') + Math.abs(leg.pnl) : '-'}
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function renderDetail(id) {
+            const config = strategies[id];
+            if (!config) return;
+
+            document.getElementById('detail-strategy-name').innerHTML = `${config.name} <i class="fas fa-pen text-xs opacity-50 cursor-pointer"></i>`;
+
+            const pnl = config.pnl || 0;
+            const pnlDisplay = document.getElementById('detail-pnl');
+            pnlDisplay.innerHTML = (pnl >= 0 ? '' : '- ') + '₹ ' + Math.abs(pnl).toLocaleString();
+            pnlDisplay.className = `text-xl font-bold ${pnl >= 0 ? 'text-pnl-pos' : 'text-pnl-neg'}`;
+
+            document.getElementById('detail-order-type').innerText = config.type || 'automatic';
+            const statusDisplay = document.getElementById('detail-status');
+            statusDisplay.innerText = config.is_active ? 'Started' : 'Paused';
+            statusDisplay.className = `text-xl font-bold ${config.is_active ? 'text-blue-400' : 'text-red-400'}`;
+
+            const stopBtn = document.getElementById('detail-stop-btn');
+            stopBtn.innerHTML = config.is_active ? '<i class="far fa-stop-circle"></i> Stop Run' : '<i class="far fa-play-circle"></i> Start Run';
+            stopBtn.className = `flex items-center gap-2 px-4 py-1.5 border rounded-lg transition-all ${config.is_active ? 'border-red-500 text-red-500 hover:bg-red-500/10' : 'border-green-500 text-green-500 hover:bg-green-500/10'}`;
+            stopBtn.onclick = () => toggleStrategy(id);
+
+            // Populate Webhook Helper
+            const baseUrl = window.location.origin;
+            document.getElementById('detail-webhook-buy-entry').innerText = `${baseUrl}/webhook/${id}/BUY_ENTRY`;
+            document.getElementById('detail-webhook-buy-exit').innerText = `${baseUrl}/webhook/${id}/BUY_EXIT`;
+            document.getElementById('detail-webhook-sell-entry').innerText = `${baseUrl}/webhook/${id}/SELL_ENTRY`;
+            document.getElementById('detail-webhook-sell-exit').innerText = `${baseUrl}/webhook/${id}/SELL_EXIT`;
+
+            // Update Alert JSON Message (for universal webhook)
+            const universalUrl = `${baseUrl}/webhook`;
+            document.getElementById('tv-webhook-url').innerText = universalUrl;
+
+            const jsonPayload = {
+                strategy: id,
+                symbol: "{{ticker}}",
+                action: "{{strategy.order.action}}",
+                price: "{{strategy.order.price}}",
+                time: "{{timenow}}"
+            };
+            document.getElementById('tv-json-payload').innerText = JSON.stringify(jsonPayload, null, 2);
+
+            // Update Manual Trigger Symbol
+            const openSymbols = Object.keys(config.open_positions || {});
+            const historySymbols = (config.completed_transactions || []).map(t => t.symbol);
+            const focusSymbol = openSymbols[0] || historySymbols[0] || "SYMBOL";
+            document.getElementById('trigger-symbol-label').innerText = focusSymbol;
+
+            const badgeContainer = document.getElementById('detail-stats-badges');
+            const numCompleted = (config.completed_transactions || []).length;
+            const numIncomplete = Object.keys(config.open_positions || {}).length;
+            badgeContainer.innerHTML = `
+                <button class="bg-blue-600/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded text-[10px] font-bold tracking-tight">${numCompleted} Transactions</button>
+                <button class="bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 px-3 py-1 rounded text-[10px] font-bold tracking-tight flex items-center gap-1">
+                    <i class="fas fa-star text-[8px]"></i> ${numIncomplete} Incomplete
+                </button>
+            `;
+
+            const historyBody = document.getElementById('detail-history-body');
+            historyBody.innerHTML = '';
+
+            let cumulative = 0;
+            const history = [...(config.completed_transactions || [])].reverse();
+            let cumLevels = [];
+            history.forEach(leg => {
+                cumulative = round(cumulative + leg.pnl);
+                cumLevels.push(cumulative);
+            });
+
+            // Show newest at top
+            history.reverse().forEach((leg, i) => {
+                const curCum = cumLevels[history.length - 1 - i];
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-white/5 transition-colors';
+                row.innerHTML = `
+                    <td class="px-6 py-4">
+                        <div class="flex flex-col items-center opacity-30 gap-0.5">
+                            <i class="fas fa-chevron-up text-[6px]"></i>
+                            <i class="fas fa-chevron-down text-[6px]"></i>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-white/70">${history.length - i}</td>
+                    <td class="px-6 py-4 font-bold text-white/60">${leg.symbol}</td>
+                    <td class="px-6 py-4 font-medium text-[10px] text-white/40">${leg.entry_time}</td>
+                    <td class="px-6 py-4 font-medium text-[10px] text-white/40">${leg.exit_time}</td>
+                    <td class="px-6 py-4 text-right font-bold ${leg.pnl >= 0 ? 'text-pnl-pos' : 'text-pnl-neg'}">
+                        ${leg.pnl >= 0 ? '₹ ' : '- ₹ '} ${Math.abs(leg.pnl).toLocaleString()}
+                    </td>
+                    <td class="px-6 py-4 text-right font-bold ${curCum >= 0 ? 'text-pnl-pos' : 'text-pnl-neg'}">
+                         ${curCum >= 0 ? '₹ ' : '- ₹ '} ${Math.abs(curCum).toLocaleString()}
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <i class="fas fa-chart-line text-blue-500/50"></i>
+                    </td>
+                </tr>
+                `;
+                historyBody.appendChild(row);
+            });
+
+            // Prepend Incomplete (Open Positions)
+            Object.entries(config.open_positions || {}).forEach(([symbol, data], i) => {
+                const row = document.createElement('tr');
+                row.className = 'bg-yellow-500/5 hover:bg-yellow-500/10 transition-colors';
+                row.innerHTML = `
+                    <td class="px-6 py-4">
+                        <div class="flex flex-col items-center opacity-30 gap-0.5">
+                            <i class="fas fa-chevron-up text-[6px]"></i>
+                            <i class="fas fa-chevron-down text-[6px]"></i>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-white/70">${history.length + i + 1}</td>
+                    <td class="px-6 py-4 font-bold text-white/60">${symbol}</td>
+                    <td class="px-6 py-4 font-medium text-[10px] text-white/40">${data.time}</td>
+                    <td class="px-6 py-4 font-medium text-[10px] text-white/40">-</td>
+                    <td class="px-6 py-4 text-right">-</td>
+                    <td class="px-6 py-4 text-right text-yellow-500">
+                        <i class="fas fa-star text-[10px] animate-pulse"></i>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <i class="fas fa-chart-line text-yellow-500/30"></i>
+                    </td>
+                </tr>
+                `;
+                historyBody.prepend(row);
+            });
+        }
+
+        async function sendQuickSignal(action) {
+            if (!currentDetailId) return;
+            const symbol = document.getElementById('trigger-symbol-label').innerText;
+            if (symbol === "SYMBOL") {
+                const input = prompt("Enter Symbol (e.g. CDSL):");
+                if (!input) return;
+                document.getElementById('trigger-symbol-label').innerText = input.toUpperCase();
+                return; // Let them click again or auto-trigger? Let's just return for now.
+            }
+
+            const currentPrice = strategies[currentDetailId].open_positions[symbol]?.entry_price || 0;
+            const price = action === 'CLOSE' ? prompt("Enter Close Price:", currentPrice) : prompt("Enter Price:", "0");
+
+            if (price === null) return; // Cancelled
+
+            const payload = {
+                strategy: currentDetailId,
+                symbol: symbol,
+                action: action,
+                price: price || "0"
+            };
+
+            try {
+                const res = await fetch(`/api/strategies/${currentDetailId}/manual`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    fetchAll();
+                } else {
+                    alert('Signal Rejected: ' + data.message);
+                }
+            } catch (err) {
+                alert('Failed to send signal');
+            }
+        }
+
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.currentTarget;
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check text-green-500"></i>';
+                setTimeout(() => btn.innerHTML = original, 2000);
+            });
+        }
+
+        function round(num) { return Math.round(num * 100) / 100; }
+
+        async function toggleStrategy(id) {
+            try {
+                await fetch(`/api/strategies/${id}/toggle`, { method: 'POST' });
+                fetchAll();
+            } catch (err) { alert('Action failed'); }
+        }
+
+        // --- Create Strategy Modal Logic ---
+        function showCreateModal() {
+            document.getElementById('modal-title').innerText = 'Create New Strategy';
+            document.getElementById('modal-mode').value = 'create';
+            document.getElementById('modal-submit-btn').innerText = 'Create Now';
+            document.getElementById('new-id').value = '';
+            document.getElementById('new-asset-type').value = 'FUTSTK';
+            document.getElementById('new-symbol-search').value = '';
+            document.getElementById('new-unique-code').value = '';
+            document.getElementById('new-name').value = '';
+            document.getElementById('new-tg-token').value = '';
+            document.getElementById('new-tg-chat-id').value = '';
+            document.getElementById('new-qm-webhook').value = '';
+            updatePayloadHelper('...');
+            document.getElementById('create-modal').classList.remove('view-hidden');
+        }
+
+        function generateId() {
+            const type = document.getElementById('new-asset-type').value;
+            const symbol = document.getElementById('new-symbol-search').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+            const code = document.getElementById('new-unique-code').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+            if (symbol) {
+                const id = `${type}_${symbol}${code ? '_' + code : ''}`;
+                document.getElementById('new-id').value = id;
+                updatePayloadHelper(id);
+            } else {
+                document.getElementById('new-id').value = '';
+                updatePayloadHelper('...');
+            }
+        }
+
+        document.getElementById('new-asset-type').addEventListener('change', generateId);
+        document.getElementById('new-symbol-search').addEventListener('input', generateId);
+        document.getElementById('new-unique-code').addEventListener('input', generateId);
+
+        function updatePayloadHelper(id) {
+            const payload = {
+                strategy: id || '...',
+                symbol: "{{ticker}}",
+                action: "{{strategy.order.action}}",
+                price: "{{strategy.order.price}}",
+                time: "{{timenow}}"
+            };
+            document.getElementById('modal-tv-payload').innerText = JSON.stringify(payload, null, 2);
+
+            // Update action-specific URLs
+            const baseUrl = window.location.origin;
+            const strategyId = id || '...';
+            document.getElementById('modal-tv-buy-entry').innerText = `${baseUrl}/webhook/${strategyId}/BUY_ENTRY`;
+            document.getElementById('modal-tv-buy-exit').innerText = `${baseUrl}/webhook/${strategyId}/BUY_EXIT`;
+            document.getElementById('modal-tv-sell-entry').innerText = `${baseUrl}/webhook/${strategyId}/SELL_ENTRY`;
+            document.getElementById('modal-tv-sell-exit').innerText = `${baseUrl}/webhook/${strategyId}/SELL_EXIT`;
+        }
+
+        document.getElementById('new-id').addEventListener('input', (e) => {
+            // Auto-clean: replace everything except A-Z, 0-9, _ with nothing
+            const cleanedValue = e.target.value.toUpperCase().replace(/[^A-Z0-9_]/g, '');
+            if (e.target.value !== cleanedValue) {
+                e.target.value = cleanedValue;
+            }
+            updatePayloadHelper(cleanedValue);
+        });
+
+        function showEditModal(id) {
+            const config = strategies[id];
+            if (!config) return;
+            document.getElementById('modal-title').innerText = 'Edit Strategy';
+            document.getElementById('modal-mode').value = 'edit';
+            document.getElementById('modal-submit-btn').innerText = 'Update Now';
+            document.getElementById('new-id').value = id;
+            document.getElementById('new-id').disabled = true;
+            document.getElementById('new-name').value = config.name;
+            document.getElementById('new-type').value = config.type || 'Automatic';
+            document.getElementById('new-tg-token').value = config.telegram_bot_token || '';
+            document.getElementById('new-tg-chat-id').value = config.telegram_chat_id || '';
+            document.getElementById('new-qm-webhook').value = config.quantman_webhook_url || '';
+
+            updatePayloadHelper(id);
+            // Show help in edit mode (maybe not in create mode until ID is set)
+            document.getElementById('modal-tv-helper').classList.remove('view-hidden');
+            document.getElementById('create-modal').classList.remove('view-hidden');
+        }
+
+        async function deleteStrategy(id) {
+            if (!confirm(`Are you sure you want to delete strategy "${id}"?`)) return;
+            try {
+                const res = await fetch(`/api/strategies/${id}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    showListView();
+                    fetchAll();
+                }
+            } catch (err) { alert('Delete failed'); }
+        }
+
+        function hideCreateModal() {
+            document.getElementById('create-modal').classList.add('view-hidden');
+        }
+
+        document.getElementById('create-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const mode = document.getElementById('modal-mode').value;
+            const id = document.getElementById('new-id').value;
+            const payload = {
+                id: id,
+                name: document.getElementById('new-name').value,
+                type: document.getElementById('new-type').value,
+                telegram_bot_token: document.getElementById('new-tg-token').value,
+                telegram_chat_id: document.getElementById('new-tg-chat-id').value,
+                quantman_webhook_url: document.getElementById('new-qm-webhook').value
+            };
+
+            try {
+                const url = mode === 'create' ? '/api/strategies' : `/api/strategies/${id}`;
+                const method = mode === 'create' ? 'POST' : 'PUT';
+                const res = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.status === 'success') {
+                    hideCreateModal();
+                    fetchAll();
+                } else {
+                    alert(data.detail || 'Error creating strategy');
+                }
+            } catch (err) {
+                alert('Connection error');
+            }
+        });
+
+        // Initial load
+        fetchAll();
+        setInterval(fetchAll, 3000);
+    </script>
+</body>
+
+</html>

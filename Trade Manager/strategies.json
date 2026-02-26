@@ -1,0 +1,33 @@
+{
+    "STKOPT_RELIANCE_V1": {
+        "name": "Reliance Test",
+        "type": "Automatic",
+        "telegram_bot_token": "",
+        "telegram_chat_id": "",
+        "quantman_webhook_url": "",
+        "is_active": true,
+        "last_signal": "BUY",
+        "pnl": 0.0,
+        "open_positions": {
+            "RELIANCE": {
+                "action": "BUY",
+                "entry_price": 2500.5,
+                "time": "2026-02-22 09:30:00"
+            }
+        },
+        "completed_transactions": [],
+        "last_signal_time": "2026-02-22 09:30:00"
+    },
+    "FUTSTK_BHARTIARTL_1": {
+        "name": "TEST AIRTEL",
+        "type": "Automatic",
+        "telegram_bot_token": "",
+        "telegram_chat_id": "",
+        "quantman_webhook_url": "",
+        "is_active": true,
+        "last_signal": null,
+        "pnl": 0.0,
+        "open_positions": {},
+        "completed_transactions": []
+    }
+}

@@ -1,0 +1,24 @@
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/AppSidebar";
+import { Outlet } from "react-router-dom";
+
+export function AppLayout() {
+  return (
+    <SidebarProvider>
+      <div className="min-h-screen flex w-full">
+        <AppSidebar />
+        <main className="flex-1 flex flex-col">
+          <header className="h-14 border-b flex items-center px-4 gap-4">
+            <SidebarTrigger />
+            <h2 className="text-sm font-medium text-muted-foreground">
+              TradingView Webhook Manager
+            </h2>
+          </header>
+          <div className="flex-1 p-6 overflow-auto">
+            <Outlet />
+          </div>
+        </main>
+      </div>
+    </SidebarProvider>
+  );
+}

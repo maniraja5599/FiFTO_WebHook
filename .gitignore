@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.venv/
+env/
+venv/
+bin/
+obj/
+
+# Environment variables
+.env
+.env.*
+
+# Build outputs
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Temporary files
+temp/
+tmp/
+*.log
+temp_nifty.txt
+temp_uploads/
+
+# Lovable
+.lovable/
