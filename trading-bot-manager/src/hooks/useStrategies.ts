@@ -40,6 +40,8 @@ export function useStrategies() {
   });
 }
 
+const generateToken = () => Math.random().toString(36).substring(2, 15).toUpperCase();
+
 export function useCreateStrategy() {
   const qc = useQueryClient();
   return useMutation({
@@ -58,9 +60,14 @@ export function useCreateStrategy() {
     }) => {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error("Not authenticated");
+
       const { data, error } = await supabase.from("strategies").insert({
         ...strategy,
         user_id: user.id,
+        entry_buy_token: strategy.webhook_url_entry_buy || generateToken(),
+        entry_sell_token: strategy.webhook_url_entry_sell || generateToken(),
+        exit_buy_token: strategy.webhook_url_exit_buy || generateToken(),
+        exit_sell_token: strategy.webhook_url_exit_sell || generateToken(),
       }).select().single();
       if (error) throw error;
       return data;

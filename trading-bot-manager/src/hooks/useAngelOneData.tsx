@@ -161,11 +161,15 @@ export function AngelOneProvider({ children }: { children: React.ReactNode }) {
         const list = await fetchMSL();
         if (!list.length) return null;
 
+        // Fix for MIDCAP naming mismatch and SENSEX/BANKEX exchange
+        const searchSymbol = symbol === 'MIDCAP' ? 'MIDCPNIFTY' : symbol;
+        const exchange = (symbol === 'SENSEX' || symbol === 'BANKEX') ? 'BFO' : 'NFO';
+
         // For indexes, find FUTIDX with nearest expiry
         const now = Date.now();
         const potential = list.filter(i =>
-            i.name === symbol &&
-            i.exch_seg === 'NFO' &&
+            i.name === searchSymbol &&
+            i.exch_seg === exchange &&
             i.instrumenttype === 'FUTIDX' &&
             parseDate(i.expiry) >= now
         );
@@ -176,7 +180,7 @@ export function AngelOneProvider({ children }: { children: React.ReactNode }) {
 
         // Fallback: any FUTIDX for this symbol
         const fallback = list.filter(i =>
-            i.name === symbol && i.exch_seg === 'NFO' && i.instrumenttype === 'FUTIDX'
+            i.name === searchSymbol && i.exch_seg === exchange && i.instrumenttype === 'FUTIDX'
         ).sort((a, b) => parseDate(a.expiry) - parseDate(b.expiry));
 
         return fallback[0] || null;
@@ -236,15 +240,20 @@ export function AngelOneProvider({ children }: { children: React.ReactNode }) {
             if (!s) return null;
         }
 
+        const extractLtp = (data: any) => {
+            const item = data?.fetched?.[0] || data?.[0];
+            return item?.ltp ? Number(item.ltp) : null;
+        };
+
         try {
             const data = await client.getLTP(s.jwtToken, symbol, token, exchange);
-            return data?.fetched?.[0]?.ltp ? Number(data.fetched[0].ltp) : (data?.[0]?.ltp ? Number(data[0].ltp) : null);
+            return extractLtp(data);
         } catch (e: any) {
             if (e.message?.includes('expired') || e.message?.includes('token') || e.message?.includes('Invalid')) {
                 const newS = await login();
                 if (newS) {
                     const data = await client.getLTP(newS.jwtToken, symbol, token, exchange);
-                    return data?.fetched?.[0]?.ltp ? Number(data.fetched[0].ltp) : (data?.[0]?.ltp ? Number(data[0].ltp) : null);
+                    return extractLtp(data);
                 }
             }
             return null;

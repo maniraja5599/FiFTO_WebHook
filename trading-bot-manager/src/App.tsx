@@ -21,14 +21,36 @@ const queryClient = new QueryClient();
 
 function AuthGate({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<any>(undefined);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    const checkSession = async () => {
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) throw error;
+        setSession(data.session);
+      } catch (e: any) {
+        console.error("Auth error:", e);
+        setError(e.message);
+        setSession(null); // Fallback to login if something is wrong
+      }
+    };
+
+    checkSession();
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => setSession(session));
     return () => subscription.unsubscribe();
   }, []);
 
-  if (session === undefined) return null; // loading
+  if (session === undefined && !error) return (
+    <div className="flex items-center justify-center min-h-screen bg-background">
+      <div className="text-center space-y-4">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+        <p className="text-muted-foreground">Checking authentication...</p>
+      </div>
+    </div>
+  );
+
   if (!session) return <Auth />;
   return <AngelOneProvider>{children}</AngelOneProvider>;
 }

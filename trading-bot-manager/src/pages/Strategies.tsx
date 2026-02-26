@@ -11,9 +11,10 @@ import { useAngelOne, useAngelOneData } from "@/hooks/useAngelOneData";
 import { getWebhookUrl } from "@/lib/webhook-url";
 import { Link, useNavigate } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useFireSignal } from "@/hooks/useSignals";
 
 
-import { Plus, Trash2, Pencil, ChevronRight, Eye, Info, Search, TrendingUp, TrendingDown, Copy, Loader2 } from "lucide-react";
+import { Plus, Trash2, Pencil, ChevronRight, Eye, Info, Search, TrendingUp, TrendingDown, Copy, Loader2, Layers, Zap, Activity, Clock, Bell, ArrowUpRight } from "lucide-react";
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
@@ -31,7 +32,7 @@ const signalTypeLabels: Record<string, string> = {
   exit_sell: "Exit Sell",
 };
 
-const INDEX_OPTIONS = ["NIFTY", "SENSEX", "MIDCAP", "BANKNIFTY", "FINNIFTY"];
+const INDEX_OPTIONS = ["NIFTY", "SENSEX", "MIDCAP", "BANKNIFTY", "FINNIFTY", "BANKEX"];
 const FO_STOCKS = [
   "ABB", "ABBOTBHA", "ABCAPITAL", "ABFRL", "ACC", "ADANIENSOL", "ADANIENT", "ADANIPORTS", "ADANIPOWER", "ALKEM",
   "AMBUJACEM", "ANGELONE", "APOLLOHOSP", "APOLLOTYRE", "ASHOKLEY", "ASIANPAINT", "ASTRAL", "AUBANK", "AUROPHARMA", "AXISBANK",
@@ -66,7 +67,17 @@ const getUniqueName = (baseName: string, existingNames: string[]) => {
   return name;
 };
 
-function StrategyRow({ strategy, strategies }: { strategy: Strategy, strategies: Strategy[] }) {
+const formatINR = (value: number, decimals = 1) => {
+  const absVal = Math.abs(value);
+  const sign = value < 0 ? "-" : "";
+
+  return `${sign}₹ ${absVal.toLocaleString('en-IN', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  })}`;
+};
+
+function StrategyRow({ strategy, strategies, allSignals }: { strategy: Strategy, strategies: Strategy[], allSignals: any[] }) {
 
   const navigate = useNavigate();
   const [editOpen, setEditOpen] = useState(false);
@@ -74,7 +85,12 @@ function StrategyRow({ strategy, strategies }: { strategy: Strategy, strategies:
 
   const updateStrategy = useUpdateStrategy();
   const deleteStrategy = useDeleteStrategy();
-  const { data: signals = [] } = useSignals({ strategyId: strategy.id, limit: 1 });
+  const fireSignal = useFireSignal();
+
+  // Use allSignals from props instead of fetching locally if possible, 
+  // but StrategyRow was fetching with limit 50 specifically for its own signals.
+  // Let's filter allSignals for this strategy.
+  const signals = allSignals.filter(sig => sig.strategy_id === strategy.id);
 
   const [form, setForm] = useState({
     name: strategy.name,
@@ -127,251 +143,140 @@ function StrategyRow({ strategy, strategies }: { strategy: Strategy, strategies:
 
   // Calculate realized + unrealized P&L
   const quantity = (strategy.lot_size || 1) * (strategy.lot_deploy_qty || 1);
-  let profitValue = 0;
+  let overallProfit = 0;
+  let currentTradeProfit: number | null = null;
+  let lastTradeProfit: number | null = null;
   let tempActive: { type: string; price: number } | null = null;
 
   sortedSigs.forEach(sig => {
+    const sigPrice = Number(sig.price) || 0;
     if (sig.signal_type.startsWith('entry')) {
-      tempActive = { type: sig.signal_type, price: Number(sig.price) || 0 };
+      if (sigPrice > 0) {
+        tempActive = { type: sig.signal_type, price: sigPrice };
+      }
     } else if (sig.signal_type.startsWith('exit') && tempActive) {
-      const exitPrice = Number(sig.price) || 0;
-      const multiplier = tempActive.type === 'entry_buy' ? 1 : -1;
-      profitValue += (exitPrice - tempActive.price) * quantity * multiplier;
-      tempActive = null;
+      if (sigPrice > 0) {
+        const multiplier = tempActive.type === 'entry_buy' ? 1 : -1;
+        const tradeProfit = (sigPrice - tempActive.price) * quantity * multiplier;
+        overallProfit += tradeProfit;
+        lastTradeProfit = tradeProfit;
+        tempActive = null;
+      }
     }
   });
 
+  // Calculate current trade profit (unrealized) if still in position
   if (tempActive && currentLtp) {
     const multiplier = tempActive.type === 'entry_buy' ? 1 : -1;
-    profitValue += (currentLtp - tempActive.price) * quantity * multiplier;
+    currentTradeProfit = (currentLtp - tempActive.price) * quantity * multiplier;
+    overallProfit += currentTradeProfit;
   }
 
+  const handleSquareOff = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!tempActive) return;
+
+    const exitType = tempActive.type === 'entry_buy' ? 'exit_buy' : 'exit_sell';
+    fireSignal.mutate({
+      strategy_id: strategy.id,
+      signal_type: exitType,
+      price: currentLtp || 0
+    });
+    toast.success(`Square Off signal sent for ${strategy.name}`);
+  };
+
   useEffect(() => {
-    if (isActive && strategy.angelone_token && hasConfig) {
-      const timer = setInterval(async () => {
+    if (strategy.angelone_token && hasConfig) {
+      const fetchNow = async () => {
         const val = await getLTP(strategy.symbol, strategy.angelone_token!, strategy.exchange || 'NFO');
-        if (val) setCurrentLtp(Number(val));
-      }, 5000);
+        if (val) setCurrentLtp(val);
+      };
+
+      fetchNow();
+      const timer = setInterval(fetchNow, 2000);
       return () => clearInterval(timer);
     }
-  }, [isActive, strategy.angelone_token, strategy.symbol, strategy.exchange, hasConfig, getLTP]);
+  }, [strategy.angelone_token, strategy.symbol, strategy.exchange, hasConfig, getLTP]);
 
   return (
-    <div className="bg-card border border-border/50 rounded-lg shadow-sm overflow-hidden mb-2 group">
+    <div className={cn(
+      "bg-card border rounded-lg shadow-sm overflow-hidden mb-3 group transition-all duration-300",
+      isActive ? "border-emerald-500/50 bg-emerald-500/[0.04] ring-1 ring-emerald-500/20 animate-pulse-subtle" : "border-border/50",
+      !strategy.enabled && "opacity-60"
+    )}>
       <div
-        className="flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-muted/50 transition-colors"
+        className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 cursor-pointer hover:bg-muted/50 transition-colors gap-4"
         onClick={() => navigate(`/strategies/${strategy.id}`)}
       >
 
-        <div className="flex items-center gap-4 flex-1">
-          <ChevronRight className="h-5 w-5 text-muted-foreground" />
-          <div className="flex flex-col">
-            <h3 className="text-sm font-bold text-card-foreground uppercase tracking-wide leading-tight">{strategy.name}</h3>
-            <div className="flex items-center gap-2 mt-0.5">
-
+        <div className="flex items-center gap-3 w-full sm:flex-1">
+          <ChevronRight className="h-5 w-5 text-muted-foreground shrink-0 hidden sm:block" />
+          <div className="flex flex-col min-w-0 flex-1">
+            <h3 className="text-sm font-bold text-card-foreground uppercase tracking-wide leading-tight truncate">{strategy.name}</h3>
+            <div className="flex flex-wrap items-center gap-2 mt-1">
               <div className="flex items-center gap-1">
-                <span className="text-[10px] text-muted-foreground font-medium">Order type :</span>
-                <Badge className="bg-primary/20 hover:bg-primary/30 text-primary border-0 text-[10px] h-4 px-1.5 rounded font-semibold uppercase tracking-wider">
+                <Badge className="bg-primary/20 text-primary border-0 text-[9px] h-4 px-1.5 rounded font-semibold uppercase tracking-wider">
                   {strategy.exchange === 'NFO' ? 'F&O' : 'Cash'}
                 </Badge>
-
-                <Badge className="bg-muted/50 text-muted-foreground border-0 text-[10px] h-4 px-1.5 rounded font-semibold uppercase tracking-wider">
+                <Badge className="bg-muted/50 text-muted-foreground border-0 text-[9px] h-4 px-1.5 rounded font-semibold uppercase tracking-wider">
                   {quantity} QTY
                 </Badge>
               </div>
-              <div className="flex items-center gap-1.5">
-                <div className={`h-1.5 w-1.5 rounded-full ${isActive ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]'}`} />
-                <span className="text-[10px] text-muted-foreground/80 font-medium italic">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <div className={`h-1.5 w-1.5 rounded-full shrink-0 ${isActive ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]'}`} />
+                <span className="text-[10px] text-muted-foreground/80 font-medium italic truncate">
                   {isActive ? `Position Open (${lastEntry?.signal_type === 'entry_buy' ? 'BUY' : 'SELL'})` : 'Waiting for Next Entry Signal'}
                 </span>
               </div>
-
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className={`text-base font-bold tracking-tight ${profitValue >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
-            {profitValue >= 0 ? `₹ ${profitValue.toLocaleString(undefined, { minimumFractionDigits: 2 })}` : `- ₹ ${Math.abs(profitValue).toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
-          </div>
-          <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <Button size="icon" variant="ghost" className="h-7 w-7 hover:bg-muted" onClick={(e) => { e.stopPropagation(); navigate(`/strategies/${strategy.id}`); }}>
-              <Eye className="h-4 w-4 text-muted-foreground" />
-            </Button>
-
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button size="icon" variant="ghost" className="h-7 w-7 hover:bg-muted" title="Webhook URLs" onClick={(e) => e.stopPropagation()}>
-                  <Plus className="h-3.5 w-3.5 text-primary" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-80 p-0 overflow-hidden bg-card border-border/50" onClick={(e) => e.stopPropagation()}>
-                <div className="bg-muted/30 px-4 py-2 border-b border-border/50">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Webhook Setup</p>
-                </div>
-                <div className="p-3 space-y-3">
-                  {[
-                    { label: "Entry Buy", token: strategy.entry_buy_token },
-                    { label: "Entry Sell", token: strategy.entry_sell_token },
-                    { label: "Exit Buy", token: strategy.exit_buy_token },
-                    { label: "Exit Sell", token: strategy.exit_sell_token },
-                  ].map((hook, i) => {
-                    const url = hook.token ? getWebhookUrl(hook.token) : "";
-                    return (
-                      <div key={i} className="space-y-1">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground">{hook.label}</span>
-                          {url && (
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-5 w-5 hover:bg-primary/10 hover:text-primary"
-                              onClick={() => {
-                                navigator.clipboard.writeText(url);
-                                toast.success(`${hook.label} URL copied!`);
-                              }}
-                            >
-                              <Copy className="h-3 w-3" />
-                            </Button>
-                          )}
-                        </div>
-                        <div className="bg-muted/40 p-1.5 rounded border border-border/30 text-[9px] font-mono break-all text-muted-foreground min-h-[30px] flex items-center">
-                          {url || "No token set"}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </PopoverContent>
-            </Popover>
-
-            <Dialog open={editOpen} onOpenChange={(v) => { setEditOpen(v); if (v) resetForm(); }}>
-              <DialogTrigger asChild>
-                <Button size="icon" variant="ghost" className="h-7 w-7 hover:bg-muted" onClick={(e) => e.stopPropagation()}>
-                  <Pencil className="h-3.5 w-3.5 text-muted-foreground" />
-                </Button>
-
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-xl" onClick={(e) => e.stopPropagation()}>
-                <DialogHeader>
-                  <DialogTitle>Edit Strategy</DialogTitle>
-                </DialogHeader>
-                <div className="grid grid-cols-2 gap-4 py-4">
-                  <div className="space-y-2">
-                    <Label>Instrument Type</Label>
-                    <Select
-                      value={form.symbol && INDEX_OPTIONS.includes(form.symbol) ? "INDEX" : "FUTURE"}
-                      onValueChange={(v) => {
-                        const newSymbol = v === "INDEX" ? "NIFTY" : FO_STOCKS[0];
-                        const prefix = v === "INDEX" ? "IDXFUT" : "STKFUT";
-                        const baseName = `${prefix}-${newSymbol}`;
-                        const otherNames = strategies.map(s => s.name).filter(n => n !== strategy.name);
-                        setForm({ ...form, symbol: newSymbol, name: getUniqueName(baseName, otherNames) });
-                      }}
-
-                    >
-                      <SelectTrigger><SelectValue placeholder="Select type" /></SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="INDEX">INDEX</SelectItem>
-                        <SelectItem value="FUTURE">FUTURE</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label>{(form.symbol && INDEX_OPTIONS.includes(form.symbol)) ? "Select Index" : "Select Stock"}</Label>
-                    {(form.symbol && INDEX_OPTIONS.includes(form.symbol)) ? (
-                      <Select
-                        value={form.symbol}
-                        onValueChange={(v) => {
-                          const baseName = `IDXFUT-${v}`;
-                          const otherNames = strategies.map(s => s.name).filter(n => n !== strategy.name);
-                          setForm({ ...form, symbol: v, name: getUniqueName(baseName, otherNames) });
-                        }}
-
-                      >
-                        <SelectTrigger><SelectValue placeholder="Select Index" /></SelectTrigger>
-                        <SelectContent>{INDEX_OPTIONS.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}</SelectContent>
-                      </Select>
-                    ) : (
-                      <Popover open={stockPopoverOpen} onOpenChange={setStockPopoverOpen}>
-                        <PopoverTrigger asChild>
-                          <Button variant="outline" role="combobox" className="w-full justify-between font-normal">
-                            {form.symbol || "Select Stock"}
-                            <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
-                          <Command>
-                            <CommandInput placeholder="Search stock..." />
-                            <CommandEmpty>No stock found.</CommandEmpty>
-                            <CommandList
-                              className="max-h-[300px] overflow-y-auto"
-                              onWheel={(e) => e.stopPropagation()}
-                            >
-                              <CommandGroup>
-                                {FO_STOCKS.sort().map((stock) => (
-                                  <CommandItem
-                                    key={stock}
-                                    value={stock}
-                                    onSelect={(currentValue) => {
-                                      const symbol = currentValue.toUpperCase();
-                                      const baseName = `STKFUT-${symbol}`;
-                                      const otherNames = strategies.map(s => s.name).filter(n => n !== strategy.name);
-                                      setForm({ ...form, symbol: symbol, name: getUniqueName(baseName, otherNames) });
-                                      setStockPopoverOpen(false);
-                                    }}
-
-                                  >
-                                    {stock}
-                                  </CommandItem>
-                                ))}
-                              </CommandGroup>
-                            </CommandList>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                    )}
-                  </div>
-                  <div className="col-span-2 space-y-2">
-                    <Label>Name</Label>
-                    <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                  </div>
-
-
-                  <div className="col-span-2 space-y-2">
-                    <Label>Description</Label>
-                    <Input value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Lot Size</Label>
-                    <Input type="number" value={form.lot_size} onChange={(e) => setForm({ ...form, lot_size: Number(e.target.value) || 1 })} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Lot Deploy Qty</Label>
-                    <Input type="number" value={form.lot_deploy_qty} onChange={(e) => setForm({ ...form, lot_deploy_qty: Number(e.target.value) || 1 })} />
-                  </div>
-                  <div className="col-span-2 space-y-3 mt-2">
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest border-b border-border/50 pb-1">Forward Webhook URLs</p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-1"><Label className="text-xs">Entry Buy</Label><Input value={form.webhook_url_entry_buy} onChange={(e) => setForm({ ...form, webhook_url_entry_buy: e.target.value })} /></div>
-                      <div className="space-y-1"><Label className="text-xs">Entry Sell</Label><Input value={form.webhook_url_entry_sell} onChange={(e) => setForm({ ...form, webhook_url_entry_sell: e.target.value })} /></div>
-                      <div className="space-y-1"><Label className="text-xs">Exit Buy</Label><Input value={form.webhook_url_exit_buy} onChange={(e) => setForm({ ...form, webhook_url_exit_buy: e.target.value })} /></div>
-                      <div className="space-y-1"><Label className="text-xs">Exit Sell</Label><Input value={form.webhook_url_exit_sell} onChange={(e) => setForm({ ...form, webhook_url_exit_sell: e.target.value })} /></div>
-                    </div>
-                  </div>
-                </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => setEditOpen(false)}>Cancel</Button>
-                  <Button onClick={handleUpdate} disabled={!form.name || !form.symbol}>Update Strategy</Button>
-                </DialogFooter>
-              </DialogContent>
-            </Dialog>
-            <Button size="icon" variant="ghost" className="h-7 w-7 text-destructive hover:bg-destructive/10" onClick={(e) => { e.stopPropagation(); deleteStrategy.mutate(strategy.id); }}>
-              <Trash2 className="h-3.5 w-3.5" />
-            </Button>
-
+        <div className="flex items-center justify-between w-full sm:w-auto gap-4 sm:gap-8 border-t sm:border-t-0 border-border/30 pt-3 sm:pt-0">
+          <div className="flex flex-col items-start sm:items-end min-w-[80px] sm:min-w-[100px]">
+            <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/50">
+              {isActive ? "Open P&L" : "Last Trade"}
+            </span>
+            <div className={cn(
+              "text-xs font-bold",
+              isActive
+                ? (currentTradeProfit === null ? "text-muted-foreground" : (currentTradeProfit >= 0 ? "text-emerald-500" : "text-rose-500"))
+                : (lastTradeProfit === null ? "text-muted-foreground" : (lastTradeProfit >= 0 ? "text-emerald-500/80" : "text-rose-500/80"))
+            )}>
+              {isActive
+                ? (currentTradeProfit === null ? "---" : formatINR(currentTradeProfit))
+                : (lastTradeProfit === null ? "No Trades" : formatINR(lastTradeProfit))
+              }
+            </div>
           </div>
 
+          <div className="flex flex-col items-start sm:items-end min-w-[80px] sm:min-w-[100px]">
+            <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/50">Overall P&L</span>
+            <div className={`text-sm sm:text-base font-black tracking-tight ${overallProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
+              {formatINR(overallProfit)}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-1.5 min-w-[70px] sm:min-w-[80px]">
+            <Badge className={cn(
+              "text-[9px] font-black uppercase tracking-[0.1em] px-2 py-0.5 border-0 rounded",
+              strategy.enabled
+                ? "bg-emerald-500/10 text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.1)]"
+                : "bg-muted text-muted-foreground"
+            )}>
+              {strategy.enabled ? "LIVE" : "STOPPED"}
+            </Badge>
+            {isActive && (
+              <Button
+                size="sm"
+                variant="destructive"
+                className="h-6 w-full text-[8px] font-black uppercase tracking-widest rounded shadow-lg shadow-destructive/10"
+                onClick={handleSquareOff}
+              >
+                Square Off
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -391,76 +296,61 @@ export default function Strategies() {
   });
 
   const [instrumentType, setInstrumentType] = useState<"INDEX" | "FUTURE">("INDEX");
+  const [sortBy, setSortBy] = useState<"name" | "profit" | "date" | "status">("date");
+  const [filterBy, setFilterBy] = useState<"all" | "live" | "stopped">("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const { getLTP, findIndexInstrument, findFutureInstrument, hasConfig, isConnecting: angelLoading, isConnected } = useAngelOne();
   const [ltp, setLtp] = useState<number | null>(null);
   const [ltpLabel, setLtpLabel] = useState<string>("");
 
+  const { data: allSignals = [] } = useSignals();
+
   const fetchLtp = async (symbol: string, type: "INDEX" | "FUTURE") => {
     setLtp(null);
     setLtpLabel("");
-    try {
-      // Use proper instrument finder based on type
-      const inst = type === "INDEX"
-        ? await findIndexInstrument(symbol)   // FUTIDX nearest expiry
-        : await findFutureInstrument(symbol); // FUTSTK current month
-
-      if (inst) {
-        // Update lot size + token from instrument data
-        setForm(prev => ({
-          ...prev,
-          lot_size: Number(inst.lotsize) || 1,
-          angelone_token: inst.token,
-          exchange: inst.exch_seg
-        }));
-
-        // Build label like "NIFTY FUT 27FEB2026"
-        const label = `${inst.name} ${inst.instrumenttype === 'FUTIDX' ? 'FUT' : 'FUT'} ${inst.expiry || ''}`;
-        setLtpLabel(label.trim());
-
-        // Fetch real-time LTP
-        if (hasConfig) {
-          const val = await getLTP(inst.symbol, inst.token, inst.exch_seg);
-          if (val) setLtp(Number(val));
-        }
+    if (!hasConfig) return;
+    const instrument = type === "INDEX" ? await findIndexInstrument(symbol) : await findFutureInstrument(symbol);
+    if (instrument) {
+      setLtpLabel(`${instrument.symbol} (${instrument.expiry})`);
+      const val = await getLTP(instrument.symbol, instrument.token, instrument.exch_seg);
+      if (val) {
+        setLtp(val);
+        setForm(prev => ({ ...prev, angelone_token: instrument.token, lot_size: Number(instrument.lotsize) || 1, exchange: instrument.exch_seg }));
       }
-    } catch (e) {
-      console.error(e);
     }
   };
 
-  // Fetch initial LTP and lot size when modal opens
   useEffect(() => {
-    if (open && instrumentType === "INDEX") {
-      fetchLtp("NIFTY", "INDEX");
-    } else if (open && instrumentType === "FUTURE" && FO_STOCKS.length > 0) {
-      fetchLtp(form.symbol || FO_STOCKS[0], "FUTURE");
+    if (open && form.symbol) {
+      fetchLtp(form.symbol, instrumentType);
     }
-  }, [open, instrumentType]);
+  }, [open, form.symbol, instrumentType, hasConfig]);
 
   const handleCreate = () => {
     createStrategy.mutate(form, {
       onSuccess: () => {
         setOpen(false);
         setForm({
-          name: "", symbol: "", description: "",
+          name: "", symbol: "NIFTY", description: "",
           webhook_url_entry_buy: "", webhook_url_entry_sell: "",
           webhook_url_exit_buy: "", webhook_url_exit_sell: "",
           lot_size: 1, lot_deploy_qty: 1, angelone_token: "", exchange: "NFO"
         });
-        setLtp(null);
+        setInstrumentType("INDEX");
       },
     });
   };
 
   // Summary Stats
-  const { data: allSignals = [] } = useSignals();
   const totalRunCount = allSignals.length;
 
   // Real P&L calculation logic
-  const calculateOverallPL = () => {
+  const calculatePL = (isTodayOnly = false) => {
     if (!allSignals.length || !strategies.length) return 0;
 
-    // Group signals by strategy
+    const todayStr = new Date().toDateString();
+
     const signalsByStrategy = allSignals.reduce((acc, sig) => {
       if (!acc[sig.strategy_id]) acc[sig.strategy_id] = [];
       acc[sig.strategy_id].push(sig);
@@ -475,75 +365,234 @@ export default function Strategies() {
       const quantity = (s.lot_size || 1) * (s.lot_deploy_qty || 1);
       const sorted = [...sigs].sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
 
-      let active: { type: string; price: number } | null = null;
+      let active: { type: string; price: number; time: string } | null = null;
       sorted.forEach(sig => {
+        const sigPrice = Number(sig.price) || 0;
+        const sigTime = new Date(sig.created_at);
+        const isToday = sigTime.toDateString() === todayStr;
+
         if (sig.signal_type.startsWith('entry')) {
-          active = { type: sig.signal_type, price: Number(sig.price) || 0 };
+          if (sigPrice > 0) {
+            active = { type: sig.signal_type, price: sigPrice, time: sig.created_at };
+          }
         } else if (sig.signal_type.startsWith('exit') && active) {
-          const multiplier = active.type === 'entry_buy' ? 1 : -1;
-          total += (Number(sig.price) - active.price) * quantity * multiplier;
-          active = null;
+          if (sigPrice > 0) {
+            const multiplier = active.type === 'entry_buy' ? 1 : -1;
+            const tradeProfit = (sigPrice - active.price) * quantity * multiplier;
+
+            if (!isTodayOnly || isToday) {
+              total += tradeProfit;
+            }
+            active = null;
+          }
         }
       });
     });
     return total;
   };
 
-  const overallProfit = calculateOverallPL();
-  const todayProfit = overallProfit / 1.5; // Keeping this simplified for now
+  const overallProfit = calculatePL(false);
+  const todayProfit = calculatePL(true);
+
+  // Stats for the new grid
+  const totalStrategies = strategies.length;
+  const liveStrategiesCount = strategies.filter(s => s.enabled).length;
+
+  // Count open positions across all strategies
+  const openPositionsCount = strategies.filter(s => {
+    const stratSigs = allSignals.filter(sig => sig.strategy_id === s.id);
+    const sorted = [...stratSigs].sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+    let isOpen = false;
+    sorted.forEach(sig => {
+      if (sig.signal_type.startsWith('entry')) isOpen = true;
+      else if (sig.signal_type.startsWith('exit')) isOpen = false;
+    });
+    return isOpen;
+  }).length;
+
+  // Handle Square Off All
+  const fireSignal = useFireSignal();
+  const handleSquareOffAll = () => {
+    const openStrategies = strategies.filter(s => {
+      const stratSigs = allSignals.filter(sig => sig.strategy_id === s.id);
+      const sorted = [...stratSigs].sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+      let isOpen = false;
+      sorted.forEach(sig => {
+        if (sig.signal_type.startsWith('entry')) isOpen = true;
+        else if (sig.signal_type.startsWith('exit')) isOpen = false;
+      });
+      return isOpen;
+    });
+
+    if (openStrategies.length === 0) {
+      toast.info("No open positions to square off");
+      return;
+    }
+
+    if (confirm(`Are you sure you want to square off ALL ${openStrategies.length} open positions?`)) {
+      openStrategies.forEach(s => {
+        const stratSigs = allSignals.filter(sig => sig.strategy_id === s.id);
+        const lastEntry = [...stratSigs].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+          .find(sig => sig.signal_type.startsWith('entry'));
+
+        if (lastEntry) {
+          const exitType = lastEntry.signal_type === 'entry_buy' ? 'exit_buy' : 'exit_sell';
+          fireSignal.mutate({
+            strategy_id: s.id,
+            signal_type: exitType,
+            price: 0 // Will use LTP or last known
+          });
+        }
+      });
+      toast.success(`Square off signals sent for ${openStrategies.length} strategies`);
+    }
+  };
 
   return (
-    <div className="space-y-4 max-w-7xl mx-auto py-2 px-4">
-      {/* ... Summary stats cards ... */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
-        <div className="bg-card border border-border/50 rounded-lg p-3 shadow-sm relative overflow-hidden group">
-          <div className="absolute right-[-10px] top-[-10px] opacity-10 group-hover:opacity-20 transition-opacity">
-            <Info className="h-20 w-20 text-primary" />
+    <div className="container mx-auto max-w-7xl py-6 px-4 sm:py-10 sm:px-8 space-y-10 animate-in fade-in duration-700">
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Total Strategies */}
+        <div className="glass-card border-white/5 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Layers className="h-16 w-16 text-primary" />
           </div>
-          <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mb-1 text-center">Total Run Count</p>
-          <p className="text-xl font-bold text-primary text-center tracking-tight">{totalRunCount}</p>
-        </div>
-
-        <div className="bg-card border border-border/50 rounded-lg p-3 shadow-sm relative overflow-hidden group">
-          <div className="absolute right-[-10px] top-[-10px] opacity-10 group-hover:opacity-20 transition-opacity">
-            {todayProfit >= 0 ? <TrendingUp className="h-20 w-20 text-emerald-500" /> : <TrendingDown className="h-20 w-20 text-rose-500" />}
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40 mb-2">Total Managed</p>
+          <div className="flex items-end gap-2">
+            <h2 className="text-4xl font-extrabold tracking-tight text-white">{strategies.length}</h2>
+            <span className="text-xs font-semibold text-muted-foreground/60 mb-1">Strategies</span>
           </div>
-          <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mb-1 text-center">Today Profit</p>
-          <div className="flex flex-col items-center">
-            <p className={`text-xl font-bold tracking-tight ${todayProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
-              ₹ {Math.abs(todayProfit).toLocaleString()}
-            </p>
-            <div className={`flex items-center gap-1 mt-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${todayProfit >= 0 ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500"}`}>
-              {todayProfit >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
-              {todayProfit >= 0 ? "Profit" : "Loss"}
-            </div>
+          <div className="mt-4 flex items-center gap-2">
+            <Badge variant="outline" className="bg-primary/5 border-primary/20 text-primary text-[9px] font-bold">STABLE</Badge>
           </div>
         </div>
 
-        <div className="bg-card border border-border/50 rounded-lg p-3 shadow-sm relative overflow-hidden group">
-          <div className="absolute right-[-10px] top-[-10px] opacity-10 group-hover:opacity-20 transition-opacity">
-            {overallProfit >= 0 ? <TrendingUp className="h-20 w-20 text-emerald-500" /> : <TrendingDown className="h-20 w-20 text-rose-500" />}
+        {/* Live Positions */}
+        <div className="glass-card border-white/5 rounded-2xl p-6 shadow-xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Zap className="h-16 w-16 text-amber-500" />
           </div>
-          <p className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground mb-1 text-center">Overall Profit</p>
-          <div className="flex flex-col items-center">
-            <p className={`text-xl font-bold tracking-tight ${overallProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
-              ₹ {Math.abs(overallProfit).toLocaleString()}
-            </p>
-            <div className={`flex items-center gap-1 mt-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${overallProfit >= 0 ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500"}`}>
-              {overallProfit >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
-              {overallProfit >= 0 ? "Profit" : "Loss"}
-            </div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40 mb-2">Active Signal</p>
+          <div className="flex items-end gap-2">
+            <h2 className="text-4xl font-extrabold tracking-tight text-amber-500">{openPositionsCount}</h2>
+            <span className="text-xs font-semibold text-muted-foreground/60 mb-1">Trades</span>
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+            <span className="text-[10px] text-muted-foreground font-semibold italic">Markets Monitoring</span>
+          </div>
+        </div>
+
+        {/* Today Profit */}
+        <div className={cn(
+          "glass-card border-white/5 rounded-2xl p-6 shadow-xl relative overflow-hidden group",
+          todayProfit >= 0 ? "shadow-emerald-500/5" : "shadow-rose-500/5"
+        )}>
+          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <TrendingUp className={cn("h-16 w-16", todayProfit >= 0 ? "text-emerald-500" : "text-rose-500")} />
+          </div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40 mb-2">Today's Performance</p>
+          <div className="flex items-end gap-2">
+            <h2 className={cn("text-3xl font-extrabold tracking-tight", todayProfit >= 0 ? "text-emerald-500" : "text-rose-500")}>
+              {formatINR(todayProfit, 0)}
+            </h2>
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+            <Badge variant="outline" className={cn(
+              "text-[9px] font-bold border-0",
+              todayProfit >= 0 ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500"
+            )}>
+              {todayProfit >= 0 ? "PROFIT" : "LOSS"}
+            </Badge>
+          </div>
+          {todayProfit !== 0 && (
+            <div className={cn(
+              "absolute bottom-0 left-0 h-1 transition-all duration-500 group-hover:h-2",
+              todayProfit >= 0 ? "bg-emerald-500/20" : "bg-rose-500/20"
+            )} style={{ width: '100%' }} />
+          )}
+        </div>
+
+        {/* Overall Profit */}
+        <div className={cn(
+          "glass-card border-white/5 rounded-2xl p-6 shadow-xl relative overflow-hidden group",
+          overallProfit >= 0 ? "shadow-primary/5" : "shadow-rose-500/5"
+        )}>
+          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Activity className={cn("h-16 w-16", overallProfit >= 0 ? "text-primary" : "text-rose-500")} />
+          </div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40 mb-2">Total Cumulative</p>
+          <div className="flex items-end gap-2">
+            <h2 className={cn("text-3xl font-extrabold tracking-tight", overallProfit >= 0 ? "text-primary" : "text-rose-500")}>
+              {formatINR(overallProfit, 0)}
+            </h2>
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+            <span className="text-[10px] text-muted-foreground font-semibold italic">Entire Portfolio P&L</span>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-xl font-bold text-card-foreground">Strategies</h1>
-        <div className="flex items-center gap-4">
+      <div className="space-y-6">
+        {/* Header & Controls */}
+        <div className="flex flex-col lg:flex-row items-center justify-between bg-white/[0.02] border border-white/5 p-4 rounded-2xl gap-6">
+          <div className="flex items-center gap-4 w-full lg:w-auto">
+            <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Layers className="h-5 w-5 text-primary" />
+            </div>
+            <h1 className="text-2xl font-extrabold tracking-tight text-gradient">Strategies</h1>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+            <div className="relative flex-1 min-w-[200px] lg:flex-none">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
+              <Input
+                placeholder="Search strategies..."
+                className="h-11 pl-10 bg-white/5 border-white/10 rounded-xl text-sm"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="flex bg-white/5 border border-white/10 rounded-xl p-1 lg:h-11">
+              {['all', 'live', 'stopped'].map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setFilterBy(f as any)}
+                  className={cn(
+                    "px-4 text-[10px] font-extrabold uppercase tracking-widest rounded-lg transition-all duration-300",
+                    filterBy === f ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "text-muted-foreground hover:text-white hover:bg-white/5"
+                  )}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 flex-1 lg:flex-none">
+              <Select value={sortBy} onValueChange={(v: any) => setSortBy(v)}>
+                <SelectTrigger className="h-11 bg-white/5 border-white/10 rounded-xl text-xs font-bold uppercase tracking-widest min-w-[130px]">
+                  <SelectValue placeholder="Sort..." />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="date">Creation Date</SelectItem>
+                  <SelectItem value="name">Strategy Name</SelectItem>
+                  <SelectItem value="profit">Profitability</SelectItem>
+                  <SelectItem value="status">Live Status</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </div>
+
+        {/* Global Action Buttons */}
+        <div className="flex flex-wrap items-center gap-4 px-2 pt-2">
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded h-9 px-4 text-sm font-bold uppercase tracking-wider">
-                <Plus className="h-4 w-4 mr-2" />New Strategy
+              <Button
+                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl h-9 px-5 text-[10px] font-black uppercase tracking-[0.1em] shadow-lg shadow-primary/20 transition-all active:scale-95"
+              >
+                <Plus className="h-3.5 w-3.5 mr-1.5" /> New Strategy
               </Button>
             </DialogTrigger>
 
@@ -573,17 +622,19 @@ export default function Strategies() {
                     </SelectContent>
                   </Select>
                 </div>
+
                 <div className="space-y-2">
-                  <Label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-                    {instrumentType === "INDEX" ? "Select Index" : "Select Stock"}
-                  </Label>
+                  <Label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{instrumentType === "INDEX" ? "Select Index" : "Select Stock"}</Label>
                   {instrumentType === "INDEX" ? (
-                    <Select value={form.symbol} onValueChange={(v) => {
-                      const baseName = `IDXFUT-${v}`;
-                      const existingNames = strategies.map(s => s.name);
-                      setForm({ ...form, symbol: v, name: getUniqueName(baseName, existingNames) });
-                      fetchLtp(v, "INDEX");
-                    }}>
+                    <Select
+                      value={form.symbol}
+                      onValueChange={(v) => {
+                        const baseName = `IDXFUT-${v}`;
+                        const existingNames = strategies.map(s => s.name);
+                        setForm({ ...form, symbol: v, name: getUniqueName(baseName, existingNames) });
+                        fetchLtp(v, "INDEX");
+                      }}
+                    >
                       <SelectTrigger className="h-10 font-bold"><SelectValue placeholder="Select Index" /></SelectTrigger>
                       <SelectContent>{INDEX_OPTIONS.map(opt => <SelectItem key={opt} value={opt}>{opt}</SelectItem>)}</SelectContent>
                     </Select>
@@ -597,12 +648,9 @@ export default function Strategies() {
                       </PopoverTrigger>
                       <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
                         <Command>
-                          <CommandInput placeholder="Search future stock..." />
+                          <CommandInput placeholder="Search stock..." className="h-9" />
                           <CommandEmpty>No stock found.</CommandEmpty>
-                          <CommandList
-                            className="max-h-[300px] overflow-y-auto"
-                            onWheel={(e) => e.stopPropagation()}
-                          >
+                          <CommandList className="max-h-[300px] overflow-y-auto">
                             <CommandGroup>
                               {FO_STOCKS.sort().map((stock) => (
                                 <CommandItem
@@ -694,6 +742,14 @@ export default function Strategies() {
               </DialogFooter>
             </DialogContent>
           </Dialog>
+
+          <Button
+            variant="destructive"
+            className="bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/20 rounded-xl h-9 px-5 text-[10px] font-black uppercase tracking-[0.1em] shadow-lg shadow-rose-500/5 transition-all active:scale-95 group"
+            onClick={handleSquareOffAll}
+          >
+            <Zap className="h-3.5 w-3.5 mr-1.5 group-hover:fill-current" /> Square Off All
+          </Button>
         </div>
       </div>
 
@@ -709,9 +765,52 @@ export default function Strategies() {
         </div>
       ) : (
         <div className="space-y-1">
-          {strategies.map((s) => (
-            <StrategyRow key={s.id} strategy={s} strategies={strategies} />
-          ))}
+          {strategies
+            .map(s => {
+              const stratSigs = allSignals.filter(sig => sig.strategy_id === s.id);
+              const sorted = [...stratSigs].sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+              const quantity = (s.lot_size || 1) * (s.lot_deploy_qty || 1);
+              let profit = 0;
+              let active: { type: string; price: number } | null = null;
+              sorted.forEach(sig => {
+                const sigPrice = Number(sig.price) || 0;
+                if (sig.signal_type.startsWith('entry')) {
+                  if (sigPrice > 0) {
+                    active = { type: sig.signal_type, price: sigPrice };
+                  }
+                } else if (sig.signal_type.startsWith('exit') && active) {
+                  if (sigPrice > 0) {
+                    const multiplier = active.type === 'entry_buy' ? 1 : -1;
+                    profit += (sigPrice - active.price) * quantity * multiplier;
+                    active = null;
+                  }
+                }
+              });
+              return { ...s, calculatedProfit: profit };
+            })
+            .filter(s => {
+              if (filterBy === "live") return s.enabled;
+              if (filterBy === "stopped") return !s.enabled;
+              return true;
+            })
+            .filter(s => {
+              if (!searchQuery) return true;
+              return s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                s.symbol.toLowerCase().includes(searchQuery.toLowerCase());
+            })
+            .sort((a, b) => {
+              if (sortBy === "name") return a.name.localeCompare(b.name);
+              if (sortBy === "date") return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+              if (sortBy === "status") {
+                if (a.enabled === b.enabled) return 0;
+                return b.enabled ? -1 : 1;
+              }
+              if (sortBy === "profit") return b.calculatedProfit - a.calculatedProfit;
+              return 0;
+            })
+            .map((s) => (
+              <StrategyRow key={s.id} strategy={s} strategies={strategies} allSignals={allSignals} />
+            ))}
         </div>
       )}
     </div>

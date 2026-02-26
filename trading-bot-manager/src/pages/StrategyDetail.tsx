@@ -16,6 +16,7 @@ import { useUpdateStrategy } from "@/hooks/useStrategies";
 import { Signal } from "@/hooks/useSignals";
 import { useAngelOneData } from "@/hooks/useAngelOneData";
 import { Loader2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type Trade = {
   id: string;
@@ -25,6 +26,7 @@ type Trade = {
   exitSignal?: Signal;
   status: "open" | "closed";
   profit?: number;
+  cumulativeProfit?: number;
 };
 
 
@@ -46,10 +48,15 @@ export default function StrategyDetail() {
   const { getLTP, hasConfig } = useAngelOneData();
   const [currentLtp, setCurrentLtp] = useState<number | null>(null);
 
-  const handleFireSignal = (type: "entry_buy" | "entry_sell" | "exit_buy" | "exit_sell") => {
+  const handleFireSignal = (type: "entry_buy" | "entry_sell" | "exit_buy" | "exit_sell", price?: number) => {
+    if (!strategy?.enabled) {
+      toast.warning("Strategy is stopped. Please start the strategy first before triggering signals.");
+      return;
+    }
     fireSignal.mutate({
       strategy_id: id!,
       signal_type: type,
+      price: price || currentLtp || 0,
     }, {
       onSuccess: () => toast.success(`Signal ${type} triggered successfully`),
     });
@@ -88,6 +95,8 @@ export default function StrategyDetail() {
     let currentSellTrade: Trade | null = null;
     const quantity = (strategy?.lot_size || 1) * (strategy?.lot_deploy_qty || 1);
 
+    let runningProfit = 0;
+
     sortedSigs.forEach((sig) => {
       if (sig.signal_type === "entry_buy") {
         if (!currentBuyTrade) {
@@ -106,6 +115,8 @@ export default function StrategyDetail() {
           const entryPrice = Number(currentBuyTrade.entrySignal.price) || 0;
           const exitPrice = Number(sig.price) || 0;
           currentBuyTrade.profit = (exitPrice - entryPrice) * quantity;
+          runningProfit += currentBuyTrade.profit;
+          currentBuyTrade.cumulativeProfit = runningProfit;
           trades.push(currentBuyTrade);
           currentBuyTrade = null;
         }
@@ -126,6 +137,8 @@ export default function StrategyDetail() {
           const entryPrice = Number(currentSellTrade.entrySignal.price) || 0;
           const exitPrice = Number(sig.price) || 0;
           currentSellTrade.profit = (entryPrice - exitPrice) * quantity;
+          runningProfit += currentSellTrade.profit;
+          currentSellTrade.cumulativeProfit = runningProfit;
           trades.push(currentSellTrade);
           currentSellTrade = null;
         }
@@ -168,14 +181,17 @@ export default function StrategyDetail() {
     }, 0);
 
   useEffect(() => {
-    if (isPositionOpen && strategy?.angelone_token && hasConfig) {
-      const timer = setInterval(async () => {
+    if (strategy?.angelone_token && hasConfig) {
+      const fetchNow = async () => {
         const val = await getLTP(strategy.symbol, strategy.angelone_token!, strategy.exchange || 'NFO');
         if (val) setCurrentLtp(Number(val));
-      }, 5000);
+      };
+
+      fetchNow();
+      const timer = setInterval(fetchNow, 2000);
       return () => clearInterval(timer);
     }
-  }, [isPositionOpen, strategy, hasConfig, getLTP]);
+  }, [strategy, hasConfig, getLTP]);
 
 
   const displayProfit = totalProfit;
@@ -199,45 +215,67 @@ export default function StrategyDetail() {
         <h1 className="text-2xl font-bold">{strategy?.name || "Loading..."}</h1>
       </div>
 
-      {/* Ultra-Compact Top Stats Bar */}
-      <div className="bg-card/40 backdrop-blur-md rounded-xl border border-border/40 shadow-xl px-6 py-2.5 flex flex-wrap items-center justify-between gap-6 overflow-x-auto mb-2">
-        <div className="flex items-center gap-3 border-r border-border/30 pr-6 last:border-0 pointer-events-none">
-          <Activity className="h-4 w-4 text-emerald-500" />
-          <div className="flex flex-col">
-            <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Complete Profit</span>
-            <span className={`text-sm font-black ${displayProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
+      {/* Ultra-Compact Top Stats Bar - Improved Mobile Stacking */}
+      <div className="bg-card/40 backdrop-blur-md rounded-xl border border-border/40 shadow-xl px-4 py-3 sm:px-6 sm:py-2.5 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-2">
+        <div className="flex items-center gap-2 sm:gap-3 md:border-r md:border-border/30 pr-2 sm:pr-6 pointer-events-none">
+          <Activity className="h-4 w-4 text-emerald-500 shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Complete Profit</span>
+            <span className={`text-xs sm:text-sm font-black truncate ${displayProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
               ₹ {displayProfit.toLocaleString()}
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 border-r border-border/30 pr-6 last:border-0 pointer-events-none">
-          <LineChart className="h-4 w-4 text-primary" />
-          <div className="flex flex-col">
-            <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Today Profit</span>
-            <span className={`text-sm font-black ${displayTodayProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
+        <div className="flex items-center gap-2 sm:gap-3 md:border-r md:border-border/30 pr-2 sm:pr-6 pointer-events-none">
+          <LineChart className="h-4 w-4 text-primary shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Today Profit</span>
+            <span className={`text-xs sm:text-sm font-black truncate ${displayTodayProfit >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
               ₹ {displayTodayProfit.toLocaleString()}
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 border-r border-border/30 pr-6 last:border-0 pointer-events-none">
-          <PlayCircle className="h-4 w-4 text-sky-400" />
-          <div className="flex flex-col">
-            <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Date Started</span>
-            <span className="text-sm font-black text-foreground">
+        <div className="flex items-center gap-2 sm:gap-3 md:border-r md:border-border/30 pr-2 sm:pr-6 pointer-events-none">
+          <PlayCircle className="h-4 w-4 text-sky-400 shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Date Started</span>
+            <span className="text-xs sm:text-sm font-black text-foreground truncate">
               {strategy?.created_at ? format(new Date(strategy.created_at), "dd MMM yyyy") : "---"}
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 border-r border-border/30 pr-6 last:border-0 pointer-events-none">
-          <Info className="h-4 w-4 text-rose-400" />
-          <div className="flex flex-col">
-            <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Current Status</span>
-            <span className={`text-sm font-black ${strategy?.enabled ? "text-emerald-500" : "text-rose-500"}`}>
-              {strategy?.enabled ? "STARTED" : "STOPPED"}
-            </span>
+        <div className="flex items-center gap-2 sm:gap-3 last:border-0 pl-0 sm:pl-0">
+          <Info className="h-4 w-4 text-rose-400 shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-muted-foreground font-bold leading-tight">Current Status</span>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className={`text-[10px] sm:text-sm font-black ${strategy?.enabled ? "text-emerald-500" : "text-rose-500"}`}>
+                {strategy?.enabled ? "STARTED" : "STOPPED"}
+              </span>
+              <Button
+                size="sm"
+                variant="outline"
+                className={cn(
+                  "h-5 px-1.5 sm:h-6 sm:px-2 text-[7px] sm:text-[8px] font-black uppercase tracking-widest rounded transition-all",
+                  strategy?.enabled
+                    ? "hover:bg-rose-500 hover:text-white border-rose-500/20 text-rose-500"
+                    : "hover:bg-emerald-500 hover:text-white border-emerald-500/20 text-emerald-500"
+                )}
+                onClick={() => {
+                  if (strategy?.enabled && isPositionOpen) {
+                    if (!confirm("⚠️ Warning: There is an open position on this strategy. Stopping it will NOT close the position automatically. Are you sure you want to stop?")) {
+                      return;
+                    }
+                  }
+                  updateStrategy.mutate({ id: strategy?.id!, enabled: !strategy?.enabled });
+                }}
+              >
+                {strategy?.enabled ? "STOP" : "START"}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -257,137 +295,133 @@ export default function StrategyDetail() {
             {showUrls ? "HIDE URLS" : "SHOW URLS"}
           </Button>
         </div>
-        <div className="grid grid-cols-1 divide-y divide-border/30">
-          {[
-            { label: "Entry Buy", type: "entry_buy", tokenField: "entry_buy_token", token: strategy?.entry_buy_token, color: "text-emerald-400", glow: "bg-emerald-500", btnColor: "text-emerald-400 hover:bg-emerald-500/10 border-emerald-500/20", icon: TrendingUp },
-            { label: "Entry Sell", type: "entry_sell", tokenField: "entry_sell_token", token: strategy?.entry_sell_token, color: "text-rose-400", glow: "bg-rose-500", btnColor: "text-rose-400 hover:bg-rose-500/10 border-rose-500/20", icon: TrendingDown },
-            { label: "Exit Buy", type: "exit_buy", tokenField: "exit_buy_token", token: strategy?.exit_buy_token, color: "text-sky-400", glow: "bg-sky-500", btnColor: "text-sky-400 hover:bg-sky-500/10 border-sky-500/20", icon: Square },
-            { label: "Exit Sell", type: "exit_sell", tokenField: "exit_sell_token", token: strategy?.exit_sell_token, color: "text-amber-400", glow: "bg-amber-500", btnColor: "text-amber-400 hover:bg-amber-500/10 border-amber-500/20", icon: Square },
-          ].map((item, index) => {
-            const isEditing = editingField === item.tokenField;
-            const url = item.token ? getWebhookUrl(item.token) : "";
 
-            return (
-              <div key={index} className="flex flex-col md:flex-row md:items-center justify-between px-6 py-1.5 hover:bg-muted/5 transition-all gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="relative flex items-center justify-center">
-                    <div className={`w-2 h-2 rounded-full ${item.token ? item.glow : "bg-muted"}`} />
-                    {item.token && <div className={`absolute w-2 h-2 rounded-full ${item.glow} animate-ping opacity-40`} />}
+        {/* Manual Trigger Buttons - All in one compact row */}
+        <div className="px-4 sm:px-6 py-4">
+          <div className="flex flex-wrap items-center gap-3">
+            {[
+              { label: "BUY", type: "entry_buy", btnColor: "text-emerald-400 hover:bg-emerald-500/10 border-emerald-500/20", icon: TrendingUp },
+              { label: "SELL", type: "entry_sell", btnColor: "text-rose-400 hover:bg-rose-500/10 border-rose-500/20", icon: TrendingDown },
+              { label: "CLOSE BUY", type: "exit_buy", btnColor: "text-sky-400 hover:bg-sky-500/10 border-sky-500/20", icon: Square },
+              { label: "CLOSE SELL", type: "exit_sell", btnColor: "text-amber-400 hover:bg-amber-500/10 border-amber-500/20", icon: Square },
+            ].map((item) => {
+              const isDisabled =
+                !strategy?.enabled ||
+                (item.type.startsWith("entry") && isPositionOpen) ||
+                (item.type === "exit_buy" && (!isPositionOpen || openTradeType !== "entry_buy")) ||
+                (item.type === "exit_sell" && (!isPositionOpen || openTradeType !== "entry_sell"));
+
+              return (
+                <Button
+                  key={item.type}
+                  variant="outline"
+                  size="sm"
+                  disabled={isDisabled}
+                  className={`h-9 px-5 text-[10px] font-black uppercase tracking-widest rounded-lg border shadow-sm flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] ${isDisabled
+                    ? "opacity-30 grayscale cursor-not-allowed border-muted"
+                    : item.btnColor
+                    }`}
+                  onClick={() => handleFireSignal(item.type as any, currentLtp || 0)}
+                >
+                  <item.icon className="h-3.5 w-3.5 fill-current" />
+                  {item.label}
+                  {!strategy?.enabled && <span className="text-[7px] ml-1 opacity-60">(STOPPED)</span>}
+                </Button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* URL Details - Only visible when showUrls is true */}
+        {showUrls && (
+          <div className="border-t border-border/30 divide-y divide-border/20 animate-in fade-in slide-in-from-top-2 duration-300">
+            {[
+              { label: "BUY", tokenField: "entry_buy_token", token: strategy?.entry_buy_token, color: "text-emerald-400", glow: "bg-emerald-500" },
+              { label: "SELL", tokenField: "entry_sell_token", token: strategy?.entry_sell_token, color: "text-rose-400", glow: "bg-rose-500" },
+              { label: "CLOSE BUY", tokenField: "exit_buy_token", token: strategy?.exit_buy_token, color: "text-sky-400", glow: "bg-sky-500" },
+              { label: "CLOSE SELL", tokenField: "exit_sell_token", token: strategy?.exit_sell_token, color: "text-amber-400", glow: "bg-amber-500" },
+            ].map((item, index) => {
+              const isEditing = editingField === item.tokenField;
+              const url = item.token ? getWebhookUrl(item.token) : "";
+
+              return (
+                <div key={index} className="flex flex-col sm:flex-row sm:items-center justify-between px-4 sm:px-6 py-3 gap-3 hover:bg-muted/5 transition-all">
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex items-center justify-center shrink-0">
+                      <div className={`w-2 h-2 rounded-full ${item.token ? item.glow : "bg-muted"}`} />
+                      {item.token && <div className={`absolute w-2 h-2 rounded-full ${item.glow} animate-ping opacity-40`} />}
+                    </div>
+                    <span className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] min-w-[90px] font-mono ${item.color}`}>
+                      {item.label}
+                    </span>
                   </div>
-                  <span className={`text-[11px] font-bold uppercase tracking-[0.1em] min-w-[90px] font-mono ${item.color}`}>
-                    {item.label}
-                  </span>
-                </div>
 
-                <div className="flex-1 flex items-center justify-between gap-4">
-                  {/* Center: Trigger Button */}
-                  <div className="flex-1 flex justify-center">
-                    {!isEditing && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={
-                          (item.type.startsWith("entry") && isPositionOpen) ||
-                          (item.type === "exit_buy" && (!isPositionOpen || openTradeType !== "entry_buy")) ||
-                          (item.type === "exit_sell" && (!isPositionOpen || openTradeType !== "entry_sell"))
-                        }
-                        className={`h-8 px-4 text-[10px] font-black uppercase tracking-widest rounded-lg border shadow-sm flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] ${(item.type.startsWith("entry") && isPositionOpen) ||
-                          (item.type === "exit_buy" && (!isPositionOpen || openTradeType !== "entry_buy")) ||
-                          (item.type === "exit_sell" && (!isPositionOpen || openTradeType !== "entry_sell"))
-                          ? "opacity-30 grayscale cursor-not-allowed border-muted"
-                          : item.btnColor
-                          }`}
-                        title={
-                          (item.type.startsWith("entry") && isPositionOpen)
-                            ? "Entry restricted while position is open"
-                            : (item.type.startsWith("exit") && !isPositionOpen)
-                              ? "Exit restricted while no position is open"
-                              : (item.type === "exit_buy" && openTradeType !== "entry_buy")
-                                ? "Exit restricted: Active position is SELL"
-                                : (item.type === "exit_sell" && openTradeType !== "entry_sell")
-                                  ? "Exit restricted: Active position is BUY"
-                                  : `Trigger ${item.label}`
-                        }
-                        onClick={() => handleFireSignal(item.type as "entry_buy" | "entry_sell" | "exit_buy" | "exit_sell")}
-                      >
-                        <item.icon className="h-3.5 w-3.5 fill-current" />
-                        Trigger
-                      </Button>
-                    )}
-                  </div>
-
-                  {/* Right: Management Controls */}
-                  <div className="flex items-center gap-4 min-w-[140px] justify-end">
-                    {isEditing ? (
-                      <div className="flex items-center gap-1">
-                        <Input
-                          value={editValue}
-                          onChange={(e) => setEditValue(e.target.value)}
-                          placeholder="Token..."
-                          className="h-7 text-[10px] w-24 px-2 font-mono bg-muted/20 border-primary/20"
-                          autoFocus
-                        />
-                        <Button size="icon" variant="ghost" className="h-7 w-7 text-emerald-500" onClick={() => handleUpdateToken(item.tokenField)}>
-                          <Check className="h-4 w-4" />
-                        </Button>
-                        <Button size="icon" variant="ghost" className="h-7 w-7 text-blue-400" onClick={handlePaste}>
-                          <ClipboardPaste className="h-4 w-4" />
-                        </Button>
-                        <Button size="icon" variant="ghost" className="h-7 w-7 text-rose-500" onClick={() => setEditingField(null)}>
-                          <X className="h-4 w-4" />
-                        </Button>
-                      </div>
+                  <div className="flex-1 flex items-center justify-between gap-3">
+                    {url ? (
+                      <code className="text-[9px] font-mono text-primary/60 truncate max-w-[400px] select-all">{url}</code>
                     ) : (
-                      <>
-                        {url ? (
-                          <div className="flex items-center gap-1">
+                      <span className="text-[9px] text-muted-foreground/40 italic">No token set</span>
+                    )}
+
+                    <div className="flex items-center gap-1 shrink-0">
+                      {isEditing ? (
+                        <div className="flex items-center gap-1">
+                          <Input
+                            value={editValue}
+                            onChange={(e) => setEditValue(e.target.value)}
+                            placeholder="Token..."
+                            className="h-7 text-[10px] w-24 px-2 font-mono bg-muted/20 border-primary/20"
+                            autoFocus
+                          />
+                          <Button size="icon" variant="ghost" className="h-7 w-7 text-emerald-500" onClick={() => handleUpdateToken(item.tokenField)}>
+                            <Check className="h-4 w-4" />
+                          </Button>
+                          <Button size="icon" variant="ghost" className="h-7 w-7 text-blue-400" onClick={handlePaste}>
+                            <ClipboardPaste className="h-4 w-4" />
+                          </Button>
+                          <Button size="icon" variant="ghost" className="h-7 w-7 text-rose-500" onClick={() => setEditingField(null)}>
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      ) : (
+                        <>
+                          {url && (
                             <Button
                               variant="ghost"
                               size="icon"
-                              className="h-8 w-8 hover:bg-muted/20 rounded-full group/copy"
+                              className="h-7 w-7 hover:bg-muted/20 rounded-full"
                               title="Copy URL"
                               onClick={() => {
                                 navigator.clipboard.writeText(url);
                                 toast.success(`${item.label} URL copied!`);
                               }}
                             >
-                              <Copy className="h-3.5 w-3.5 text-muted-foreground group-hover/copy:text-primary transition-colors" />
+                              <Copy className="h-3.5 w-3.5 text-muted-foreground hover:text-primary" />
                             </Button>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-8 w-8 hover:bg-muted/20 rounded-full group/edit"
-                              title="Edit Token"
-                              onClick={() => {
-                                setEditingField(item.tokenField);
-                                setEditValue(item.token || "");
-                              }}
-                            >
-                              <Edit2 className="h-3.5 w-3.5 text-muted-foreground group-hover/edit:text-primary transition-colors" />
-                            </Button>
-                          </div>
-                        ) : (
+                          )}
                           <Button
                             variant="ghost"
-                            size="sm"
-                            className="h-7 px-2 text-[9px] text-primary hover:bg-primary/10 rounded-full font-bold"
+                            size="icon"
+                            className="h-7 w-7 hover:bg-muted/20 rounded-full"
+                            title={url ? "Edit Token" : "Set Token"}
                             onClick={() => {
                               setEditingField(item.tokenField);
-                              setEditValue("");
+                              setEditValue(item.token || "");
                             }}
                           >
-                            <Plus className="h-3 w-3 mr-1" /> Set Token
+                            {url ? <Edit2 className="h-3.5 w-3.5 text-muted-foreground hover:text-primary" /> : <Plus className="h-3 w-3 text-primary" />}
                           </Button>
-                        )}
-                      </>
-                    )}
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
+
 
 
 
@@ -427,10 +461,10 @@ export default function StrategyDetail() {
               <TableRow className="border-border/50 hover:bg-transparent">
                 <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Case</TableHead>
                 <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Status</TableHead>
-                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Entry Time</TableHead>
-                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Exit Time (Close)</TableHead>
-                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Profit</TableHead>
-                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Chart</TableHead>
+                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Entry Time & Price</TableHead>
+                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider">Exit Time & Price</TableHead>
+                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider text-right">Profit</TableHead>
+                <TableHead className="text-muted-foreground font-semibold uppercase text-xs tracking-wider text-right">Cum. Profit</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -453,18 +487,30 @@ export default function StrategyDetail() {
                       </span>
                     </TableCell>
                     <TableCell className="text-muted-foreground italic text-xs">
-                      {format(new Date(trade.entrySignal.created_at), "dd MMM yyyy hh:mm:ss a")}
+                      <div className="flex flex-col">
+                        <span>{format(new Date(trade.entrySignal.created_at), "dd MMM yyyy hh:mm:ss a")}</span>
+                        <span className="text-primary font-bold not-italic mt-0.5">
+                          @ ₹ {Number(trade.entrySignal.price) > 0
+                            ? Number(trade.entrySignal.price).toLocaleString()
+                            : (currentLtp ? `${currentLtp.toLocaleString()} (Live)` : "---")}
+                        </span>
+                      </div>
                     </TableCell>
                     <TableCell className="text-muted-foreground italic text-xs">
-                      {trade.exitSignal
-                        ? format(new Date(trade.exitSignal.created_at), "dd MMM yyyy hh:mm:ss a")
-                        : "---"}
+                      {trade.exitSignal ? (
+                        <div className="flex flex-col">
+                          <span>{format(new Date(trade.exitSignal.created_at), "dd MMM yyyy hh:mm:ss a")}</span>
+                          <span className="text-primary font-bold not-italic mt-0.5">@ ₹ {Number(trade.exitSignal.price || 0).toLocaleString()}</span>
+                        </div>
+                      ) : (
+                        <span className="opacity-40">Position Open</span>
+                      )}
                     </TableCell>
-                    <TableCell className={`font-bold ${!trade.profit ? "text-muted-foreground" : (trade.profit >= 0 ? "text-emerald-500" : "text-rose-500")}`}>
+                    <TableCell className={`font-bold text-right ${!trade.profit ? "text-muted-foreground" : (trade.profit >= 0 ? "text-emerald-500" : "text-rose-500")}`}>
                       {trade.profit ? `₹ ${trade.profit.toLocaleString()}` : "---"}
                     </TableCell>
-                    <TableCell>
-                      <LineChart className="h-4 w-4 text-primary cursor-pointer hover:scale-110 transition-transform" />
+                    <TableCell className={`font-bold text-right ${trade.cumulativeProfit === undefined ? "text-muted-foreground" : (trade.cumulativeProfit >= 0 ? "text-emerald-500" : "text-rose-500")}`}>
+                      {trade.cumulativeProfit !== undefined ? `₹ ${Math.round(trade.cumulativeProfit).toLocaleString()}` : "---"}
                     </TableCell>
                   </TableRow>
                 ))

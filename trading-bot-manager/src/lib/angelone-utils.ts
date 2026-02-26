@@ -143,7 +143,7 @@ export class AngelOneClient {
                 'Authorization': `Bearer ${jwtToken}`
             },
             body: JSON.stringify({
-                mode: 'LTP',
+                mode: 'FULL',
                 exchangeTokens: {
                     [exchange]: [token]
                 }

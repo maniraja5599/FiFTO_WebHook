@@ -2,7 +2,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
 Deno.serve(async (req) => {
@@ -25,9 +26,9 @@ Deno.serve(async (req) => {
       { global: { headers: { Authorization: authHeader } } }
     );
 
-    const token = authHeader.replace("Bearer ", "");
-    const { data: claimsData, error: claimsError } = await supabase.auth.getClaims(token);
-    if (claimsError || !claimsData?.claims) {
+    // Verify user is authenticated
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
+    if (userError || !user) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -44,7 +45,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    // Verify strategy ownership and get webhook URL
+    // Verify strategy ownership and get symbols
     const { data: strategy, error: stratError } = await supabase
       .from("strategies")
       .select("*")
@@ -91,7 +92,7 @@ Deno.serve(async (req) => {
         responseCode = fwdRes.status;
         responseBody = await fwdRes.text();
         if (!fwdRes.ok) status = "failed";
-      } catch (e) {
+      } catch (e: any) {
         status = "failed";
         responseBody = e.message;
       }
@@ -105,6 +106,7 @@ Deno.serve(async (req) => {
 
     const { error: insertError } = await serviceClient.from("signals").insert({
       strategy_id,
+      user_id: user.id, // Ensure we log the user who triggered it
       signal_type,
       source: "manual",
       price: price || null,
@@ -116,6 +118,7 @@ Deno.serve(async (req) => {
     });
 
     if (insertError) {
+      console.error("Signal Insert Error:", insertError);
       return new Response(JSON.stringify({ error: insertError.message }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -126,7 +129,8 @@ Deno.serve(async (req) => {
       JSON.stringify({ success: true, status }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (e) {
+  } catch (e: any) {
+    console.error("Function error:", e);
     return new Response(JSON.stringify({ error: e.message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

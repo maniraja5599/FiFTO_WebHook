@@ -30,17 +30,19 @@ async function syncSymbols() {
         // Filter for relevant symbols
         const filtered = data.filter((item: any) => {
             const isNFO = item.exch_seg === 'NFO';
-            // Only keep Futures for NFO to keep file size small
+            const isBFO = item.exch_seg === 'BFO';
+            // Only keep Futures for NFO/BFO to keep file size small
             const isFuture = item.instrumenttype === 'FUTIDX' || item.instrumenttype === 'FUTSTK';
 
-            const isIndex = item.exch_seg === 'NSE' && (
+            const isIndex = (item.exch_seg === 'NSE' || item.exch_seg === 'BSE') && (
                 item.symbol === 'NIFTY' ||
                 item.symbol === 'BANKNIFTY' ||
                 item.symbol === 'FINNIFTY' ||
                 item.symbol === 'MIDCPNIFTY' ||
-                item.symbol === 'SENSEX'
+                item.symbol === 'SENSEX' ||
+                item.symbol === 'BANKEX'
             );
-            return (isNFO && isFuture) || isIndex;
+            return (isNFO && isFuture) || (isBFO && isFuture) || isIndex;
         }).map((item: any) => ({
             token: item.token,
             symbol: item.symbol,

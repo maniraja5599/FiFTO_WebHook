@@ -49,17 +49,55 @@ DROP TRIGGER IF EXISTS update_broker_settings_updated_at ON public.broker_settin
 CREATE TRIGGER update_broker_settings_updated_at BEFORE UPDATE ON public.broker_settings FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
 CREATE TABLE IF NOT EXISTS public.strategies (
-    id TEXT PRIMARY KEY,
+    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
     user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
-    stock TEXT NOT NULL,
-    direction TEXT NOT NULL DEFAULT 'LONG',
-    quantity INTEGER NOT NULL DEFAULT 1,
-    status TEXT NOT NULL DEFAULT 'active',
+    symbol TEXT NOT NULL,
+    description TEXT,
+    enabled BOOLEAN DEFAULT true,
     webhook_url TEXT,
+    webhook_url_entry_buy TEXT,
+    webhook_url_entry_sell TEXT,
+    webhook_url_exit_buy TEXT,
+    webhook_url_exit_sell TEXT,
+    entry_buy_token TEXT DEFAULT '',
+    entry_sell_token TEXT DEFAULT '',
+    exit_buy_token TEXT DEFAULT '',
+    exit_sell_token TEXT DEFAULT '',
+    lot_size INTEGER DEFAULT 1,
+    lot_deploy_qty INTEGER DEFAULT 1,
+    angelone_token TEXT,
+    exchange TEXT DEFAULT 'NFO',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
 );
+
+-- Backward compatibility for existing tables
+DO $$ 
+BEGIN
+    IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='strategies' AND column_name='stock') AND 
+       NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='strategies' AND column_name='symbol') THEN
+        ALTER TABLE public.strategies RENAME COLUMN stock TO symbol;
+    END IF;
+END $$;
+
+ALTER TABLE public.strategies 
+ADD COLUMN IF NOT EXISTS symbol TEXT,
+ADD COLUMN IF NOT EXISTS description TEXT,
+ADD COLUMN IF NOT EXISTS enabled BOOLEAN DEFAULT true,
+ADD COLUMN IF NOT EXISTS webhook_url_entry_buy TEXT,
+ADD COLUMN IF NOT EXISTS webhook_url_entry_sell TEXT,
+ADD COLUMN IF NOT EXISTS webhook_url_exit_buy TEXT,
+ADD COLUMN IF NOT EXISTS webhook_url_exit_sell TEXT,
+ADD COLUMN IF NOT EXISTS entry_buy_token TEXT DEFAULT '',
+ADD COLUMN IF NOT EXISTS entry_sell_token TEXT DEFAULT '',
+ADD COLUMN IF NOT EXISTS exit_buy_token TEXT DEFAULT '',
+ADD COLUMN IF NOT EXISTS exit_sell_token TEXT DEFAULT '',
+ADD COLUMN IF NOT EXISTS lot_size INTEGER DEFAULT 1,
+ADD COLUMN IF NOT EXISTS lot_deploy_qty INTEGER DEFAULT 1,
+ADD COLUMN IF NOT EXISTS angelone_token TEXT,
+ADD COLUMN IF NOT EXISTS exchange TEXT DEFAULT 'NFO';
+
 ALTER TABLE public.strategies ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS "Users can view their own strategies" ON public.strategies;
 DROP POLICY IF EXISTS "Users can insert their own strategies" ON public.strategies;
