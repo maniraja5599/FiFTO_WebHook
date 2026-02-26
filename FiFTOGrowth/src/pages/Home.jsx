@@ -25,8 +25,7 @@ const Home = () => {
     const segments = [
         { id: 'fnoPnL', label: 'F&O' },
         { id: 'equityPnL', label: 'Equity' },
-        { id: 'commodityPnL', label: 'Commodity' },
-        { id: 'currencyPnL', label: 'Currency' }
+        { id: 'commodityPnL', label: 'Commodity' }
     ];
 
     const [selectedSegments, setSelectedSegments] = useState(segments.map(s => s.id));
@@ -85,8 +84,8 @@ const Home = () => {
                         <button
                             onClick={selectAll}
                             className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 border ${selectedSegments.length === segments.length
-                                    ? 'bg-premium-gold text-black border-premium-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]'
-                                    : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
+                                ? 'bg-premium-gold text-black border-premium-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]'
+                                : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
                                 }`}
                         >
                             All
@@ -96,8 +95,8 @@ const Home = () => {
                                 key={seg.id}
                                 onClick={() => toggleSegment(seg.id)}
                                 className={`px-6 py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 border ${selectedSegments.includes(seg.id)
-                                        ? 'bg-premium-gold/20 text-premium-gold border-premium-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]'
-                                        : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
+                                    ? 'bg-premium-gold/20 text-premium-gold border-premium-gold shadow-[0_0_15px_rgba(212,175,55,0.2)]'
+                                    : 'bg-white/5 text-gray-400 hover:text-white border-white/5'
                                     }`}
                             >
                                 {seg.label}

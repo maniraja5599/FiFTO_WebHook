@@ -67,7 +67,7 @@ const PnLChart = ({ data, selectedSegment }) => {
         });
 
         return Object.values(aggregated);
-    }, [viewMode, chartType]);
+    }, [viewMode, chartType, data]);
 
     // Determine if Brush should be shown (always in full screen, or if manually enabled - but we removed manual toggle for full screen logic)
     // The user request implies "zoom" = "full screen mode". So in full screen, we enable brush.
